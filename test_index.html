@@ -1,0 +1,203 @@
+<!-- Démarrage SQL : repos sur OS (C:) -->
+
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <title>Cours SQL - Accueil</title>
+
+    <link rel="stylesheet" href="css/styles.css">   
+</head>
+
+<body>
+
+    <!-- =================================== -->
+    <!-- Ici on placera une navbar lattérale avec le sommaire de la page -->
+    <!-- =================================== -->
+
+    <!-- =================================== -->
+    <!-- Ici on mettra un diaporama full wuth (cf. container-fluid) -->
+    <!-- =================================== -->
+
+    <section class="m-4">
+       <div class="nav-latterale">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Sommaire</button>
+           
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel" href="#index">Index</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabe" href="#introduction">1. Introduction</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabe" href="#myqsl">2. myQSL</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabe" href="#sgbdr">3. SGBDR ou SGBD</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabe" href="#resume">4. En résumé</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel" href="#index">Modélisation d'une BDD</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+           
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabel" href="#modelisation">5. Modélisation d'une BDD</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+           
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabel" href="#tables">3. Les tables</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+           
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabel" href="#colonnes">4. Les colonnes ou les champs</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+           
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabel" href="#types_donnees">5. Les types de données</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+           
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabel" href="#donnees_PK_AI">6. Types de données PK AI pour les ID</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+           
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabel" href="#cardinalités">7. Les cardinalités</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+           
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabel" href="#jointures">8. Table de jointure</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+           
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabel" href="#cle_etrangere">9. Clé étrangère ou foreign key (FK)</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+           
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabel" href="#enregistrements">10. Les enregistrements</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+           
+                <div class="offcanvas-body">
+                    <h6 id="offcanvasRightLabel" href="#interroger_bdd">11. Interroger la BDD</h6>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+            </div>
+        </div class="nav-latterale">
+    </section>
+
+    <header class="container m-4 justify-content-center">
+        <div class="row">
+            <div class="col-8">
+                <h1 class="display-1 ">Cours SQL - Accueil</h1>
+                <p class="lead text-center">Base de données pour PHP : on commence le back-end !</p>
+            </div>
+        </div>
+        <!-- fin row -->      
+    </header>
+
+    <section id="diapo">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/sql.jpg" class="d-block w-100" alt="sql">
+              </div>
+              <div class="carousel-item">
+                <img src="img/php.jpg" class="d-block w-100" alt="php">
+              </div>
+              <div class="carousel-item">
+                <img src="img/pma.jpg" class="d-block w-100" alt="pma">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </section>
+
+    <section class="container bg-ligth">
+        <div class="row justify-content-center">
+            <h2 id="introduction" class="text-center m-4">Introduction</h2>
+            <!-- .col-4*3>h2{$/titre} -->
+        
+            <div class="col-12 col-md-6 col-lg-3 bg-white m-2">
+                <h3 id="mysql">1/ MySQL</h3>
+                <ul>
+                    <li>MySQL peut s'utiliser en ligne de commande (Shell, Bash, CMDR et le Terminal sur Mac ou Linux, ou avec une interface graphique comme phpMyAdmin</li>
+                    <li>Pour se connecter en ligne de commande on utilise <code>mysql -u utilisateur -p</code> (en local), on respectant les espaces avant -u et -p.</li>
+                    <li class="bg-warning text-white">Il faut penser à mettre le nom d'utilisateur spécifique au serveur, sur le PC en local, l'utilisateur est "root", qui signifie "racine". Il faut donc taper ceci <code>mysql -u root -p</code> </li>
+                    <li>En local, sur PC, par défaut, il n'y a pas de mot de passe, sur MAC le mot de passe est 'root'</li>
+                    <li>En ligne, chaque BBD (base de données ???) aura son utilisateur propre et son mot de passe propre.</li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 bg-white m-2">
+                <h2 id="sgbdr">2/ SGBDR ou SGBD</h2>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 bg-white m-2">
+                <h2 id="resume">3/ En résumé</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <h2 id="modelisation">Modélisation d'une BDD</h2>
+        </div>
+    </section>
+    <!-- fin section containeur -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+    <!-- Mes scripts JS en externe -->
+
+    <script src=""></script>
+</body>
+</html>
