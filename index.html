@@ -16,11 +16,16 @@
 </head>
 <body>
 
-    <!-- ici on mettra une navbar latérale avec le sommaire du cours  -->
+    <!-- =================================== -->
+    <!-- Ici on placera une navbar lattérale avec le sommaire de la page -->
+    <!-- =================================== -->
+
+    <!-- =================================== -->
     <!-- Ici on mettra un diaporama full width (cf.container-fluid) -->
+    <!-- =================================== -->
 
     <!-- en-tête -->
-    <header class="container mb-4 bg-white">
+    <header class="container mt-4 p-4 bg-white">
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="display-1 text-dark">Cours SQL - Accueil</h1>
@@ -30,9 +35,9 @@
         <!-- fin row  -->
     </header>
 
-    <!-- caroussel -->
-    <div class="d-flex mb-4 justify-content-center">
-       
+    <!-- debut div de la row caroussel -->
+    <div class="d-flex mb-4 p-4 justify-content-center">
+        <!-- debut row -->
         <div class="row col-6">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2500">
                 <div class="carousel-inner">
@@ -47,40 +52,43 @@
                     </div>               
                 </div>
               </div>
-        </div> 
+        </div>
+        <!-- fin row -->
     </div>
     <!-- fin div caroussel -->
 
     <!-- corps central avec contenu principal -->
-    <main class="row container-fluid mb-4 bg-light">
+    <main class="row container-fluid mx-auto p-2 bg-light">
 
         <!-- aside gauche avec nav sommaire -->
-        <div class="col-3">
+        <div class="col-3 mt-4">
             <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
                 <a class="navbar-brand" href="#">Sommaire</a>
                 <nav class="nav nav-pills flex-column">
-                    <a class="nav-link" href="#introduction">I- Introduction</a>
-                    <a class="nav-link" href="#modelisation">II- Modélisation</a>
-                    <a class="nav-link" href="#tables">III- Les tables </a>
-                    <a class="nav-link" href="#les_colonnes">IV- Les colonnes ou les champs </a>
-                    <a class="nav-link" href="#les_types_de_donnees">V- Les types de données</a>
-                    <a class="nav-link" href="#pk_ai_id">VI- Types de données PK AI pour les ID</a>
-                    <a class="nav-link" href="#les_cardinalites">VII- Les cardinalités</a>
-                    <a class="nav-link" href="#table de jointure">VIII- Table de jointure</a>
-                    <a class="nav-link" href="#clefs_etrangères">IX- Clefs étrangères ou FK</a>
-                    <a class="nav-link" href="#les_enregistrements">X- Les enrégistrements</a>
-                    <a class="nav-link" href="#interroger_la_bdd">XI- Intérroger la BDD </a>
+                    <a class="nav-link" href="#introduction">1. Introduction</a>
+                    <a class="nav-link" href="#modelisation">2. Modélisation</a>
+                    <a class="nav-link" href="#tables">3. Les tables </a>
+                    <a class="nav-link" href="#les_colonnes">4. Les colonnes ou les champs </a>
+                    <a class="nav-link" href="#les_types_de_donnees">5. Les types de données</a>
+                    <a class="nav-link" href="#pk_ai_id">6. Types de données PK AI pour ID</a>
+                    <a class="nav-link" href="#les_cardinalites">7. Les cardinalités</a>
+                    <a class="nav-link" href="#table de jointure">8.Table de jointure</a>
+                    <a class="nav-link" href="#clefs_etrangères">9. Clefs étrangères ou FK</a>
+                    <a class="nav-link" href="#les_enregistrements">10. Les enrégistrements</a>
+                    <a class="nav-link" href="#interroger_la_bdd">11. Intérroger la BDD </a>
                 </nav>
             </nav>
         </div>
 
         <!-- section contenu principal -->
         <section class="col-9">
-            <div class="row">
-                <h2 id="introduction" class="text-dark p-4"> I - Introduction</h2>
+
+            <!-- debut row 1 -->
+            <div class="row mt-4">
+                <h2 id="introduction" class="text-dark p-4">1. Introduction</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-12 col-md-6 col-lg-4 mt-4 p-4 bg-white">
+                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
                     <h3>1 - MySQL</h2>
                     <ul>
                         <li>MySQL peut s'utiliser en ligne de commande (Shell, Bash, CMDR et le Terminal sur Mac ou Linux , ou avec une interface graphique comme phpMyAdmin.</li>
@@ -91,77 +99,406 @@
                     </ul>
                 </div>
                 
-                <div class="col-12 col-md-6 col-lg-4 mt-4 p-4">
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
                     <h3>2 - SGBDR ou SGBD</h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4 mt-4 p-4">
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
                     <h3>3 - En résumé</h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
                 </div>
             </div>
-            <!-- fin row  -->
-        
-            <div class="row mt-4">
-                <h2 id="modelisation">II- Modélisation</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, pariatur laborum explicabo, nesciunt tempora assumenda fugit quasi est dicta fuga cumque laudantium nihil perferendis maxime accusamus eum impedit libero voluptatibus.</p>
-            </div>
-            <!-- fin row -->
+            <!-- fin row 1  -->
 
-            <div class="row mt-4">
-                <h2 id="tables">III- Les tables</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, pariatur laborum explicabo, nesciunt tempora  voluptatibus.</p>
-            </div>
-            <!-- fin row -->
 
+            <!-- debut row 2 -->
             <div class="row mt-4">
-                <h2 id="les_colonnes">IV- Les colonnes ou les champs</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, pariatur laborum explicabo, nesciunt tempora  voluptatibus.</p>
-            </div>
-            <!-- fin row -->
+                <h2 id="modélisation" class="text-dark p-4">2. Modélisation</h2>
+                <!-- .col-4*3>h2{$/ Titre} -->
 
-            <div class="row mt-4">
-                <h2 id="les_types_de_donnees">V- Les types de données </h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, pariatur laborum explicabo, nesciunt tempora  voluptatibus.</p>
-            </div>
-            <!-- fin row -->
+                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>1 - </h2>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>2 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
 
-            <div class="row mt-4">
-                <h2 id="pk_ai_id">VI- Types de données PK AI pour les ID</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, pariatur laborum explicabo, nesciunt tempora  voluptatibus.</p>
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>3 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
             </div>
-            <!-- fin row -->
+            <!-- fin row 2  -->
 
+            <!-- debut row 3 -->
             <div class="row mt-4">
-                <h2 id="les_cardinalites">VII- Les cardinalités </h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, pariatur laborum explicabo, nesciunt tempora  voluptatibus.</p>
-            </div>
-            <!-- fin row -->
+                <h2 id="modélisation" class="text-dark p-4">3. Les tables</h2>
+                <!-- .col-4*3>h2{$/ Titre} -->
 
-            <div class="row mt-4">
-                <h2 id="table de jointure">VIII- Table de jointure </h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, pariatur laborum explicabo, nesciunt tempora  voluptatibus.</p>
-            </div>
-            <!-- fin row -->
+                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>1 - </h2>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>2 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
 
-            <div class="row mt-4">
-                <h2 id="clefs_etrangères">IX- Clefs étrangères ou FK</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, pariatur laborum explicabo, nesciunt tempora  voluptatibus.</p>
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>3 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
             </div>
-            <!-- fin row -->
+            <!-- fin row 3 -->    
 
-            <div class="row mt-4">
-                <h2 id="les_enregistrements">X- Les enrégistrements </h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, pariatur laborum explicabo, nesciunt tempora  voluptatibus.</p>
-            </div>
-            <!-- fin row -->
 
+            <!-- debut row 4 -->
             <div class="row mt-4">
-                <h2 id="interroger_la_bdd">XI- Intérroger la BDD</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, pariatur laborum explicabo, nesciunt tempora  voluptatibus.</p>
+                <h2 id="modélisation" class="text-dark p-4">4. Les colonnes et les champs</h2>
+                <!-- .col-4*3>h2{$/ Titre} -->
+
+                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>1 - </h2>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>2 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>3 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
             </div>
-            <!-- fin row -->
+            <!-- fin row 4 -->    
+
+            <!-- debut row 5-->
+            <div class="row mt-4">
+                <h2 id="modélisation" class="text-dark p-4">5. Types de données</h2>
+                <!-- .col-4*3>h2{$/ Titre} -->
+
+                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>1 - </h2>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>2 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>3 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- fin row 5 -->   
+            
+            <!-- debut row 6 -->
+            <div class="row mt-4">
+                <h2 id="modélisation" class="text-dark p-4">6. Types de données PK AI pour ID</h2>
+                <!-- .col-4*3>h2{$/ Titre} -->
+
+                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>1 - </h2>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>2 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>3 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- fin row 6 -->    
+
+            <!-- debut row 7 -->
+            <div class="row mt-4">
+                <h2 id="modélisation" class="text-dark p-4">7. Les cardinalités</h2>
+                <!-- .col-4*3>h2{$/ Titre} -->
+
+                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>1 - </h2>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>2 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>3 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- fin row 7 -->    
+
+            <!-- debut row 8 -->
+            <div class="row mt-4">
+                <h2 id="modélisation" class="text-dark p-4">8. Table de jointure </h2>
+                <!-- .col-4*3>h2{$/ Titre} -->
+
+                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>1 - </h2>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>2 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>3 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- fin row 8 -->
+            
+            <!-- debut row 9 -->
+            <div class="row mt-4">
+                <h2 id="modélisation" class="text-dark p-4">9. Clefs étrangères ou FK</h2>
+                <!-- .col-4*3>h2{$/ Titre} -->
+
+                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>1 - </h2>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>2 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>3 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- fin row 9 -->  
+
+            <!-- debut row 10 -->
+            <div class="row mt-4">
+                <h2 id="modélisation" class="text-dark p-4">10. Les enrégistrements </h2>
+                <!-- .col-4*3>h2{$/ Titre} -->
+
+                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>1 - </h2>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>2 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>3 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- fin row 10 -->  
+
+            <!-- debut row 11 -->
+            <div class="row mt-4">
+                <h2 id="modélisation" class="text-dark p-4">11. Interroger la BDD </h2>
+                <!-- .col-4*3>h2{$/ Titre} -->
+
+                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>1 - </h2>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>2 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>3 - </h3>
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- fin row 11 -->  
         </section>
+        <!-- fin container -->    
     </main>
+       <!-- fin corps central avec contenu principal -->
+
+
+    <!-- pied de page -->
+    
+        <!-- Ajouter "container" if you want to extend the Footer to full width/ou container-fluid -->
+    <div class="my-5">
+
+        <footer class="text-center text-lg-start bg-jaune" style="background-color:">
+            <!-- <div class="container d-flex justify-content-center py-5">
+                <button type="button" class="btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-facebook-f"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-youtube"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-instagram"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-twitter"></i>
+                </button>
+            </div> -->
+
+            <!-- Copyright -->
+            <div class="text-center text-dark p-5 m-5" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2021 :
+                <a class="text-dark" href="https://mdbootstrap.com/">Vanusa Santos, Colombbus</a>
+            </div>
+            <!-- Copyright -->     
+        </footer>    
+  </div>
+  <!-- fin div container/fluid du footer -->
 
     <!-- Optional JavaScript -->
     <!-- Bootstrap Bundle with Popper -->

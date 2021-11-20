@@ -3,6 +3,17 @@
     box-sizing: border-box;
 }
 
+
+/* les couleurs en variables */
+
+    :root {
+        --jaune : : yellow;
+    }
+
+    .bg-jaune {
+        background-color: yellow;
+    }
+
     body {
         background-color: yellow;
     }
