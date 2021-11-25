@@ -24,11 +24,13 @@
     <!-- Ici on mettra un diaporama full width (cf.container-fluid) -->
     <!-- =================================== -->
 
+    <!-- =================================== -->
     <!-- en-tête -->
+    <!-- =================================== -->
     <header class="container mt-4 p-4 bg-white">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="display-1 text-dark">Cours SQL - Accueil</h1>
+                <h1 class="display-4 text-dark">Cours SQL - Accueil</h1>
                 <p class="lead">Base de données pour PHP : on commence le back-end !</p>
             </div>
         </div>
@@ -81,8 +83,10 @@
 
         <!-- aside gauche avec nav sommaire -->
         <div class="col-3 mt-5 p-5 bg-white">
+
+            <!-- nav pour la page index -->
             <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
-                <a class="navbar-brand" href="#">Sommaire</a>
+                <a class="navbar-brand" href="#">Page Index</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link" href="#introduction">1. Introduction</a>
                     <a class="nav-link" href="#modelisation">2. Modélisation</a>
@@ -96,11 +100,29 @@
                     <a class="nav-link" href="#les_enregistrements">10. Les enrégistrements</a>
                     <a class="nav-link" href="#interroger_la_bdd">11. Intérroger la BDD </a>
                 </nav>
+
+                <!-- nav pour la page requêtes -->
+                <a class="navbar-brand" href="#">Page Requêtes</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#introduction">1. Base d'une BDD</a>
+                    <a class="nav-link" href="#modelisation">2. Création d'une table</a>
+                    <a class="nav-link" href="#tables">3. SELECT et DISTINCT</a>
+                    <a class="nav-link" href="#les_colonnes">4. Les conditions</a>
+                    <a class="nav-link" href="#les_types_de_donnees">5. Les opérateurs de comparaison</a>
+                    <a class="nav-link" href="#pk_ai_id">6. ORDER BY</a>
+                    <a class="nav-link" href="#les_cardinalites">7. Limitation avec LIMIT</a>
+                    <a class="nav-link" href="#table de jointure">8. Faire des calculs</a>
+                    <a class="nav-link" href="#clefs_etrangères">9. Les conditions multiples</a>
+                    <a class="nav-link" href="#les_enregistrements"> Les regroupements</a>
+                </nav>
             </nav>
         </div>
 
-        <!-- section contenu principal -->
-        <section class="col-9">
+        <!-- ================================================ -->
+        <!-- section container : zoning avec contenu principal-->
+        <!-- ================================================ -->
+    
+        <section class="container col-9">
 
             <!-- debut row 1 -->
             <div class="row mt-4">
@@ -218,8 +240,6 @@
                     <h3>1 - </h2><br>
                         <ul>
                             <li>Chaque table possède généralement plusieurs champs (aussi appelés colonnes). Les colonnes / champs représentent des caractéristiques relatives au sujet (la table).</li><br>
-                            <li>...</li><br>
-                            <li>...</li><br>
                         </ul>
                     </ul>
                 </div>
@@ -228,9 +248,7 @@
                     <h3>2 - </h3><br>
                     <ul>
                         <li>Pour savoir, quelle colonne mettre dans quelle table, il faut se poser la question suivante : qu'est-ce qui pourrait décrire mon sujet ? quelles sont les informations sur mon sujet ? <br>
-                            Par exemple, la table membre aura les champs : pseudo, mot de passe, nom, prenom, adresse, email, etc.</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
+                        Par exemple, la table membre aura les champs : pseudo, mot de passe, nom, prenom, adresse, email, etc.</li><br>
                     </ul>
                 </ul>
                 </div>
@@ -295,236 +313,188 @@
             
             <!-- debut row 6 -->
             <div class="row mt-4">
-                <h2 id="modélisation" class="text-dark p-4">6. Types de données PK AI pour ID</h2>
+                <h2 id="donneesPK_AI_pourID" class="text-dark p-4">6. Types de données PK AI pour ID</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>1 - </h2><br>
+                <!-- debut des 4 col -->
+                <div class="col-12 m-4 bg-white">
+                    <h3>a) PK - Les identifiants - Primary Key et clef primaire</h2><br>
                         <ul>
-                            <li>...</li><br>
-                            <li>...</li><br>
-                            <li>...</li><br>
+                            <li>Les identifiants sont des champs un peu particuliers car ils ne décrivent pas le sujet. Ce sont des champs/colonnes systématiquement présents dans chaque table et ce en première position.</li><br>
+                            <li>Chaque table possède un champs identifiant, appellé <code>une clef primaire (PK) unique.</code></li><br>
+                            <li>Les identifiants sont uniques.</li><br>
+                            <li>Par exemple, nous pourrons appeler le champs <code>"id"</code> ou encore <code>"id_membre"</code> ou <code>"idMembre"</code> ou <code>"id_user"</code>.</li><br>
                         </ul>
                     </ul>
                 </div>
                 
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>2 - </h3><br>
+                <div class="col-12 m-4 bg-white">
+                    <h3>b) AI (en anglais : Auto Increment - auto-incrementé)</h3><br>
                     <ul>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
+                        <li>L'ID membre sera toujours auto-incrementé.</li><br>
+                        <li>Auto-incrementé est une option permettant de génerer un numéro unique dans un champ de type clef primaire (identifiant).</li><br>
+                        <li>Par conséquent, retenez bien que le 1er champ de chaque table sera systématiquement un <code>"id"</code> qui sera PK et AI.</li><br>
                     </ul>
                 </ul>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>3 - </h3><br>
+                <div class="col-12 m-4 bg-white">
+                    <h3>c) NULL, NOT NULL</h3><br>
                     <ul>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
+                        <li>Dans cahque champ, nous pourrons indiquer si nous acceptons les valeurs <code>NULL</code> ou <code>NOT NULL</code></li><br>
+                        <li>"Null" est un type de valeur en informatique évitant de laisser un champ vide si nous n'avons pas d'inforamtion à y déposer.</li><br>
                     </ul>
                 </ul>
                 </div>
+
+                <div class="col-12 m-4 bg-white">
+                    <h3>d) Les relations</h3><br>
+                    <ul>
+                        <li>Il arrive parfois que les sujets interagissent entre eux.</li><br>
+                        <li>Exemples : </li><br>
+                        <li>1 membre commande un produit (ou 1 produit est commandé par un membre), nous deveons enregistrer l'information dans une table commande.</li><br>
+                        <li>1 conducteur conduit 1 véhicule (ou 1 véhicule est conduit par 1 conducteur), il nous faudra une table permetrant de préciser qui conduit tel véhicule.</li><br>
+                    </ul>
+                </ul>
+                </div>
+                <!-- fin des 4 col -->
             </div>
             <!-- fin row 6 -->    
 
             <!-- debut row 7 -->
             <div class="row mt-4">
-                <h2 id="modélisation" class="text-dark p-4">7. Les cardinalités</h2>
+                <h2 id="cardinalites" class="text-dark p-4">7. Les cardinalités</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>1 - </h2><br>
+                <div class="col-md-6 col-lg-5 m-4 bg-white">
                         <ul>
-                            <li>...</li><br>
-                            <li>...</li><br>
-                            <li>...</li><br>
+                            <li>Les cardinalités permettent de connaître le chiffre minimum et maximum d'enregistrements pour une relation.</li><br>
+                            <li>Exemple 1 : Un homme est le fils d'une femme et d'une seule <code>(min = 1 et max = 1)</code></li><br>
+                            <li>En revanche, une femme peut n'avoir aucun enfant ou plusieurs <code>(min = 0 et max = n). Ici : (n = nombre entier anturel)</code>(min = 0 et max = n). Ici : (n = nombre entier naturel)</li><br>
+                            <li>Exemple 2 : 1 livre possède forcément 1 auteur et qu'1 seul. <code>Relation (1,1)</code>. Minimum 1 auteur, Maximum 1 auteur. 1 auteur peut avoir écrit plusieurs livre (ou aucun). <code>Relation (0,n)</code>. Minimum 0 livre, Maximum N livres</li><br>
                         </ul>
                     </ul>
                 </div>
+                <!-- fin col -->
                 
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>2 - </h3><br>
-                    <ul>
-                        <li>...</li>
-                        <li>...</li>
-                        <li>...</li>
-                    </ul><ul>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                    </ul>
-                </ul>
+                <div class="col-md-6 col-lg-5 m-4 bg-white">
+                    <figure>
+                        <img src="img/cardinalites.jpg" alt="les cardinalités">
+                        <figcaption class="bg-light text-center">Les cardinalités</figcaption>
+                    </figure>
                 </div>
-
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>3 - </h3><br>
-                    <ul>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                    </ul>
-                </ul>
-                </div>
+                <!-- fin col -->
             </div>
-            <!-- fin row 7 -->    
+            <!-- fin row 7 --> 
+
 
             <!-- debut row 8 -->
             <div class="row mt-4">
-                <h2 id="modélisation" class="text-dark p-4">8. Table de jointure </h2>
+                <h2 id="table_de_jointure" class="text-dark p-4">8. Les tables de jointure </h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>1 - </h2><br>
-                        <ul>
-                            <li>...</li><br>
-                            <li>...</li><br>
-                            <li>...</li><br>
-                        </ul>
+                <div class="col-12 col-md-6 col-lg-4 m-4 bg-white">
+                    <p class="bg-info">Une table de jointure permet de faire le lien entre 2 tables.</p><br>
+                    <p>Exemple : une société de taxi, qui possède des conducteurs et des véhicules.</p><br>
+                    <ul>               
+                        <li>1 conducteur peut conduire 0 ou plusieurs véhicules.</li><br>
+                        <li>1 véhicule peut être conduit par 0 ou plusieurs conducteurs.</li><br>
                     </ul>
+                    <p>Comment savoir quel conducteur conduit quel véhicule ?</p>
+                    <p>Ou dans l'autre sens, quel véhicule est conduit par quel conducteur ?</p>
                 </div>
-                
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>2 - </h3><br>
-                    <ul>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                    </ul>
-                </ul>
-                </div>
+                <!-- fin col -->
 
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>3 - </h3><br>
-                    <ul>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                    </ul>
-                </ul>
+                <div class="col-md-6 col-lg-6 m-4 bg-white">
+                    <figure>
+                        <img src="img/jointures.jpg" alt="les tables de jointure">
+                        <figcaption class="bg-light text-center">Une table de jointure <br>Avec cette table de jointure, nous savons qu'Alexandre est autorisé à conduire la BM et la Mercedes et Julien ne peut conduire que la BM.</figcaption>
+                    </figure>
                 </div>
+                <!-- fin col -->
             </div>
             <!-- fin row 8 -->
             
             <!-- debut row 9 -->
             <div class="row mt-4">
-                <h2 id="modélisation" class="text-dark p-4">9. Clefs étrangères ou FK</h2>
+                <h2 id="clefs_etrangeres" class="text-dark p-4">9. Clefs étrangères ou FK</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>1 - </h2><br>
-                        <ul>
-                            <li>...</li><br>
-                            <li>...</li><br>
-                            <li>...</li><br>
-                        </ul>
-                    </ul>
-                </div>
-                
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>2 - </h3><br>
-                    <ul>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                    </ul>
-                </ul>
-                </div>
+                <div class="col-md-12 m-4 bg-white">
+                    <p>Les clefs étrangères sont des champs forcément clefs primaires dans leur table d'origine et qui se retrouvent dans une table extérieure.</p> <br>
 
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>3 - </h3><br>
-                    <ul>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                    </ul>
-                </ul>
+                    <p>Un champ clef étrangère permet de faire la relation avec un autre sujet.</p> <br>
                 </div>
+                <!-- fin col -->
+                
+                <div class="col-md-5 m-4 bg-white">
+                    <figure>
+                        <img src="img/clef_etrangere_1.jpg" alt="clef etrangere">
+                        <figcaption class="bg-light text-center">Les tables de jointure et les clefs étrangères.<br></figcaption>
+                    </figure>
+                </div>
+                <!-- fin col -->
+
+                <div class="col-md-5 m-4 bg-white">
+                    <figure>
+                        <img src="img/clef_etrangere_2.jpg" alt="clef etrangere">
+                        <figcaption class="bg-light text-center">Les tables de jointure et les clefs étrangères.<br></figcaption>
+                    </figure>
+                </div>
+                <!-- fin col -->
             </div>
-            <!-- fin row 9 -->  
+            <!-- fin row 9 --> 
+
 
             <!-- debut row 10 -->
             <div class="row mt-4">
-                <h2 id="modélisation" class="text-dark p-4">10. Les enrégistrements </h2>
+                <h2 id="enregistrement" class="text-dark p-4">10. Les enregistrements</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>1 - </h2><br>
-                        <ul>
-                            <li>...</li><br>
-                            <li>...</li><br>
-                            <li>...</li><br>
-                        </ul>
-                    </ul>
+                <div class="col-md-10 m-4 bg-white">
+                    <p class="bg-info text-white">Chaque enregistrement represente 1 ligne dans la table de la BDD. Chaque nouvel enregistrement va s'auto-incrementer. Même si un <code>ID</code> est supprimé, il ne sera pas réutilisé !</p><br>
                 </div>
-                
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>2 - </h3><br>
-                    <ul>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                    </ul>
-                </ul>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>3 - </h3><br>
-                    <ul>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                    </ul>
-                </ul>
-                </div>
+                <!-- fin col-12 -->
             </div>
             <!-- fin row 10 -->  
 
             <!-- debut row 11 -->
             <div class="row mt-4">
-                <h2 id="modélisation" class="text-dark p-4">11. Interroger la BDD </h2>
+                <h2 id="interroger_la_bdd" class="text-dark p-4">11. Interroger la BDD </h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="row col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>1 - </h2><br>
-                        <ul>
-                            <li>...</li><br>
-                            <li>...</li><br>
-                            <li>...</li><br>
-                        </ul>
-                    </ul>
+                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                    <h3>a) Les requêtes</h3>
+                    <p>Une requête permet de poser une question afin d'obtenir une réponse, ou encore de donner un ordre.</p><br>
+                    <p>Nous terminerons toutes nos requêtes SQL par un point virgule <code>" ; "</code> pour que SQL sache que nous avons terminé d'écrire et qu'il doit exécuter notre demande.</p><br>
+                    <p>De manière standard, les requêtes SQL seront écrites en MAJUSCULES <code>SELECT * FROM membre;</code></p><br>
+                    <p>L'étoile signifie toujours "all = tous".</p><br>
+                    <!-- <p></p><br> -->
                 </div>
+                <!-- fin col -->
                 
                 <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>2 - </h3><br>
+                    <h3>b) Types de requêtes</h3>
+                    <p>Il existe 4 types de requêtes :</p>
                     <ul>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
+                        <li>Sélection <code>SELECT</code> ; requête question/réponse, nous demandons et obtenons une réponse.</li><br>
+                        <li>Insertion <code>INSERT</code> ; requête d'action, qui aura un impact sur les données.</li><br>
+                        <li>Modification <code>UPDATE</code> ; requête d'action, qui aura un impact sur les données.</li><br>
+                        <li>Suppression <code>DELETE</code> ; requête d'action, qui aura un impact sur les données.</li><br>
                     </ul>
-                </ul>
                 </div>
-
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
-                    <h3>3 - </h3><br>
-                    <ul>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                        <li>...</li><br>
-                    </ul>
-                </ul>
-                </div>
+                <!-- fin col -->
             </div>
             <!-- fin row 11 -->  
         </section>
         <!-- fin container -->    
     </main>
-       <!-- fin corps central avec contenu principal -->
+    <!-- fin corps central -->
 
 
+    <!-- =================================== -->
     <!-- pied de page -->
+    <!-- =================================== -->
     
         <!-- Ajouter "container" if you want to extend the Footer to full width/ou container-fluid -->
     <div class="my-5">

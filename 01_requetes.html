@@ -1,0 +1,302 @@
+<!-- Démarrage SQL : repos sur OS (C:) -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    
+    <title>Cours SQL - Requêtes</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- =================================== -->
+    <!-- Ici on placera une navbar lattérale avec le sommaire de la page -->
+    <!-- =================================== -->
+
+    <!-- =================================== -->
+    <!-- Ici on mettra un diaporama full width (cf.container-fluid) -->
+    <!-- =================================== -->
+
+    <!-- =================================== -->
+    <!-- en-tête -->
+    <!-- =================================== -->
+    <header class="container mt-4 p-4 bg-white">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 text-dark">Cours SQL - Requêtes - # 1</h1>
+                <p class="lead">Base de données pour PHP : le back-end !</p>
+            </div>
+        </div>
+        <!-- fin row  -->
+    </header>
+
+    <!-- debut div de la row caroussel -->
+    <div class="d-flex mb-4 p-4 justify-content-center">
+        <!-- debut row -->
+        <div class="row col-6">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2500">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img src="img/langage.png"class="d-block w-100" alt="logo sql">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/index.png"class="d-block w-100" alt="logo sql">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/php-apache-postgresql-logo.png"class="d-block w-100" alt="logo sql">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/conception-logo-sql-ou-base-données-icône-ux-app-ui-clipart-vecteur_csp49313056.webp"class="d-block w-100" alt="logo sql">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/sql.jpg"class="d-block w-100" alt="logo sql">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/php.jpg" class="d-block w-100" alt="logo php">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/pma.jpg" class="d-block w-100" alt="logo pma">
+                    </div>               
+                </div>
+              </div>
+        </div>
+        <!-- fin row -->
+    </div>
+    <!-- fin div caroussel -->
+
+    <!-- corps central avec contenu principal -->
+    <main class="row container-fluid mx-auto p-2 bg-light">
+
+        <!-- aside gauche avec nav sommaire -->
+        <div class="col-3 mt-5 p-5 bg-white">
+
+            <!-- nav pour la page index -->
+            <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
+                <a class="navbar-brand" href="#">Sommaire</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#introduction">1. Introduction</a>
+                    <a class="nav-link" href="#modelisation">2. Modélisation</a>
+                    <a class="nav-link" href="#tables">3. Les tables </a>
+                    <a class="nav-link" href="#les_colonnes">4. Les colonnes ou les champs </a>
+                    <a class="nav-link" href="#les_types_de_donnees">5. Les types de données</a>
+                    <a class="nav-link" href="#pk_ai_id">6. Types de données PK AI pour ID</a>
+                    <a class="nav-link" href="#les_cardinalites">7. Les cardinalités</a>
+                    <a class="nav-link" href="#table de jointure">8.Table de jointure</a>
+                    <a class="nav-link" href="#clefs_etrangères">9. Clefs étrangères ou FK</a>
+                    <a class="nav-link" href="#les_enregistrements">10. Les enrégistrements</a>
+                    <a class="nav-link" href="#interroger_la_bdd">11. Intérroger la BDD </a>
+                </nav>
+
+                 <!-- nav pour la page requêtes -->
+                <a class="navbar-brand" href="#">Page Requêtes</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#introduction">1. Base d'une BDD</a>
+                    <a class="nav-link" href="#modelisation">2. Création d'une table</a>
+                    <a class="nav-link" href="#tables">3. SELECT et DISTINCT</a>
+                    <a class="nav-link" href="#les_colonnes">4. Les conditions</a>
+                    <a class="nav-link" href="#les_types_de_donnees">5. Les opérateurs de comparaison</a>
+                    <a class="nav-link" href="#pk_ai_id">6. ORDER BY</a>
+                    <a class="nav-link" href="#les_cardinalites">7. Limitation avec LIMIT</a>
+                    <a class="nav-link" href="#table de jointure">8. Faire des calculs</a>
+                    <a class="nav-link" href="#clefs_etrangères">9. Les conditions multiples</a>
+                    <a class="nav-link" href="#les_enregistrements"> Les regroupements</a>
+                </nav>
+            </nav>
+        </div>
+
+        <!-- ================================================ -->
+        <!-- section container : zoning avec contenu principal-->
+        <!-- ================================================ -->
+    
+        <section class="container col-9">
+
+            <!-- debut row 1 -->
+            <div class="row mt-4">
+                <h2 id="base_dune_bdd" class="text-dark p-5">1. Base d'une BDD</h2>
+                <!-- .col-4*3>h2{$/ Titre} -->
+                <ul>
+                    <li>Créer une BDD : <code>CREATE DATABASE nomdelabdd CHARACTER SET 'utf8';</code></li>
+                    <li>Voir les BDD dans le serveur : <code>SHOW DATABASES;</code></li>
+                    <li>Utiliser une BDD : <code>USE nomdelabdd;</code></li>
+                    <li>Supprimer une BDD : <code>DROP DATABASE IF EXISTS nomdelabdd;</code></li>
+                </ul>
+            </div>
+            <!-- fin row 1 -->
+
+            <!-- debut row 2 -->
+            <div class="row col-12 m-4 bg-white">
+                <h2 id="creation_dune_table" class="text-dark p-5">2. Création d'une table</h2>
+                <p>Création d'une table "employés" dans la BDD entreprise (tester sur le terminal le texte suivant, pour la ligne de commande)</p><br>
+                <p><code>int</code> = integer = c'est nombre entier et on choisi le numéro 3, DEFAULT NOT NULL veut dire qu'il ne peut pas être vide, NULL pourraît être vide. Varchar c'est le nombre de caractères acceptés.</p><br>
+                <p>Copier coller dans le terminal cette requête SQL : </p><br>
+                <code>
+                    CREATE TABLE IF NOT EXISTS employes ( 
+                        id_employes int(3) NOT NULL AUTO_INCREMENT, <br>
+                        prenom varchar(20) DEFAULT NULL, <br>
+                        nom varchar(20) DEFAULT NULL, <br>
+                        sexe enum ('f', 'm') NOT NULL, <br>
+                        service varchar(30) DEFAULT NULL, <br>
+                        date_embauche date DEFAULT NULL, <br>
+                        salaire float DEFAULT NULL, <br>
+                        PRIMARY KEY (id_employes) <br>
+                    )ENGINE=InnoDB DEFAULT CHARSET=latin1 ; <br>
+                </code>
+
+                <p>Pour que ça marche, il faut creer la DB "entreprise". Voici une liste de commandes possibles à faire :</p> <br>
+                    <ul>
+                        <li><code>CREATE DATABASE entreprise CHARACTER SET 'utf8';</code></li><br>
+                        <li><code>USE entreprise;</code></li><br>
+                        <li><code>copier/coller le texte ci-dessous avec la requête : INSERT INTO employes...</code></li><br>
+                        <li><code>SELECT * FROM employes</code></li><br>
+                        <li><code>SELECT DISTINCT(service) FROM employes;</code> : avec DISTINCT on évite les doublons des services, par ex.</li><br>
+                        <li><code> SELECT * FROM employes WHERE service='informatique';</code> : ici on selectionne seulement tous les employes du service informatique</li><br>
+                        <li><code>SELECT prenom, nom FROM employes WHERE service='informatique';</code> : ici on selectionne les nom + prenoms des emplyes du service informatique.</li><br>
+                        <li><code>SELECT nom, prenom, date_embauche FROM employes WHERE date_embauche BETWEEN '2006-01-01' AND '2010-12-31';</code> : ici on selectionne les employés embauchés entre janvier 2006 et décembre 2010.</li><br>
+                        <li><code>SELECT nom, prenom FROM employes WHERE sexe='f';</code>: ici on sélectionne les employés du sexe "féminin".</li>
+                        <li><code>SHOW TABLES</code> : ici on demande de voir les tables.</li><br>
+                        <li><code>DESCRIBE employes</code> : ici on demande le tableau descriptif pour employés.</li><br>
+                    </ul> <br>
+
+                <p>Nous venons d'ajouter une table "employes". Nous allons ajouter maintenant les contenus dans cette table. Il faut la même quantité de champs pour les valeurs, pour éviter des décalages sur le tableau.</p><br>
+
+                <code>
+                    INSERT INTO employes    (id_employes, prenom, nom, sexe, service, date_embauche, salaire) VALUES
+                                            (350, 'Jean-Pierre', 'Laborde', 'm', 'direction', '1999-12-09', 5000),
+                                            (388, 'Clement', 'Gallet', 'm', 'commercial', '2000-01-15', 2300),
+                                            (415, 'Thomas', 'Winter', 'm', 'commercial', '2000-05-03', 3550),
+                                            (417, 'Chloe', 'Dubar', 'f', 'production', '2001-09-05', 1900),
+                                            (491, 'Elodie', 'Fellier', 'f', 'secretariat', '2002-02-22', 1600),
+                                            (509, 'Fabrice', 'Grand', 'm', 'comptabilite', '2003-02-20', 1900),
+                                            (547, 'Melanie', 'Collier', 'f', 'commercial', '2004-09-08', 3100),
+                                            (592, 'Laura', 'Blanchet', 'f', 'direction', '2005-06-09', 4500),
+                                            (627, 'Guillaume', 'Miller', 'm', 'commercial', '2006-07-02', 1900),
+                                            (655, 'Celine', 'Perrin', 'f', 'commercial', '2006-09-10', 2700),
+                                            (699, 'Julien', 'Cottet', 'm', 'secretariat', '2007-01-18', 1390),
+                                            (701, 'Mathieu', 'Vignal', 'm', 'informatique', '2008-12-03', 2000),
+                                            (739, 'Thierry', 'Desprez', 'm', 'secretariat', '2009-11-17', 1500),
+                                            (780, 'Amandine', 'Thoyer', 'f', 'communication', '2010-01-23', 1500),
+                                            (802, 'Damien', 'Durand', 'm', 'informatique', '2010-07-05', 2250),
+                                            (854, 'Daniel', 'Chevel', 'm', 'informatique', '2011-09-28', 1700),
+                                            (876, 'Nathalie', 'Martin', 'f', 'juridique', '2012-01-12', 3200),
+                                            (900, 'Benoit', 'Lagarde', 'm', 'production', '2013-01-03', 2550),
+                                            (933, 'Emilie', 'Sennard', 'f', 'commercial', '2014-09-11', 1800),
+                                            (990, 'Stephanie', 'Lafaye', 'f', 'assistant', '2015-06-02', 1775);
+                </code>
+            </div>
+            <!-- fin row 2 -->
+
+            <div class="row">
+                <h2 id="select_distinct" class="text-dark p-5">3. SELECT et DISTINCT</h2>
+                <div class="col-12 m-4 bg-white">
+                    <ul>
+                        <li>Pour voir le contenu d'une table <code>SELECT * FROM employes;</code></li>
+                        <li>Sélectionner les prénoms et les noms des employés <code>SELECT prenom, nom FROM employes;</code></li>
+                        <li>Afficher les données sans les doublons avec le mot-clef DISTINCT <code>SELECT DISTINCT(service) FROM employes;</code></li>
+                        <li><code></code></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+                    <p class="alert alert-danger">Les requêtes ne sont pas sensibles à la casse mais une convention indique qu'il faut mettre les mots-clefs des requêtes en majuscules. C'est plus facile ainsi de de s'y retrouver.</p>            
+                </div>
+                <!-- fin col -->
+            </div>
+            <!-- fin row -->
+
+            <div class="row">
+                <h2 id="conditions" class="text-dark p-5">4. Les conditions</h2>
+                <div class="col-md-4">
+                    <h3>a) Le mot-clef WHERE</h3>
+                    <ul>
+                        <li>Nous cherchons une condition. Ex. Les prénoms et les noms des employes du service informatique : <code>SELECT prenom, nom FROM employes WHERE service='informatique';</code></li><br>
+                        <li>Nous cherchons les employés du sexe masculin : <code>SELECT prenom, nom FROM employes WHERE sexe='m'</code></li><br>
+                        <li>Trouver la personne qui gagne 1390 euros : <code>SELECT prenom, nom, service FROM employes WHERE salaire='1390';</code></li><br>
+                    </ul>
+                </div>
+                <!-- fin col -->
+
+                <div class="col-md-4">
+                    <h3>b) Le mot-clef BETWEEN</h3>
+                    <ul>
+                        <li>Nous cherchons avec une condition une partie des données. Ex.: Les employés embauchés entre 2006 et 2010. <br> <code>SELECT nom, prenom, data-embauche FROM employes WHERE date_embauche BETWEEN '2006-01-01 AND '2010-12-31';</code></li><br>
+                        <li>Dans une BD les dates sont toujours notées au format états-uniens<code>YYYY-MM-DD</code></li><br>
+                    </ul>
+                </div>
+                <!-- fin col -->
+
+                <div class="col-md-4">
+                    <h3>c) Le mot-clef LIKE</h3>
+                    <ul>
+                        <li>Afficher les employés dons le prénom commence par <code>"S" :</code> <br><code>SELECT prenom, nom FROM employes WHERE prenom LIKE 's%';</code> </li> <br>
+                        <li>Afficher les employés dons le prénom termine par<code>"E" :</code> <br></li><code>SELECT prenom, nom FROM employes WHERE prenom LIKE '%e';</code><br>
+                    </ul>
+                </div>
+                <!-- fin col -->
+            </div>
+            <!-- fin row -->
+          
+
+        </section>
+        <!-- fin container -->
+    </main>
+    <!-- fin corps central -->
+
+
+    <!-- =================================== -->
+    <!-- pied de page -->
+    <!-- =================================== -->
+    
+        <!-- Ajouter "container" if you want to extend the Footer to full width/ou container-fluid -->
+    <div class="p-5 my-5">
+
+        <footer class="text-center text-lg-start bg-jaune" style="background-color:">
+            <!-- <div class="container d-flex justify-content-center py-5">
+                <button type="button" class="btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-facebook-f"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-youtube"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-instagram"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-twitter"></i>
+                </button>
+            </div> -->
+
+            <!-- Copyright -->
+            <div class="text-center text-dark p-5 m-5" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2021 :
+                <a class="text-dark" href="https://mdbootstrap.com/">Vanusa Santos, Colombbus</a>
+            </div>
+            <!-- Copyright -->     
+        </footer>    
+  </div>
+  <!-- fin div container/fluid du footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+</html>
