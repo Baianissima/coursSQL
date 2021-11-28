@@ -364,7 +364,7 @@
                             </tr>
                             <tr>
                               <th scope="row">&lt; &gt; ou !=</th>
-                              <td>est différent de</td>
+                              <td>Est différent de</td>
                             </tr>
                         </tbody>
                       </table>
@@ -376,9 +376,10 @@
             <hr>
 
             <div class="col-md-4">
-                <h3>...</h3>
+                
                 <ul>
-                    <li>Différent de <code> != </code> : afficher TOUS les employés sauf ceux du service informatique</li><br>
+                    <li>Différent de <code>!=</code>: Afficher tous les employés, sauf ceux du service informatique : <code>SELECT prenom, nom, service FROM employes WHERE service != 'informatique';</code></li>
+                   
                     <code>+-------------+----------+---------------+
                         | prenom      | nom      | service       |
                         +-------------+----------+---------------+
@@ -400,8 +401,10 @@
                         | Emilie      | Sennard  | commercial    |
                         | Stephanie   | Lafaye   | assistant     |
                         +-------------+----------+---------------+</code>
-                    <li>Différent de <code> >= </code> : afficher TOUS les employés qui gagnent PLUS de 3000</li><br>
-                    <li>Différent de <code> <= </code> : afficher TOUS les employés qui gagnent MOINS de 3000</li><br>
+
+                    <li>Supérieur à <code> > </code> : afficher les employés qui gagnent plus de 3000 euros : <code> SELECT prenom, nom, salaire FROM employes WHERE salaire > 3000;</code></li><br>
+
+                    <li>Inférieur à <code> < </code> : afficher TOUS les employés qui gagnent MOINS de 3000 euros : <code> SELECT prenom, nom, salaire FROM employes WHERE salaire < 3000;</code></li><br>
                 </ul>
             </div>
             <!-- fin col -->
@@ -439,8 +442,8 @@
 
             <!-- Copyright -->
             <div class="text-center text-dark p-5 m-5" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2021 :
-                <a class="text-dark" href="https://mdbootstrap.com/">Vanusa Santos, Colombbus</a>
+                &copy; Colombbus 2021-2022 :
+                <a class="text-dark" href="https://mdbootstrap.com/">Agence Suresnes</a>
             </div>
             <!-- Copyright -->     
         </footer>    
