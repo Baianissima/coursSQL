@@ -1,0 +1,423 @@
+<!-- Démarrage SQL : repos sur OS (C:) -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    
+    <title>Cours SQL - Requêtes/02</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- =================================== -->
+
+    <!-- Pour une navbar Bootstrap sans la fleche :
+        https://www.it-swarm-fr.com/fr/css/comment-supprimer-la-fleche-dans-la-liste-deroulante-dans-bootstrap-4/827351415/-->
+
+    <!-- =================================== -->
+
+
+    <!-- ======= -->
+    <!-- en-tête -->
+    <!-- ======= -->
+
+    <header class="container mt-4 p-4 bg-white">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 text-dark">Cours SQL - Requêtes - # 2</h1>
+                <p class="lead">INSERT, UPDATE et DELETE</p>
+            </div>
+        </div>
+        <!-- fin row  -->
+    </header>
+
+    <!-- debut div de la row caroussel -->
+    <div class="d-flex mb-4 p-4 justify-content-center">
+        <!-- debut row -->
+        <div class="row col-6">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2500">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img src="img/langage.png"class="d-block w-100" alt="logo sql">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/index.png"class="d-block w-100" alt="logo sql">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/php-apache-postgresql-logo.png"class="d-block w-100" alt="logo sql">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/conception-logo-sql-ou-base-données-icône-ux-app-ui-clipart-vecteur_csp49313056.webp"class="d-block w-100" alt="logo sql">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/sql.jpg"class="d-block w-100" alt="logo sql">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/php.jpg" class="d-block w-100" alt="logo php">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/pma.jpg" class="d-block w-100" alt="logo pma">
+                    </div>               
+                </div>
+              </div>
+        </div>
+        <!-- fin row -->
+    </div>
+    <!-- fin div caroussel -->
+
+    <!-- corps central avec contenu principal -->
+    <main class="row container-fluid mx-auto p-2 bg-light">
+
+        <!-- aside gauche avec nav sommaire -->
+        <div class="col-3 mt-5 p-5 bg-white">
+
+            <!-- nav pour la page index : sommaire -->
+            <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
+                <a class="navbar-brand" href="#index">Page Index - Sommaire</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#introduction">1. Introduction</a>
+                    <a class="nav-link" href="#modelisation">2. Modélisation</a>
+                    <a class="nav-link" href="#tables">3. Les tables </a>
+                    <a class="nav-link" href="#les_colonnes">4. Les colonnes ou les champs </a>
+                    <a class="nav-link" href="#les_types_de_donnees">5. Les types de données</a>
+                    <a class="nav-link" href="#pk_ai_id">6. Types de données PK AI pour ID</a>
+                    <a class="nav-link" href="#les_cardinalites">7. Les cardinalités</a>
+                    <a class="nav-link" href="#table de jointure">8.Table de jointure</a>
+                    <a class="nav-link" href="#clefs_etrangères">9. Clefs étrangères ou FK</a>
+                    <a class="nav-link" href="#les_enregistrements">10. Les enrégistrements</a>
+                    <a class="nav-link" href="#interroger_la_bdd">11. Intérroger la BDD </a>
+                </nav>
+
+                 <!-- nav pour la page 01_requêtes -->
+                <a class="navbar-brand" href="#">Page 01 <br>- Requêtes</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#introduction">1. Base d'une BDD</a>
+                    <a class="nav-link" href="#modelisation">2. Création d'une table</a>
+                    <a class="nav-link" href="#tables">3. SELECT et DISTINCT</a>
+                    <a class="nav-link" href="#les_colonnes">4. Les conditions</a>
+                    <a class="nav-link" href="#les_types_de_donnees">5. Les opérateurs de comparaison</a>
+                    <a class="nav-link" href="#pk_ai_id">6. ORDER BY</a>
+                    <a class="nav-link" href="#les_cardinalites">7. Limitation avec LIMIT</a>
+                    <a class="nav-link" href="#table de jointure">8. Faire des calculs</a>
+                    <a class="nav-link" href="#clefs_etrangères">9. Les conditions multiples</a>
+                    <a class="nav-link" href="#les_enregistrements"> Les regroupements</a>
+                </nav>
+
+                <!-- nav pour la page 02_requêtes -->
+                <a class="navbar-brand" href="#">Page 02 <br>- Requêtes</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#INSERT INTO, insertion">1. INSERT INTO, insertion</a>
+                    <a class="nav-link" href="#modelisation">2. UPDATE, mise à jour</a>
+                    <a class="nav-link" href="#tables">3. DELETE, effacer</a>
+                    <a class="nav-link" href="#les_colonnes">4. Exo</a>
+                </nav>
+
+                <!-- nav pour la page 03_requêtes imbriquées -->
+                <a class="navbar-brand" href="#">Page 03 <br>- Requêtes imbriquées</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. </a>
+                    <a class="nav-link" href="#">2. </a>
+                    <a class="nav-link" href="#">3. </a>
+                    <a class="nav-link" href="#">4. </a>
+                </nav>
+
+                <!-- nav pour la page 04_jointures -->
+                <a class="navbar-brand" href="#">Page 04 <br>- Jointures</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. </a>
+                    <a class="nav-link" href="#">2. </a>
+                    <a class="nav-link" href="#">3. </a>
+                    <a class="nav-link" href="#">4. </a>
+                </nav>
+            </nav>
+        </div>
+
+        <!-- ================================================ -->
+        <!-- section container : zoning avec contenu principal-->
+        <!-- ================================================ -->
+    
+        <section class="container mb-4 bg-light col-9">
+
+            <!-- debut row 1 -->
+            <div class="row justify-content-center mt-4">
+                <h2 id="" class="text-dark p-5">1. INSERT INTO, requête d'insertion</h2>
+                <!-- .col-4*3>h2{$/ Titre} -->
+
+                <div class="col-md-10">
+                    <ul>
+
+                        <li class="alert alert-danger">En cas de bug dans le terminal, relancer la BDD : pour reinitier, faire <code>CRTL + C</code> + relancer la BDD avec <code>USE entreprise</code> + taper la requête</li><br>
+
+                        <li>1ère méthode : <code>INSERT INTO employes (prenom, nom, sexe, service, date_embauche, salaire) VALUES ('Alexis', 'Richard', 'm', 'informatique', '2011-12-28', 1800);</code> Ici il faut mettre l'ordre des elements dans la table et taper avant l'INTO <code>SELECT * FROM employes</code>! Et donnera ça :  <code>SELECT * FROM employes INSERT INTO employes (prenom, nom, sexe, service, date_embauche, salaire) VALUES ('Alexis', 'Richard', 'm', 'informatique', '2011-12-28', 1800);</code></li><br>
+                        
+                        <li>Afficher cet enregistrement, on le cherche par le nom de famille : <code>SELECT * FROM employes WHERE nom = 'Richard';</code>, ou bien on cherche le dernier enregsitrement <code>SELECT * FROM employes ORDER BY id_employes DESC LIMIT 1;</code></li><br>
+
+                        <hr>
+
+                        <li>2ème méthode : <code>INSERT INTO employes VALUES (NULL, 'Jeanne', 'Richy', 'f', 'informatique', '2012-01-21', 1800);</code></li> <br>
+
+                        <li class="alert alert-danger">NULL nous permet de laisser le champ id_employes se remplir seul car il est auto-incrementé.</li> <br>
+                    </ul>
+                </div>
+                <!-- fin col -->               
+            </div>
+            <!-- fin row 1 -->
+
+            <div class="row justify-content-center mt-4">
+                <h2 id="" class="text-dark p-5">2. UPDATE, requête de mise à jour</h2>
+
+                <div class="col-md-10">        
+                    <ul>
+                        <li>Augmenter le salaire de l'employée, Jeanne, dont l'id est 992 <code>UPDATE employes SET salaire = 1900 WHERE id_employes = 992;</code></li><br>
+    
+                        <code>
+                            MariaDB [entreprise]> SELECT * FROM employes ORDER BY id_employes DESC LIMIT 1;
+                            +-------------+--------+-------+------+--------------+---------------+---------+
+                            | id_employes | prenom | nom   | sexe | service      | date_embauche | salaire |
+                            +-------------+--------+-------+------+--------------+---------------+---------+
+                            |         994 | Jeanne | Richy | f    | informatique | 2012-01-21    |    1800 |
+                            +-------------+--------+-------+------+--------------+---------------+---------+</code>
+
+                        <hr>
+
+                        <li class="alert alert-danger">On utilise toujours des ID pour mettre à jour les informations de la BDD car c'est le seul élément unique.</li><br>
+
+                        <li>Pour faire plusieurs mises à jours au même temps il faudra respecter l'ordre des colonnes et les séparer par une virgule <code>UPDATE employes SET servicec = 'commercial', salaire = 2000 WHERE id_employes = 992;</code></li>
+                    </ul>
+                </div>
+                <!-- fin col -->               
+            </div>
+            <!-- fin row 1 -->
+
+
+            <div class="row justify-content-center mt-4">
+                <h2 id="" class="text-dark p-5">3. DELETE, requête de suppression</h2>
+
+                <div class="col-md-10">        
+                    <ul>
+                        <li>Supprimer un enregistrement avec DELETE : <br>
+                        <code>
+                            DELETE FROM employes WHERE id_employes = 388;
+
+                            MariaDB [entreprise]> SELECT * FROM employes;
+                            +-------------+-------------+----------+------+---------------+---------------+---------+
+                            | id_employes | prenom      | nom      | sexe | service       | date_embauche | salaire |
+                            +-------------+-------------+----------+------+---------------+---------------+---------+
+                            |         350 | Jean-Pierre | Laborde  | m    | direction     | 1999-12-09    |    5000 |
+                            |         415 | Thomas      | Winter   | m    | commercial    | 2000-05-03    |    3550 |
+                            |         417 | Chloe       | Dubar    | f    | production    | 2001-09-05    |    1900 |
+                            |         491 | Elodie      | Fellier  | f    | secretariat   | 2002-02-22    |    1600 |
+                            |         509 | Fabrice     | Grand    | m    | comptabilite  | 2003-02-20    |    1900 |
+                            |         547 | Melanie     | Collier  | f    | commercial    | 2004-09-08    |    3100 |
+                            |         592 | Laura       | Blanchet | f    | direction     | 2005-06-09    |    4500 |
+                            |         627 | Guillaume   | Miller   | m    | commercial    | 2006-07-02    |    1900 |
+                            |         655 | Celine      | Perrin   | f    | commercial    | 2006-09-10    |    2700 |
+                            |         699 | Julien      | Cottet   | m    | secretariat   | 2007-01-18    |    1390 |
+                            |         701 | Mathieu     | Vignal   | m    | informatique  | 2008-12-03    |    2000 |
+                            |         739 | Thierry     | Desprez  | m    | secretariat   | 2009-11-17    |    1500 |
+                            |         780 | Amandine    | Thoyer   | f    | communication | 2010-01-23    |    1500 |
+                            |         802 | Damien      | Durand   | m    | informatique  | 2010-07-05    |    2250 |
+                            |         854 | Daniel      | Chevel   | m    | informatique  | 2011-09-28    |    1700 |
+                            |         876 | Nathalie    | Martin   | f    | juridique     | 2012-01-12    |    3200 |
+                            |         900 | Benoit      | Lagarde  | m    | production    | 2013-01-03    |    2550 |
+                            |         933 | Emilie      | Sennard  | f    | commercial    | 2014-09-11    |    1800 |
+                            |         990 | Stephanie   | Lafaye   | f    | assistant     | 2015-06-02    |    1775 |
+                            |         991 | Alexis      | Richard  | m    | informatique  | 2011-12-28    |    1800 |
+                            |         992 | Alexis      | Richard  | m    | informatique  | 2011-12-28    |    1800 |
+                            |         993 | Alexis      | Richard  | m    | informatique  | 2011-12-28    |    1800 |
+                            |         994 | Jeanne      | Richy    | f    | informatique  | 2012-01-21    |    1800 |
+                            +-------------+-------------+----------+------+---------------+---------------+---------+
+                        </code></li>
+
+
+                        <li>Supprimer plusieurs enregistrements, ici on supprime toutes les personnes du service informatique : <br>
+                            <code>DELETE FROM employes WHERE service = 'informatique';</code></li><br>
+    
+                            <code>
+                            MariaDB [entreprise]> SELECT * FROM employes;
+                            +-------------+-------------+----------+------+---------------+---------------+---------+
+                            | id_employes | prenom      | nom      | sexe | service       | date_embauche | salaire |
+                            +-------------+-------------+----------+------+---------------+---------------+---------+
+                            |         350 | Jean-Pierre | Laborde  | m    | direction     | 1999-12-09    |    5000 |
+                            |         415 | Thomas      | Winter   | m    | commercial    | 2000-05-03    |    3550 |
+                            |         417 | Chloe       | Dubar    | f    | production    | 2001-09-05    |    1900 |
+                            |         491 | Elodie      | Fellier  | f    | secretariat   | 2002-02-22    |    1600 |
+                            |         509 | Fabrice     | Grand    | m    | comptabilite  | 2003-02-20    |    1900 |
+                            |         547 | Melanie     | Collier  | f    | commercial    | 2004-09-08    |    3100 |
+                            |         592 | Laura       | Blanchet | f    | direction     | 2005-06-09    |    4500 |
+                            |         627 | Guillaume   | Miller   | m    | commercial    | 2006-07-02    |    1900 |
+                            |         655 | Celine      | Perrin   | f    | commercial    | 2006-09-10    |    2700 |
+                            |         699 | Julien      | Cottet   | m    | secretariat   | 2007-01-18    |    1390 |
+                            |         739 | Thierry     | Desprez  | m    | secretariat   | 2009-11-17    |    1500 |
+                            |         780 | Amandine    | Thoyer   | f    | communication | 2010-01-23    |    1500 |
+                            |         876 | Nathalie    | Martin   | f    | juridique     | 2012-01-12    |    3200 |
+                            |         900 | Benoit      | Lagarde  | m    | production    | 2013-01-03    |    2550 |
+                            |         933 | Emilie      | Sennard  | f    | commercial    | 2014-09-11    |    1800 |
+                            |         990 | Stephanie   | Lafaye   | f    | assistant     | 2015-06-02    |    1775 |
+                            +-------------+-------------+----------+------+---------------+---------------+---------+</code>
+
+                        <hr>
+                    </ul>
+                </div>
+                <!-- fin col -->               
+            </div>
+            <!-- fin row 1 -->
+
+            <div class="row justify-content-center mt-4">
+                <h2 id="" class="text-dark p-5">4. EXOS</h2>
+
+                <div class="col-md-10">
+                    
+                    <h3>Pensez à faire un commit et un push !!! <br>
+                        Certains d'entre vous n'ont pas la BDD sur leurs ordinateurs personels il faut la recréer...
+                    </h3>
+
+                    <ol>
+                        <li> Afficher la profession de l'employé 547 : <br>
+
+                            <code>SELECT nom, prenom FROM employes WHERE id_employes = 547;
+                                +---------+---------+
+                                | nom     | prenom  |
+                                +---------+---------+
+                                | Collier | Melanie |
+                                +---------+---------+</code></li><br>
+
+
+                            <code>SELECT service FROM employes WHERE id_employes = 547;
+                                +------------+
+                                | service    |
+                                +------------+
+                                | commercial |
+                                +------------+</code>
+
+                            <p>L'employé 547 est une commercial !</p>
+
+                        <li> Afficher la date d'embauche d'Amandine : <br>
+                            <code>SELECT nom, prenom FROM employes WHERE sexe='f';</code></li><br>
+                            <code>SELECT nom, prenom, id_employes FROM employes;
+                                +----------+-------------+-------------+
+                                | nom      | prenom      | id_employes |
+                                +----------+-------------+-------------+
+                                | Laborde  | Jean-Pierre |         350 |
+                                | Winter   | Thomas      |         415 |
+                                | Dubar    | Chloe       |         417 |
+                                | Fellier  | Elodie      |         491 |
+                                | Grand    | Fabrice     |         509 |
+                                | Collier  | Melanie     |         547 |
+                                | Blanchet | Laura       |         592 |
+                                | Miller   | Guillaume   |         627 |
+                                | Perrin   | Celine      |         655 |
+                                | Cottet   | Julien      |         699 |
+                                | Desprez  | Thierry     |         739 |
+                                | Thoyer   | Amandine    |         780 |
+                                | Martin   | Nathalie    |         876 |
+                                | Lagarde  | Benoit      |         900 |
+                                | Sennard  | Emilie      |         933 |
+                                | Lafaye   | Stephanie   |         990 |
+                                +----------+-------------+-------------+</code><br>
+
+                            <code>SELECT nom, prenom, date_embauche FROM employes WHERE id_employes = 780;
+                                +--------+----------+---------------+
+                                | nom    | prenom   | date_embauche |
+                                +--------+----------+---------------+
+                                | Thoyer | Amandine | 2010-01-23    |
+                                +--------+----------+---------------+</code>
+
+                            <p>Amandine a été embauchée le 23/01/2010 !</p>
+
+                        <li> Afficher le nombre de commerciaux : <code>SELECT * FROM employes WHERE service='commercial';
+                            +-------------+-----------+---------+------+------------+---------------+---------+
+                            | id_employes | prenom    | nom     | sexe | service    | date_embauche | salaire |
+                            +-------------+-----------+---------+------+------------+---------------+---------+
+                            |         415 | Thomas    | Winter  | m    | commercial | 2000-05-03    |    3550 |
+                            |         547 | Melanie   | Collier | f    | commercial | 2004-09-08    |    3100 |
+                            |         627 | Guillaume | Miller  | m    | commercial | 2006-07-02    |    1900 |
+                            |         655 | Celine    | Perrin  | f    | commercial | 2006-09-10    |    2700 |
+                            |         933 | Emilie    | Sennard | f    | commercial | 2014-09-11    |    1800 |
+                            +-------------+-----------+---------+------+------------+---------------+---------+</code></li><br>
+
+                            <p>Ils sont5 commerciaux !</p>
+
+                        <li> Afficher le coût des commerciaux sur une année : <code></code></li><br>
+
+                        <li> Afficher le salaire moyen par service : <code></code></li><br>
+
+                        <li> Afficher le nombre de recrutement sur l'année 2010 : <code></code></li><br>
+
+                        <li> Augmenter le salaire de 100 euros pour chaque employé : <code></code></li><br>
+
+                        <li> Afficher le nombre de services : <code></code></li><br>
+
+                        <li> Afficher les inforamtions de l'employé du service commercial gagnant le salaire le plus élévé : <code></code></li><br>
+
+                        <li> Afficher l'employé ayant été embauché en dernier : <code></code></li><br>
+                    </ol>
+                </div>
+            </div>
+
+
+        </section>
+        <!-- fin container -->
+       
+    </main>
+    <!-- fin corps central -->
+
+
+    <!-- =================================== -->
+    <!-- pied de page -->
+    <!-- =================================== -->
+    
+        <!-- Ajouter "container" if you want to extend the Footer to full width/ou container-fluid -->
+    <div class="p-5 my-5">
+
+        <footer class="text-center text-lg-start bg-jaune">
+            <!-- <div class="container d-flex justify-content-center py-5">
+                <button type="button" class="btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-facebook-f"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-youtube"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-instagram"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-twitter"></i>
+                </button>
+            </div> -->
+
+            <!-- Copyright -->
+            <div class="text-center text-dark p-5 m-5" style="background-color: rgba(0, 0, 0, 0.2);">
+                &copy; Colombbus 2021-2022 :
+                <a class="text-dark" href="https://mdbootstrap.com/">Agence Suresnes</a>
+            </div>
+            <!-- Copyright -->     
+        </footer>    
+  </div>
+  <!-- fin div container/fluid du footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+</html>

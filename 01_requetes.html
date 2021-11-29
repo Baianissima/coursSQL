@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     
-    <title>Cours SQL - Requêtes</title>
+    <title>Cours SQL - Requêtes/01</title>
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -23,15 +23,6 @@
         https://www.it-swarm-fr.com/fr/css/comment-supprimer-la-fleche-dans-la-liste-deroulante-dans-bootstrap-4/827351415/-->
 
     <!-- =================================== -->
-
-    <!-- =============================================================== -->
-    <!-- Ici on placera une navbar lattérale avec le sommaire de la page -->
-    <!-- =============================================================== -->
-
-    <!-- ========================================================== -->
-    <!-- Ici on mettra un diaporama full width (cf.container-fluid) -->
-    <!-- ========================================================== -->
-
 
     <!-- ======= -->
     <!-- en-tête -->
@@ -48,42 +39,42 @@
     </header>
 
     <!-- debut div de la row caroussel -->
-    <div class="d-flex mb-4 p-4 justify-content-center">
+    <!-- <div class="d-flex mb-4 p-4 justify-content-center">
         <!-- debut row -->
-        <div class="row col-6">
+        <!-- <div class="row col-6">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2500">
                 <div class="carousel-inner">
 
                     <div class="carousel-item active">
                         <img src="img/langage.png"class="d-block w-100" alt="logo sql">
-                    </div>
+                    </div> -->
 
-                    <div class="carousel-item">
+                    <!-- <div class="carousel-item">
                         <img src="img/index.png"class="d-block w-100" alt="logo sql">
                     </div>
 
                     <div class="carousel-item">
                         <img src="img/php-apache-postgresql-logo.png"class="d-block w-100" alt="logo sql">
-                    </div>
+                    </div> -->
 
-                    <div class="carousel-item">
+                    <!-- <div class="carousel-item">
                         <img src="img/conception-logo-sql-ou-base-données-icône-ux-app-ui-clipart-vecteur_csp49313056.webp"class="d-block w-100" alt="logo sql">
                     </div>
 
                     <div class="carousel-item">
                         <img src="img/sql.jpg"class="d-block w-100" alt="logo sql">
-                    </div>
+                    </div> -->
 
-                    <div class="carousel-item">
+                    <!-- <div class="carousel-item">
                         <img src="img/php.jpg" class="d-block w-100" alt="logo php">
                     </div>
 
                     <div class="carousel-item">
                         <img src="img/pma.jpg" class="d-block w-100" alt="logo pma">
-                    </div>               
+                    <!-- </div>                -->
                 </div>
               </div>
-        </div>
+        </div> --> -->
         <!-- fin row -->
     </div>
     <!-- fin div caroussel -->
@@ -94,9 +85,9 @@
         <!-- aside gauche avec nav sommaire -->
         <div class="col-3 mt-5 p-5 bg-white">
 
-            <!-- nav pour la page index -->
+            <!-- nav pour la page index : sommaire -->
             <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
-                <a class="navbar-brand" href="#">Sommaire</a>
+                <a class="navbar-brand" href="#index">Page Index : Sommaire</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link" href="#introduction">1. Introduction</a>
                     <a class="nav-link" href="#modelisation">2. Modélisation</a>
@@ -111,8 +102,8 @@
                     <a class="nav-link" href="#interroger_la_bdd">11. Intérroger la BDD </a>
                 </nav>
 
-                 <!-- nav pour la page requêtes -->
-                <a class="navbar-brand" href="#">Page Requêtes</a>
+                 <!-- nav pour la page 01_requêtes -->
+                <a class="navbar-brand" href="#">Page 01 : Requêtes</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link" href="#introduction">1. Base d'une BDD</a>
                     <a class="nav-link" href="#modelisation">2. Création d'une table</a>
@@ -124,6 +115,33 @@
                     <a class="nav-link" href="#table de jointure">8. Faire des calculs</a>
                     <a class="nav-link" href="#clefs_etrangères">9. Les conditions multiples</a>
                     <a class="nav-link" href="#les_enregistrements"> Les regroupements</a>
+                </nav>
+
+                <!-- nav pour la page 02_requêtes -->
+                <a class="navbar-brand" href="#">Page 02 : Requêtes</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#INSERT INTO, insertion">1. INSERT INTO, insertion</a>
+                    <a class="nav-link" href="#modelisation">2. UPDATE, mise à jour</a>
+                    <a class="nav-link" href="#tables">3. DELETE, effacer</a>
+                    <a class="nav-link" href="#les_colonnes">4. Exo</a>
+                </nav>
+
+                <!-- nav pour la page 03_requêtes imbriquées -->
+                <a class="navbar-brand" href="#">Page 03 :<br> Requêtes imbriquées</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. </a>
+                    <a class="nav-link" href="#">2. </a>
+                    <a class="nav-link" href="#">3. </a>
+                    <a class="nav-link" href="#">4. </a>
+                </nav>
+
+                <!-- nav pour la page 04_jointures -->
+                <a class="navbar-brand" href="#">Page 04 :<br> Jointures</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. </a>
+                    <a class="nav-link" href="#">2. </a>
+                    <a class="nav-link" href="#">3. </a>
+                    <a class="nav-link" href="#">4. </a>
                 </nav>
             </nav>
         </div>
@@ -139,10 +157,12 @@
                 <h2 id="base_dune_bdd" class="text-dark p-5">1. Base d'une BDD</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
                 <ul>
-                    <li>Créer une BDD : <code>CREATE DATABASE nomdelabdd CHARACTER SET 'utf8';</code></li>
-                    <li>Voir les BDD dans le serveur : <code>SHOW DATABASES;</code></li>
-                    <li>Utiliser une BDD : <code>USE nomdelabdd;</code></li>
-                    <li>Supprimer une BDD : <code>DROP DATABASE IF EXISTS nomdelabdd;</code></li>
+                    <li>Créer une BDD : <code>CREATE DATABASE nomdelabdd CHARACTER SET 'utf8';</code></li><br>
+                    <li>Voir les BDD dans le serveur : <code>SHOW DATABASES;</code></li><br>
+                    <li>Utiliser une BDD : <code>USE nomdelabdd;</code></li><br>
+                    <li>Supprimer une BDD : <code>DROP DATABASE IF EXISTS nomdelabdd;</code></li><br>
+                    <li class="alert alert-danger">En cas de bug dans le terminal, relancer la BDD : pour reinitier, faire <code>CRTL + C</code> + relancer la BDD avec <code>USE entreprise</code> + taper la requête</li><br>
+
                 </ul>
             </div>
             <!-- fin row 1 -->
@@ -407,9 +427,290 @@
                     <li>Inférieur à <code> < </code> : afficher TOUS les employés qui gagnent MOINS de 3000 euros : <code> SELECT prenom, nom, salaire FROM employes WHERE salaire < 3000;</code></li><br>
                 </ul>
             </div>
+            <!-- fin row ? -->
+
+            <div class="row">
+                <h2>6- Classement avec ORDER BY</h2>
+                <div class="col-md-10">
+                    <ul>
+                        <li>Grace à ORDER BY on va classer les données par ordre alphabétique</li>
+                        <li> On range les noms par ordre alphabétique grâce au code suivant : <code>SELECT prenom, nom FROM employes ORDER BY nom DESC;</code></li>
+                        <li class="alert alert-danger">On précise <em>ASC</em> (ascendant) ou <em>DESC</em> (descendant). Se ce n'est pas précisé, ce sera trié automatiquement du plus petit au plus grand.</li>
+                        <li>Fonctionnne par les chaînes de caractères comme pour les nombres :<code>SELECT sexe, salaire FROM employes ORDER BY salaire ASC;</code></li>
+                        <li>ORDER BY permet aussi de trier sur plusieurs colonnes : <code>SELECT nom, prenom, service, salaire FROM employes ORDER BY service ASC, salaire ASC;</code></li>
+                    </ul>
+                </div>
+                <!-- fin col - div ul -->
+            </div>
+            <!-- fin row -->
+    
+            <div class="row">
+                <h2>7- Limiter les résultats avec LIMIT</h2>
+                <div class="col-md-10">
+                    <ul>
+                        <li>Afficher les employés en les classant par salaire (du + grand ay + petit) et en limitant le résultat à 3 :</li><br>
+
+                        <code>SELECT nom, prenom, service, salaire FROM employes ORDER BY service DESC LIMIT 0,3;</code><br>
+
+                        <li class="alert alert-danger">Le premier chiffre précise l'enregistrement de départ : 0 définit le premier enregistrement informatique. Le second chiffre nous indique de résultats que nous attendons.</li>                      
+                    </ul>
+                </div>
+                <!-- fin col - div ul -->
+            </div>
+            <!-- fin row -->
+
+            <div class="row">
+                <h2>8- Faire desc calculs dans la requête</h2>
+
+                <div class="col-md-6">
+                    <ul>
+                        <h3>...</h3>
+                        <li>Afficher la liste des employes avec leur salaire annuel :<br>
+                            <code>SELECT nom, prenom, salaire, salaire*12 FROM employes;</code></li>
+                    </ul>
+                </div>
+                <!-- fin col -->
+
+                <div class="col-md-6">
+                    <ul>
+                        <h3>a) Utiliser un alis (AS) - on cree salaire_annule dans la BDD</h3>
+                        <li>Avec le code précedent on a une colonne provisoire qui n'a pas de nom défini.<br>
+                            <code>MariaDB [entreprise]> SELECT nom, prenom, salaire, salaire*12 AS salaire_annuel FROM employes;
+                                +----------+-------------+---------+----------------+
+                                | nom      | prenom      | salaire | salaire_annuel |
+                                +----------+-------------+---------+----------------+
+                                | Laborde  | Jean-Pierre |    5000 |          60000 |
+                                | Gallet   | Clement     |    2300 |          27600 |
+                                | Winter   | Thomas      |    3550 |          42600 |
+                                | Dubar    | Chloe       |    1900 |          22800 |
+                                | Fellier  | Elodie      |    1600 |          19200 |
+                                | Grand    | Fabrice     |    1900 |          22800 |
+                                | Collier  | Melanie     |    3100 |          37200 |
+                                | Blanchet | Laura       |    4500 |          54000 |
+                                | Miller   | Guillaume   |    1900 |          22800 |
+                                | Perrin   | Celine      |    2700 |          32400 |
+                                | Cottet   | Julien      |    1390 |          16680 |
+                                | Vignal   | Mathieu     |    2000 |          24000 |
+                                | Desprez  | Thierry     |    1500 |          18000 |
+                                | Thoyer   | Amandine    |    1500 |          18000 |
+                                | Durand   | Damien      |    2250 |          27000 |
+                                | Chevel   | Daniel      |    1700 |          20400 |
+                                | Martin   | Nathalie    |    3200 |          38400 |
+                                | Lagarde  | Benoit      |    2550 |          30600 |
+                                | Sennard  | Emilie      |    1800 |          21600 |
+                                | Lafaye   | Stephanie   |    1775 |          21300 |
+                                +----------+-------------+---------+----------------+</code></li><br>
+                        <li>Grâce au mot clef <code>AS</code>, on crée une colonne ponctuelle <code>SELECT nom, prenom, salaire, salaire*12 AS salaire_annuel FROM employes;</code></li><br>
+                        
+                        <li>Le mot-clef <code>AS</code> permet de définir un alias (ici c est la nouvelle colonne salaire_annuel)</li>
+
+                        <li>Ici on fait une division poura vori le salaire horaire et on passe le érsultat dans un alias : <code></code></li><br>
+                        <code>SELECT nom, prenom, salaire, salaire/150 AS salaire_horaire FROM employes;
+                            +----------+-------------+---------+--------------------+
+                            | nom      | prenom      | salaire | salaire_horaire    |
+                            +----------+-------------+---------+--------------------+
+                            | Laborde  | Jean-Pierre |    5000 | 33.333333333333336 |
+                            | Gallet   | Clement     |    2300 | 15.333333333333334 |
+                            | Winter   | Thomas      |    3550 | 23.666666666666668 |
+                            | Dubar    | Chloe       |    1900 | 12.666666666666666 |
+                            | Fellier  | Elodie      |    1600 | 10.666666666666666 |
+                            | Grand    | Fabrice     |    1900 | 12.666666666666666 |
+                            | Collier  | Melanie     |    3100 | 20.666666666666668 |
+                            | Blanchet | Laura       |    4500 |                 30 |
+                            | Miller   | Guillaume   |    1900 | 12.666666666666666 |
+                            | Perrin   | Celine      |    2700 |                 18 |
+                            | Cottet   | Julien      |    1390 |  9.266666666666667 |
+                            | Vignal   | Mathieu     |    2000 | 13.333333333333334 |
+                            | Desprez  | Thierry     |    1500 |                 10 |
+                            | Thoyer   | Amandine    |    1500 |                 10 |
+                            | Durand   | Damien      |    2250 |                 15 |
+                            | Chevel   | Daniel      |    1700 | 11.333333333333334 |
+                            | Martin   | Nathalie    |    3200 | 21.333333333333332 |
+                            | Lagarde  | Benoit      |    2550 |                 17 |
+                            | Sennard  | Emilie      |    1800 |                 12 |
+                            | Lafaye   | Stephanie   |    1775 | 11.833333333333334 |
+                            +----------+-------------+---------+--------------------+</code><br>
+                            
+                    </ul>
+                </div>
+                <!-- fin col -->
+
+                <div class="col-md-6">
+                    <h3>b) Calculer une somme <code>SUM</code> et une moyenne <code>AVG</code></h3>
+
+                    <ul>
+                        <li>On calcule <code>la somme totale</code> des salaires à l'année des employés : <br>
+                            <code>SELECT SUM(salaire*12) FROM employes; <br>
+                            +-----------------+
+                            | SUM(salaire*12) | <br>
+                            +-----------------+
+                            |          577380 | <br>
+                            +-----------------+
+                            1 row in set (0.002 sec)
+                            </code>
+                        </li> <br>
+
+                        <li>On calcule <code>la moyenne</code> des salaires mensuels des employés : <br>
+                            <code>SELECT AVG(salaire) FROM employes;<br>
+                                +--------------+
+                                | AVG(salaire) |<br>
+                                +--------------+
+                                |      2405.75 |<br>    
+                                +--------------+
+                                1 row in set (0.001 sec)
+                            </code>
+                        </li> <br>
+
+                        <li>On calcule <code>la moyenne</code> des salaires mensuels des employés avec un alias <code>AS</code> : <br>
+                            <code> SELECT AVG(salaire) AS salaire__moyen  FROM employes; <br>
+                                +----------------+
+                                | salaire__moyen | <br>
+                                +----------------+
+                                |        2405.75 |  <br>
+                                +----------------+
+                                1 row in set (0.001 sec)             
+                            </code>
+                        </li> <br>
+
+                        <li>Remarque : la même requête avec la création d'un alias sans le mot <code>AS</code> (pour info). Mais Patrick déconseil car pour ça on utilise les quotes simples : <br>
+                            <code>SELECT AVG(salaire) 'salaire__moyen' FROM employes; <br>
+                            +----------------+
+                            | salaire__moyen | <br>
+                            +----------------+
+                            |        2405.75 | <br>
+                            +----------------+
+                            </code>                      
+                        </li>
+                    </ul>
+                </div>
+                <!-- fin col -->
+
+                <div class="col-md-6">
+                    <h3>c) Arrondir avec <code>ROUND()</code></h3>
+
+                    <ul>
+                        <li>Avec ROUND on peut arrondir le résultat d'un calcul, dans un alias (<code>AS</code>) : <br>
+                            <code> SELECT ROUND(AVG(salaire)) AS salaire__moyen FROM employes;
+                                +----------------+
+                                | salaire__moyen |
+                                +----------------+
+                                |           2406 |
+                                +----------------+
+                            </code>; <br>
+                        </li>
+
+                        <li>On peut cumuler deux notions avec ROUND et aAVG ; Attention à la syntaxe et aux paranthèses(<code></code>) : <br>
+                            <code>SELECT nom, prenom, salaire, ROUND(salaire/150) AS salaire__horaire FROM employes; <br>
+                                +----------+-------------+---------+------------------+
+                                | nom      | prenom      | salaire | salaire__horaire | <br>
+                                +----------+-------------+---------+------------------+
+                                | Laborde  | Jean-Pierre |    5000 |               33 |<br>
+                                | Gallet   | Clement     |    2300 |               15 |<br>
+                                | Winter   | Thomas      |    3550 |               24 |<br>
+                                | Dubar    | Chloe       |    1900 |               13 |<br>
+                                | Fellier  | Elodie      |    1600 |               11 |<br>
+                                | Grand    | Fabrice     |    1900 |               13 |<br>
+                                | Collier  | Melanie     |    3100 |               21 |<br>
+                                | Blanchet | Laura       |    4500 |               30 |<br>
+                                | Miller   | Guillaume   |    1900 |               13 |<br>
+                                | Perrin   | Celine      |    2700 |               18 |<br>
+                                | Cottet   | Julien      |    1390 |                9 |<br>
+                                | Vignal   | Mathieu     |    2000 |               13 |<br>
+                                | Desprez  | Thierry     |    1500 |               10 |<br>
+                                | Thoyer   | Amandine    |    1500 |               10 |<br>
+                                | Durand   | Damien      |    2250 |               15 |<br>
+                                | Chevel   | Daniel      |    1700 |               11 |<br>
+                                | Martin   | Nathalie    |    3200 |               21 |<br>
+                                | Lagarde  | Benoit      |    2550 |               17 |<br>
+                                | Sennard  | Emilie      |    1800 |               12 |<br>
+                                | Lafaye   | Stephanie   |    1775 |               12 |<br>
+                                +----------+-------------+---------+------------------+
+                                20 rows in set (0.001 sec)
+                                </code>
+                        </li><br>
+                    </ul>
+                </div>
+                <!-- fin col -->
+            </div>
+
+            <div class="col-md-6">
+                <h3>d) Compter avec <code>COUNT()</code></h3>
+
+                <ul>
+                    <li>On peut compter le nombre d'employés du sexe féminin <code> SELECT COUNT(*) FROM employes WHERE sexe = 'f';
+                        <code> MariaDB [entreprise]> SELECT COUNT(*) FROM employes WHERE sexe = 'f';
+                        +----------+
+                        | COUNT(*) |
+                        +----------+
+                        |        9 |
+                        +----------+
+                     
+                       </code> <br>
+                    </li>
+                </ul>
+            </div>
             <!-- fin col -->
+
+            <div class="col-md-6">
+                <h3>e) Isoler une valeur avec MIN (minimum)  ou MAX (maximum)</h3>
+
+                <ul>
+                    <li>Avec <code>MIN</code> on peut trouver le salaire le plus bas : <br>
+                        <code>
+                            MariaDB [entreprise]> SELECT MIN(salaire) FROM employes;
+                            +--------------+
+                            | MIN(salaire) |
+                            +--------------+
+                            |         1390 |
+                            +--------------+ 
+
+                            MariaDB [entreprise]> SELECT MAX(salaire) FROM employes;
+                            +--------------+
+                            | MAX(salaire) |
+                            +--------------+
+                            |         5000 |
+                            +--------------+
+                        </code>
+                    </li> <br>
+
+                    <li>Si on veut le nom, le prénom et le salaire de la personne qui touche le salaire le plus bas, <code>SELECT nom, prenom, salaire FROM employes WHERE salaire=(SELECT MIN(salaire) FROM employes);</code></li> <br>
+
+                    <li>Le système va éxecuter en premier la requête entre parenthèse pour connaître le résultat et l'éxecuter comme source pour la seconde requête.</li> Attention : ne pas oublier toutes les parenthèses !!!
+                </ul>
+            </div>
+            <!-- fin col -->
+
+            <div class="row">
+                <h2>10 - Les regroupements avec GROUP BY</h2>
+
+                <div class="col-md-10">
+                    <ul>
+                        <h3>a)Le nombre d'emplyés par service</h3>
+                        <li>Ici on veut connaître le nombre d'employés par service : <br>
+                            <code> SELECT service, COUNT(*) AS nombre_employes FROM employes GROUP BY service;
+                                +---------------+-----------------+
+                                | service       | nombre_employes |
+                                +---------------+-----------------+
+                                | assistant     |               1 |
+                                | commercial    |               6 |
+                                | communication |               1 |
+                                | comptabilite  |               1 |
+                                | direction     |               2 |
+                                | informatique  |               3 |
+                                | juridique     |               1 |
+                                | production    |               2 |
+                                | secretariat   |               3 |
+                                +---------------+-----------------+
+                            </code></li><br>
+
+                            <li class="alert alert-danger">La virgule ici signifie "et" donc on cherche le service et on compte le nombre d'meployés par service.</li><br>
+                </div>
+                <!-- fin col -->            
+            <!-- fin row -->
+
         </section>
         <!-- fin container -->
+       
     </main>
     <!-- fin corps central -->
 

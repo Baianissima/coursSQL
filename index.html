@@ -10,9 +10,18 @@
     <!-- Bootstrap CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="/img/favicon_io/site.webmanifest">
+        
+        
     <title>Cours SQL - Accueil</title>
 
     <link rel="stylesheet" href="css/styles.css">
+
+    
 </head>
 <body>
 
@@ -123,6 +132,33 @@
                     <a class="nav-link" href="#clefs_etrangères">9. Les conditions multiples</a>
                     <a class="nav-link" href="#les_enregistrements"> Les regroupements</a>
                 </nav>
+
+                <!-- nav pour la page 02_requêtes -->
+                <a class="navbar-brand" href="#">Page 02_Requêtes</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#INSERT INTO, insertion">1. INSERT INTO, insertion</a>
+                    <a class="nav-link" href="#modelisation">2. UPDATE, mise à jour</a>
+                    <a class="nav-link" href="#tables">3. DELETE, effacer</a>
+                    <a class="nav-link" href="#les_colonnes">4. Exo</a>
+                </nav>
+
+                <!-- nav pour la page 03_requêtes imbriquées -->
+                <a class="navbar-brand" href="#">Page 03 Requêtes imbriquées</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. </a>
+                    <a class="nav-link" href="#">2. </a>
+                    <a class="nav-link" href="#">3. </a>
+                    <a class="nav-link" href="#">4. </a>
+                </nav>
+
+                <!-- nav pour la page 04_jointures -->
+                <a class="navbar-brand" href="#">Page 04 - Jointures</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. </a>
+                    <a class="nav-link" href="#">2. </a>
+                    <a class="nav-link" href="#">3. </a>
+                    <a class="nav-link" href="#">4. </a>
+                </nav>
             </nav>
         </div>
 
@@ -155,6 +191,8 @@
                         <li>En local sur PC, par défault il n'y a pas de mot de passe, sur MAC le mot de passe est 'root'.</li>
                         <br>
                         <li>En ligne chaque BDD aura son utilisateur propre et son mot de passe propre.</li>
+
+                        <li class="alert alert-danger">En cas de bug dans le terminal, relancer la BDD : pour reinitier, faire <code>CRTL + C</code> + relancer la BDD avec <code>USE entreprise</code> + taper la requête</li><br>
                         <br>
                     </ul>
                 </div>
@@ -510,7 +548,7 @@
         <!-- Ajouter "container" if you want to extend the Footer to full width/ou container-fluid -->
     <div class="my-5">
 
-        <footer class="text-center text-lg-start bg-jaune" style="background-color:">
+        <footer class="text-center text-lg-start bg-jaune">
             <!-- <div class="container d-flex justify-content-center py-5">
                 <button type="button" class="btn-lg btn-floating mx-2" style="background-color: #54456b;">
                 <i class="fab fa-facebook-f"></i>
