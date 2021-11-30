@@ -173,30 +173,30 @@
                 <p>Copier coller dans le terminal cette requête SQL : </p><br>
                 <code>
                     CREATE TABLE IF NOT EXISTS employes ( 
-                        id_employes int(3) NOT NULL AUTO_INCREMENT, <br>
-                        prenom varchar(20) DEFAULT NULL, <br>
-                        nom varchar(20) DEFAULT NULL, <br>
-                        sexe enum ('f', 'm') NOT NULL, <br>
-                        service varchar(30) DEFAULT NULL, <br>
-                        date_embauche date DEFAULT NULL, <br>
-                        salaire float DEFAULT NULL, <br>
-                        PRIMARY KEY (id_employes) <br>
-                    )ENGINE=InnoDB DEFAULT CHARSET=latin1 ; <br>
+                        id_employes int(3) NOT NULL AUTO_INCREMENT,
+                        prenom varchar(20) DEFAULT NULL,
+                        nom varchar(20) DEFAULT NULL,
+                        sexe enum ('f', 'm') NOT NULL,
+                        service varchar(30) DEFAULT NULL,
+                        date_embauche date DEFAULT NULL,
+                        salaire float DEFAULT NULL, 
+                        PRIMARY KEY (id_employes) 
+                    )ENGINE=InnoDB DEFAULT CHARSET=latin1 ; 
                 </code>
 
                 <p>Pour que ça marche, il faut creer la DB "entreprise". Voici une liste de commandes possibles à faire :</p> <br>
                     <ul>
                         <li><code>CREATE DATABASE entreprise CHARACTER SET 'utf8';</code></li><br>
                         <li><code>USE entreprise;</code></li><br>
-                        <li><code>copier/coller le texte ci-dessous avec la requête : INSERT INTO employes...</code></li><br>
+                        <li><code>copier/coller le texte ci-dessous avec la requête : INSERT INTO employes... (la table avec les données des tous les employés)</code></li><br>
                         <li><code>SELECT * FROM employes</code></li><br>
                         <li><code>SELECT DISTINCT(service) FROM employes;</code> : avec DISTINCT on évite les doublons des services, par ex.</li><br>
                         <li><code> SELECT * FROM employes WHERE service='informatique';</code> : ici on selectionne seulement tous les employes du service informatique</li><br>
                         <li><code>SELECT prenom, nom FROM employes WHERE service='informatique';</code> : ici on selectionne les nom + prenoms des emplyes du service informatique.</li><br>
                         <li><code>SELECT nom, prenom, date_embauche FROM employes WHERE date_embauche BETWEEN '2006-01-01' AND '2010-12-31';</code> : ici on selectionne les employés embauchés entre janvier 2006 et décembre 2010.</li><br>
                         <li><code>SELECT nom, prenom FROM employes WHERE sexe='f';</code>: ici on sélectionne les employés du sexe "féminin".</li>
-                        <li><code>SHOW TABLES</code> : ici on demande de voir les tables.</li><br>
-                        <li><code>DESCRIBE employes</code> : ici on demande le tableau descriptif pour employés.</li><br>
+                        <li><code>SHOW TABLES;</code> : ici on demande de voir les tables.</li><br>
+                        <li><code>DESCRIBE employes;D</code> : ici on demande le tableau descriptif pour employés.</li><br>
                     </ul> <br>
 
                 <p>Nous venons d'ajouter une table "employes". Nous allons ajouter maintenant les contenus dans cette table. Il faut la même quantité de champs pour les valeurs, pour éviter des décalages sur le tableau.</p><br>
