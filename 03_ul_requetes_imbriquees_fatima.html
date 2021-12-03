@@ -358,88 +358,20 @@
             <div class="row">
                 <div class="col-10 m-5">
                     <ul>
-                        <li>Ici cherche les livres qui n'ont pas été rendus :<code> SELECT * FROM emprunt WHERE date_rendu IS NULL;</code> Attention, cas particulier :  la valeur NULL se teste avec le mot-clef <code>IS</code>!</li><br>
-                    
-                        <li>Ici on cherche les noms des auteurs et les titres des livres qui n'ont pas été rendus :<code> SELECT auteur, titre FROM livre WHERE id_livre IN(SELECT id_livre FROM emprunt WHERE date_rendu IS NULL);</code> Nous cherchons des informations dans les tables '"livre" et "emprunt", la requête entre parantheses s'execute en premier, et nous donne l'id des livres de la table "emprunt", puis nous demandons les titres des livres correspondant aux id les livres de la première requête.</li><br>
-                    
-                        <li class="alert alert-danger"> Attention ! Pour qu'une requête imbriquée sur 3 tables soit possible, il faut absolument qu'une information soit commune aux 2 tables : ici c'est l'id_livre !!! Le champs id_livre nous sert à "joindre" (table de jointure) et à "faire correspondre" les informations.</li><br>
-                    
-                        <li><code></code></li><br>
-                    
-                        <li>Afficher les prénoms des abonnés ayant emprunté un livre le 19/12/2014 : <br>
-                            <code></code></li><br>
-                    
-                        <p> - Avec IN ici on fait afficher plusieurs id/personnes : <br>
-                            <code>SELECT id_abonne FROM emprunt WHERE date_sortie = '2014-12-19';</code></p><br>
-                    
-                        <p> - Avec IN on peut trouver aussi les abonnés une fois qu'on a trouvé leurs id : <br>
-                            <code>SELECT * FROM abonne WHERE id_abonne IN('2', '3', '4');</code></p><br>
-                    
-                        <li>Afficher les abonnés ayant emprunté un livre d'Alphonse Daudet : <br>
-                            <code>SELECT prenom FROM abonne WHERE id_abonne IN(SELECT id_abonne FROM emprunt WHERE id_livre IN(SELECT id_livre FROM livre WHERE auteur = 'Alphonse Daudet'));</code></li><br>
-                    
-                            <p>La dernière requête s'éxecute en premier et nous sort de la table livre les id des livres de Daudet, puis la requête du milieu nous sort les id des abonnés ayant emprunté le ou les livres de Daudet, et enfin la première requête nous donne leur prénom.</p>
-                    
-                        <li>Afficher le(s) titre(s) du livre/des livres emprunté(s) par Chloé : <br>
-                    
-                            <code>SELECT titre FROM livre WHERE id_livre IN(SELECT id_livre FROM emprunt WHERE id_abonne =(SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));</code><br>
-                    
-                            <ul> <br>
-                                <li>La requête qui s'excute en premier (table abonne) : <code>SELECT id_abonne FROM abonne WHERE prenom = 'Chloé';</code></li> <br>
-                    
-                                <li>La requête qui s'excute en 2eme (table emprunt) : <code>...A COMPLETER...</code></li> <br>
-                    
-                                <li>La requête qui s'excute en dernier (table titre) : <code>... A COMPLETER...</code></li> <br>
-                            </ul><br>                   
-                        </li><br>
-                        
-                        <li>Afficher le(s) titre(s) des livres que Chloé n'a pas emprunté(s) : <br>
-                    
-                            <code>SELECT titre FROM livre WHERE id_livre NOT IN <br>
-                                (SELECT id_livre FROM emprunt WHERE id_abonne = <br>
-                                (SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));</code> <br>
-                    
-                                <ul> <br>
-                                    <li>La requête qui s'excute en premier (table abonne) : <code>...A COMPLETER...</code></li> <br>
-                    
-                                    <li>La requête qui s'excute en 2eme (table emprunt) : <code>...A COMPLETER...</code></li> <br>
-                    
-                                    <li>La requête qui s'excute en dernier (table titre) : <code>... A COMPLETER...</code></li> <br>
-                                </ul><br>     
-                        </li><br>
-                    
-                        <li>Afficher le(s) titre(s) des livres que Chloé n'a pas rendu : <br>
-                    
-                            <code>SELECT titre FROM livre WHERE id_livre IN <br>
-                                (SELECT id_livre FROM emprunt WHERE date_rendu IS NULL AND id_abonne = <br>
-                                (SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));</code><br>
-                    
-                                <ul> <br>
-                                    <li>La requête qui s'excute en premier (table abonne) : <code>...A COMPLETER...</code></li> <br>
-                    
-                                    <li>La requête qui s'excute en 2eme (table emprunt) : <code>...A COMPLETER...</code></li> <br>
-                    
-                                    <li>La requête qui s'excute en dernier (table titre) : <code>... A COMPLETER...</code></li> <br>
-                                </ul><br>     
+                        <li>On cherche les livres qui n'ont pas été rendu :<code>SELECT * FROM emprunt WHERE date_rendu IS NULL;</code> : attention cas particulier la valeur NULL se teste avec le mot clef IS!</li>
+                        <li>Quelles sont les titres des livres qui n'ont pas été rendus? : <code>SELECT * FROM livre WHERE id_livre IN (SELECT id_livre FROM emprunt WHERE date_rendu IS NULL);</code> nous cherchons des informations dans les tables livre et emprunt , la requete entre parenthèses s'execute en premier, et nous donne l'id des livres de la table 'emprunt', puis nous demandons les titres des livres correspondant aux id des livres de la première requête.</li>
+                        <li class="alert alert-danger">ATTENTION!!!!!! <br>
+                        Pour qu'une requête imbriquée sur 3 tables soit possible il faut absolument qu'une information soit commune aux 2 tables : ici l'id_livre !! Le champ id_livre nous sert 'à joindre' et faire correspondre les informations</li>
+                        <li>Afficher les prénoms des abonnés ayant empruntés des livres le 19/12/2014 :<code>SELECT * FROM abonne WHERE id_abonne IN(SELECT id_abonne FROM emprunt WHERE date_sortie = '2014-12-19');</code></li>
+                        <li>Afficher les prénoms des abonnés ayant empruntés le livre d'Alphonse Daudet :<code>SELECT prenom FROM abonne WHERE id_abonne IN(SELECT id_abonne FROM emprunt WHERE id_livre IN(SELECT id_livre FROM livre WHERE auteur = 'ALphonse Daudet'));</code> <br>
+                            La dernière requête s'execute en premier et nous sort de la table "livre les id  des livres de Daudet" puis la requete du milieu nous sort les id des abonnés ayant empruntés ce livre et enfin la première requete nous donne leurs prénoms.
                         </li>
+                        <li>Afficher le/les livre(s) empruntée par Chloé :<code>SELECT titre FROM livre WHERE id_livre IN(SELECT id_livre FROM emprunt WHERE id_abonne =(SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));</code></li>
+                        <li>Afficher le(s) titre(s) de(s) livre(s) que Chloé n'as pas empruntée:<code>SELECT titre FROM livre WHERE id_livre NOT IN(SELECT id_livre FROM EMPRUNT WHERE id_abonne =(SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));</code></li>
+                        <li>Afficher le titre du livre qu'elle n'as pas rendu :<code>SELECT titre FROM livre WHERE id_livre IN(SELECT id_livre FROM emprunt WHERE date_rendu IS NULL AND id_abonne=(SELECT id_abonne FROM abonne WHERE prenom ='Chloé'));</code></li>
+                        <li>Combien de livres a emprunté Guillaume :<code>SELECT COUNT(*) AS 'nombre de livre' FROM emprunt WHERE id_abonne=(SELECT id_abonne FROM abonne WHERE prenom ='Guillaume');</code></li>
 
-                        <li>Combien de livres a emprunté Guillaume ? <br>
-                    
-                            <code>SELECT COUNT(*) AS 'nombre de livre' FROM emprunt WHERE id_abonne = <br>
-                                (SELECT id_abonne FROM abonne WHERE prenom = 'Guillaume');</code><br>
-                    
-                                <ul> <br>
-                                    <li>La requête qui s'excute en premier (table abonne) : <code>...A COMPLETER...</code></li> <br>
-                    
-                                    <li>La requête qui s'excute en 2eme (table emprunt) : <code>...A COMPLETER...</code></li> <br>
-                    
-                                    <li>La requête qui s'excute en dernier (table titre) : <code>... A COMPLETER...</code></li> <br>
-                                </ul><br>     
-                        </li>
-                    
                     </ul>
-                    
-                    
                     
                 </div>
         </section>

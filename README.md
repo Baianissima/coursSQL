@@ -36,17 +36,17 @@
 4. Exo
 
 ### 03_requetes_imbriquees.html
-1. 
-2.
-3.
-4.
-5.
+1. Création de la BDD "bibliothèque"
+    a) Modélisation
+    b) Créations de tables
+    c) Création des clefs étrangères
+    d) Insettion des données
+
+2. SELECT sur plusieurs tables
 
 ### 04_jointures.html
-1. 
-2.
-3.
-4.
-5.
+1. Définition
+    a) Récap
 
+2. Exemples
 
