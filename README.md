@@ -14,7 +14,7 @@
 7. Les cardinalités
 8. Table de jointure
 9. Clé étrangère ou foreign key (FK)
-10. Les enregistrement
+10. Les enregistrements
 11. Interroger la BDD
 
 ### 01_requetes.html

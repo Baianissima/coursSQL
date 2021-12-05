@@ -6,30 +6,42 @@
 
 /* les couleurs en variables */
 
-    :root {
-        --jaune : : yellow;
-    }
-
-    .bg-jaune {
-        background-color: yellow;
-    }
-
+/* couleurs tendances en variables : https://graphiste.com/blog/couleurs-tendances-2021 */
+:root {
+    --jaunetrend:#f1da5c;
+    --gristrend: #8e9091;
+    --begetrend: #e8d5cc;
+    --mauvetrend: #80586d;
+    --cimentrend: #858480;
+    --bleufoncetrend: #709ca7;
+    --bleuclairtrend: #b8cbd0;
+    --bordeauxtrend: #9f5540;
+    --bleupigeontrend: #7a90a4;
+    --bg-jaune :#f2f20de3;
+    --grisclair : #eff0e5;
+    --nude : #e9dede;
+    --stabilovert: #adff2f;
+}
     body {
-        background-color: yellow;
+        background-color: var(--gristrend);
     }
 
-    .container {
-        background-color: whitesmoke;
+    section {
+        background-color: var(--jaunetrend);
     }
 
-    /* h1 {
-        background-color: ;
-    } */
+    .bg-grisclair {
+        background-color: var(--grisclair);
+    }
 
     .stabilo {
-        background-color: lightcyan;
+        background-color: var(--stabilovert);
     }
 
     .image {
         width: 100%;
+    }
+
+    header {
+        background-color: var(--jaunetrend);
     }

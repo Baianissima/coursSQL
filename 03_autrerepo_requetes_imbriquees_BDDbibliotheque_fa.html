@@ -1,0 +1,263 @@
+<!-- Démarrage SQL : repos sur OS (C:) -->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="img/IMG-8090.JPG" />
+
+    <title>Cours SQL - Requêtes 3</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- =================================== -->
+
+    <!-- Pour une navbar Bootstrap sans la fleche :
+        https://www.it-swarm-fr.com/fr/css/comment-supprimer-la-fleche-dans-la-liste-deroulante-dans-bootstrap-4/827351415/-->
+
+    <!-- =================================== -->
+
+    <!-- =============================================================== -->
+    <!-- Ici on placera une navbar lattérale avec le sommaire de la page -->
+    <!-- =============================================================== -->
+
+    <!-- ========================================================== -->
+    <!-- Ici on mettra un diaporama full width (cf.container-fluid) -->
+    <!-- ========================================================== -->
+
+
+    <!-- ======= -->
+    <!-- en-tête -->
+    <!-- ======= -->
+
+    <header class="container mt-4 p-4 bg-white">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 text-dark">Cours SQL - Requêtes imbriquées- # 3</h1>
+                <p class="lead">Base de données pour PHP Bibliothèques</p>
+            </div>
+        </div>
+        <!-- fin row  -->
+    </header>
+
+
+
+    <section class="container mb-4 bg-white">
+
+        <!-- debut row 1 -->
+        <div class="row ">
+            <div class="col-8">
+                <h2>1/Creation de la Bibliothèque</h2>
+                <h3>a/modélisation</h3>
+            </div>
+            <div class="col-md-6">
+                <figure>
+                    <img src="img/abonne.png" alt="abonne">
+                    <figcaption>La table abonne</figcaption>
+                </figure>
+            </div>
+
+            <div class="col-md-6">
+                <ul>
+                    <li>Creation de la table en abonne : <code>CREATE TABLE abonne (
+        id_abonne INT(3) NOT NULL AUTO_INCREMENT,
+        prenom VARCHAR(20) NOT NULL,
+        PRIMARY KEY (id_abonne)
+        ) ENGINE=InnoDB ;</code></li>
+                    <li></li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- fin row 1 -->
+
+        <div class="row ">
+            <div class="col-8">
+                <h2>b/creation de tables</h2>
+            </div>
+            <div class="col-md-6">
+                <figure>
+                    <img src="img/livre.png" alt="livre">
+                    <figcaption>La table livre</figcaption>
+                </figure>
+            </div>
+
+            <div class="col-md-6">
+                <ul>
+                    <li>Creation de la table livre: <code>
+                    CREATE TABLE livre ( id_livre INT(3) NOT NULL AUTO_INCREMENT , auteur VARCHAR(30) NOT NULL ,titre VARCHAR(30) NOT NULL , PRIMARY KEY (id_livre)) ENGINE = InnoDB;</code>
+                    </li>
+                    <li></li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- fin row 2 -->
+        <div class="row ">
+            <div class="col-8">
+                <h2>Contenu de la table livre:</h2>
+            </div>
+            <div class="col-md-6">
+                <figure>
+                    <img src="img/contenu_livre.jpg" alt="livre2">
+                    <figcaption>Contenu table livre</figcaption>
+                </figure>
+            </div>
+
+            <div class="col-md-6">
+                <ul>
+
+                    <li> <code>CREATE TABLE emprunt ( id_emprunt INT(3) NOT NULL AUTO_INCREMENT , id_livre INT(3) NULL DEFAULT NULL , id_abonne INT(3) NULL DEFAULT NULL , date_sortie DATE NOT NULL , date_rendu DATE DEFAULT NULL)ENGINE = InnoDB;</code>
+                    </li>
+                    <li></li>
+
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <figure>
+                    <img src="img/emprunt.png" alt="emprunt">
+                    <figcaption>La table emprunt</figcaption>
+                </figure>
+            </div>
+            <div class="col-md-6">
+                <figure>
+                    <img src="img/contenu_emprunt.jpg" alt="emprunt2">
+                    <figcaption>contenu table emprunt</figcaption>
+                </figure>
+            </div>
+        </div>
+        <!-- fin row 3 -->
+        <div class="row">
+            <div class="col-8">
+                <h3>c/Creation clé étrangère</h3>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>requete
+                        emprunt:<code>ALTER TABLE emprunt ADD FOREIGN KEY (id_livre) REFERENCES bibliotheque.livre (id_livre)</code>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- fin row 4 -->
+        <div class="row">
+            <div class="col-8">
+                <h3>d/insertion des données</h3>
+            </div>
+
+            <div class="col-md-6">
+                <figure class="img-fluid">
+                    <img src="img/vue_relationelle.png" alt="relationelle">
+                    <figcaption>Vue relationelle</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="row">
+            <h3>2/SELECT sur plusieurs tables</h3>
+
+
+            <div class="col-md-4">
+                <ul>
+                    <li><code>SELECT * FROM abonne;</code></li>
+                    <li><code>SELECT * FROM livre;</code></li>
+                    <li><code>SELECT * FROM emprunt;</code></li>
+                </ul>
+                <hr>
+            </div>
+
+            <div class="col-md-4">
+                <ul>
+                    <li>On cherche les livres qui n'ont pas été rendu
+                        :<code>SELECT * FROM emprunt WHERE date_rendu IS NULL;</code> : attention cas particulier la
+                        valeur NULL se teste avec le mot clef IS!</li>
+                    <li>Quelles sont les titres des livres qui n'ont pas été rendus? :
+                        <code>SELECT * FROM livre WHERE id_livre IN (SELECT id_livre FROM emprunt WHERE date_rendu IS NULL);</code>
+                        nous cherchons des informations dans les tables livre et emprunt , la requete entre parenthèses
+                        s'execute en premier, et nous donne l'id des livres de la table 'emprunt', puis nous demandons
+                        les titres des livres correspondant aux id des livres de la première requête.</li>
+                    <li class="alert alert-danger">ATTENTION!!!!!! <br>
+                        Pour qu'une requête imbriquée sur 3 tables soit possible il faut absolument qu'une information
+                        soit commune aux 2 tables : ici l'id_livre !! Le champ id_livre nous sert 'à joindre' et faire
+                        correspondre les informations</li>
+                    <li>Afficher les prénoms des abonnés ayant empruntés des livres le 19/12/2014
+                        :<code>SELECT * FROM abonne WHERE id_abonne IN(SELECT id_abonne FROM emprunt WHERE date_sortie = '2014-12-19');</code>
+                    </li>
+                    <li>Afficher les prénoms des abonnés ayant empruntés le livre d'Alphonse Daudet
+                        :<code>SELECT prenom FROM abonne WHERE id_abonne IN(SELECT id_abonne FROM emprunt WHERE id_livre IN(SELECT id_livre FROM livre WHERE auteur = 'ALphonse Daudet'));</code>
+                        <br>
+                        La dernière requête s'execute en premier et nous sort de la table "livre les id des livres de
+                        Daudet" puis la requete du milieu nous sort les id des abonnés ayant empruntés ce livre et enfin
+                        la première requete nous donne leurs prénoms.
+                    </li>
+                    <li>Afficher le/les livre(s) empruntée par Chloé
+                        :<code>SELECT titre FROM livre WHERE id_livre IN(SELECT id_livre FROM emprunt WHERE id_abonne =(SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));</code>
+                    </li>
+                    <li>Afficher le(s) titre(s) de(s) livre(s) que Chloé n'as pas
+                        empruntée:<code>SELECT titre FROM livre WHERE id_livre NOT IN(SELECT id_livre FROM EMPRUNT WHERE id_abonne =(SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));</code>
+                    </li>
+                    <li>Afficher le titre du livre qu'elle n'as pas rendu
+                        :<code>SELECT titre FROM livre WHERE id_livre IN(SELECT id_livre FROM emprunt WHERE date_rendu IS NULL AND id_abonne=(SELECT id_abonne FROM abonne WHERE prenom ='Chloé'));</code>
+                    </li>
+                    <li>Combien de livres a emprunté Guillaume
+                        :<code>SELECT COUNT(*) AS 'nombre de livre' FROM emprunt WHERE id_abonne=(SELECT id_abonne FROM abonne WHERE prenom ='Guillaume');</code>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- fin container -->
+
+
+     <!-- Ajouter "container" if you want to extend the Footer to full width/ou container-fluid -->
+     <div class="p-5 my-5">
+
+        <footer class="text-center text-lg-start bg-jaune">
+            <!-- <div class="container d-flex justify-content-center py-5">
+                <button type="button" class="btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-facebook-f"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-youtube"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-instagram"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-twitter"></i>
+                </button>
+            </div> -->
+
+            <!-- Copyright -->
+            <div class="text-center text-dark p-5 m-5" style="background-color: rgba(0, 0, 0, 0.2);">
+                &copy; Colombbus 2021-2022 : Vanusa - 
+                <a class="text-dark" href="https://mdbootstrap.com/">Agence Suresnes</a>
+            </div>
+            <!-- Copyright -->     
+        </footer>    
+  </div>
+  <!-- fin div container/fluid du footer -->
+    <!-- Optional JavaScript -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

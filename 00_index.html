@@ -44,9 +44,9 @@
     <!-- en-tête -->
     <!-- =================================== -->
     
-    <header class="container mt-4 p-4 bg-white">
+    <header class="container-fluid p-4">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-10 text-center">
                 <h1 class="display-4 text-dark">Cours SQL - Accueil</h1>
                 <p class="lead">Base de données pour PHP : on commence le back-end !</p>
             </div>
@@ -55,7 +55,7 @@
     </header>
 
     <!-- debut div de la row caroussel -->
-    <div class="d-flex mb-4 p-4 justify-content-center">
+    <div class="d-flex p-4 justify-content-center">
         <!-- debut row -->
         <div class="row col-6">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2500">
@@ -63,18 +63,6 @@
 
                     <div class="carousel-item active">
                         <img src="img/langage.png"class="d-block w-100" alt="logo sql">
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="img/index.png"class="d-block w-100" alt="logo sql">
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="img/php-apache-postgresql-logo.png"class="d-block w-100" alt="logo sql">
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="img/conception-logo-sql-ou-base-données-icône-ux-app-ui-clipart-vecteur_csp49313056.webp"class="d-block w-100" alt="logo sql">
                     </div>
 
                     <div class="carousel-item">
@@ -96,13 +84,13 @@
     <!-- fin div caroussel -->
 
     <!-- corps central avec contenu principal -->
-    <main class="row container-fluid mx-auto p-2 bg-light">
+    <main class="row container-fluid mx-auto bg-light">
 
         <!-- aside gauche avec nav sommaire -->
-        <div class="col-3 mt-5 p-5 bg-white">
+        <div class="col-3">
 
-            <!-- nav pour la page index -->
-            <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
+            <!-- nav lattérale -->
+            <nav id="navbar-example3" class="navbar navbar-light bg-liflex-column align-items-stretch p-3">
                 <a class="navbar-brand" href="#">Page Index</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link" href="#introduction">1. Introduction</a>
@@ -166,9 +154,9 @@
         <!-- section container : zoning avec contenu principal-->
         <!-- ================================================ -->
     
-        <section class="container col-9">
+        <section class="container col-9 mt-4">
 
-            <div class="col-12 col-md-6 col-lg-6 m-4 bg-white">
+            <div class="col-10 col-md-4 col-lg-6 m-4">
                 <img src="img/front-back.jpg" alt="front-back">             
             </div>
             <!-- fin div img -->
@@ -178,15 +166,28 @@
                 <h2 id="introduction" class="text-dark p-5">1. Introduction</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-3 m-4 bg-white">
                     <h3>a) MySQL</h2>
                     <ul>
                         <li>MySQL peut s'utiliser en ligne de commande (Shell, Bash, CMDR et le Terminal sur Mac ou Linux , ou avec une interface graphique comme phpMyAdmin.</li>
                         <br>
-                        <li>Pour se connecter en ligne de commande on utilise <code>mysql -u utilisateur -p</code></li>
+                        <li>Pour se connecter en ligne de commande on utilise <code>mysql -u utilisateur -p</code>
+                        </li>
                         <br>
-                        <li class="bg-info text-white">Attention: il faut penser à mettre le nom d'utilisateur spécifique au serveur ; sur le Pc en local l'utilisateur est 'root' qui signifie 'racine'.</li>
-                        <li>Pour une première installation il est nécessaire d'installer sur un PC Windows les variables de commandes (variables d'environnement ?) avant d'utiliser MySQL en ligne de commande. cf. <a href="https://www.malekal.com/variables-environnement-windows/">plus sur les variables d'environnement.</a></li>
+                        <li class="bg-info text-white">Attention : il faut penser à mettre le nom d'utilisateur spécifique au serveur ; sur le Pc en local l'utilisateur est 'root' qui signifie 'racine'.
+                        </li>
+                        <br>
+                        <li class = "alert alert-success">Pour une première utilisation il est nécessaire d'installer les variables de commandes (variables d'environnement) avant d'utiliser MySQL en ligne de commande :
+                            <ul>
+                                <li><a href="https://www.malekal.com/variables-environnement-windows/">Pour Windows, cliquer ici !</a>
+                                </li>
+
+                                <br>
+
+                                <li><a href="https://support.apple.com/fr-ne/guide/terminal/apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac">Pour Mac, <br> cliquez ici !</a><br>
+                                </li>
+                            </ul>
+                        </li>
                         <br>
                         <li>En local sur PC, par défault il n'y a pas de mot de passe, sur MAC le mot de passe est 'root'.</li>
                         <br>
@@ -197,7 +198,7 @@
                     </ul>
                 </div>
                 
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-3 m-4 bg-white">
                     <h3>b) SGBDR ou SGBD</h3>
                     <ul>
                         <li>Un SGBDR est un système de gestion de base de données relationnelles</li><br>
@@ -221,7 +222,7 @@
                     </ul>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-3 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-3 m-4 bg-white">
                     <h3>c) En résumé</h3>
                     <ul>
                         <li>A l'intérieur de la BDD les informations sont classées, sctructurées et regroupées par sujet</li><br>
@@ -239,7 +240,7 @@
                 <h2 id="modelisation" class="text-dark p-4">2. Modélisation</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-12 col-md-12 col-lg-10 m-4 bg-white">
+                <div class="col-10 col-md-12 col-lg-10 m-4 bg-white">
                     <h3>1 - Intro</h3><br>
                     <ul>
                         <li>Avant de créer une BDD, il est essentiel de se poser et de réflechir à la modélisation de la base : pour éviter de se tromper.</li><br>
@@ -259,7 +260,7 @@
                 <h2 id="tables" class="text-dark p-4">3. Les tables</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="row col-12 col-md-6 col-lg-2 m-4 bg-white">
+                <div class="row col-10 col-md-6 col-lg-2 m-4 bg-white">
                     <ul>
                         <ul>
                             <li>1 sujet représente 1 table dans une base de données. </li><br>
@@ -269,7 +270,7 @@
                     </ul>
                 </div>
                 
-                <div class="col-12 col-md-6 col-lg-8 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-8 m-4 bg-white">
                     <figure>
                         <img src="img/abonne.png" alt="table_abonne">
                         <figcaption class="bg-light text-center">
@@ -288,13 +289,13 @@
                 <h2 id="colonnes_champs" class="text-dark p-4">4. Les colonnes et les champs</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="row col-12 col-md-6 col-lg-5 m-4 bg-white">
+                <div class="row col-10 col-md-6 col-lg-5 m-4 bg-white">
                     <p class="p-5">Chaque table possède généralement plusieurs champs (aussi appelés colonnes).<br>
                     <br>
                     Les colonnes / champs représentent des caractéristiques relatives au sujet (la table).</p>
                 </div>
                 
-                <div class="col-12 col-md-6 col-lg-5 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-5 m-4 bg-white">
                     <p class="p-5">Pour savoir, quelle colonne mettre dans quelle table, il faut se poser la question suivante : qu'est-ce qui pourrait décrire mon sujet ? quelles sont les informations sur mon sujet ? <br>
                     <br>
                     Par exemple, la table membre aura les champs : pseudo, mot de passe, nom, prenom, adresse, email, etc.</p>
@@ -364,7 +365,7 @@
                 <!-- .col-4*3>h2{$/ Titre} -->
 
                 <!-- debut des 4 col -->
-                <div class="col-12 m-4 p-4 bg-white">
+                <div class="col-10 m-4 p-4 bg-white">
                     <h3>a) PK - Les identifiants - Primary Key et clef primaire</h2><br>
                         <ul>
                             <li>Les identifiants sont des champs un peu particuliers car ils ne décrivent pas le sujet. Ce sont des champs/colonnes systématiquement présents dans chaque table et ce en première position.</li><br>
@@ -375,7 +376,7 @@
                     </ul>
                 </div>
                 
-                <div class="col-12 m-4 p-4bg-white">
+                <div class="col-10 m-4 p-4 bg-white">
                     <h3>b) AI (Auto Increment = auto-incrementé)</h3><br>
                     <ul>
                         <li>L'ID membre sera toujours auto-incrementé.</li><br>
@@ -385,7 +386,7 @@
                 </ul>
                 </div>
 
-                <div class="col-12 m-4 p-4 bg-white">
+                <div class="col-10 m-4 p-4 bg-white">
                     <h3>c) NULL, NOT NULL</h3><br>
                     <ul>
                         <li>Dans cahque champ, nous pourrons indiquer si nous acceptons les valeurs <code>NULL</code> ou <code>NOT NULL</code></li><br>
@@ -394,7 +395,7 @@
                 </ul>
                 </div>
 
-                <div class="col-12 m-4 p-4 bg-white">
+                <div class="col-10 m-4 p-4 bg-white">
                     <h3>d) Les relations</h3><br>
                     <p>Il arrive parfois que les sujets interagissent entre eux.</p><br>
                     <ul>
@@ -442,7 +443,7 @@
                 <h2 id="table_de_jointure" class="text-dark p-4">8. Les tables de jointure </h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-12 col-md-6 col-lg-4 m-4 p-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-4 m-4 p-4 bg-white">
                     <p class="bg-info">Une table de jointure permet de faire le lien entre 2 tables.</p><br>
                     <p>Exemple : une société de taxi, qui possède des conducteurs et des véhicules.</p><br>
                     <ul>               
@@ -469,7 +470,7 @@
                 <h2 id="clefs_etrangeres" class="text-dark p-4">9. Clefs étrangères ou FK</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-md-12 m-4 bg-white">
+                <div class="col-10 m-4 bg-white">
                     <p>Les clefs étrangères sont des champs forcément clefs primaires dans leur table d'origine et qui se retrouvent dans une table extérieure.</p> <br>
 
                     <p>Un champ clef étrangère permet de faire la relation avec un autre sujet.</p> <br>
@@ -503,7 +504,7 @@
                 <div class="col-md-10 m-4 bg-white">
                     <p class="bg-info text-white">Chaque enregistrement represente 1 ligne dans la table de la BDD. Chaque nouvel enregistrement va s'auto-incrementer. Même si un <code>ID</code> est supprimé, il ne sera pas réutilisé !</p><br>
                 </div>
-                <!-- fin col-12 -->
+                <!-- fin col-10 -->
             </div>
             <!-- fin row 10 -->  
 
@@ -512,7 +513,7 @@
                 <h2 id="interroger_la_bdd" class="text-dark p-4">11. Interroger la BDD </h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-12 col-md-6 col-lg-5 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-5 m-4 bg-white">
                     <h3>a) Les requêtes</h3>
                     <p>Une requête permet de poser une question afin d'obtenir une réponse, ou encore de donner un ordre.</p><br>
                     <p>Nous terminerons toutes nos requêtes SQL par un point virgule <code>" ; "</code> pour que SQL sache que nous avons terminé d'écrire et qu'il doit exécuter notre demande.</p><br>
@@ -522,7 +523,7 @@
                 </div>
                 <!-- fin col -->
                 
-                <div class="col-12 col-md-6 col-lg-5 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-5 m-4 bg-white">
                     <h3>b) Types de requêtes</h3>
                     <p>Il existe 4 types de requêtes :</p>
                     <ul>

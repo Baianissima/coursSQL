@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     
-    <title>Cours SQL - Requêtes imbriquées - BDD bibliotheque </title>
+    <title>Cours SQL - Requêtes imbriquées - Créarion de BDD bibliotheque</title>
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -29,10 +29,10 @@
     <!-- en-tête -->
     <!-- ======= -->
 
-    <header class="container mt-4 p-4 bg-white">
+    <header class="container-fluid p-4 bg-white">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="display-4 text-dark">Cours SQL - Requêtes imbriquées</h1>
+                <h1 class="display-4 text-dark">Cours SQL - Requêtes imbriquées # 3</h1>
                 <p class="lead">BDD "bibliotheque"</p>
             </div>
         </div>
@@ -48,18 +48,6 @@
 
                     <div class="carousel-item active">
                         <img src="img/langage.png"class="d-block w-100" alt="logo sql">
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="img/index.png"class="d-block w-100" alt="logo sql">
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="img/php-apache-postgresql-logo.png"class="d-block w-100" alt="logo sql">
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="img/conception-logo-sql-ou-base-données-icône-ux-app-ui-clipart-vecteur_csp49313056.webp"class="d-block w-100" alt="logo sql">
                     </div>
 
                     <div class="carousel-item">
@@ -81,10 +69,10 @@
     <!-- fin div caroussel -->
 
     <!-- corps central avec contenu principal -->
-    <main class="row container-fluid mx-auto p-2 bg-light">
+    <main class="row container-fluid mx-auto p-2">
 
         <!-- aside gauche avec nav sommaire -->
-        <div class="col-3 mt-5 p-5 bg-white">
+        <div class="col-3 p-5 bg-grisclair">
 
             <!-- nav pour la page index : sommaire -->
             <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
@@ -189,19 +177,27 @@
                 <!-- fin col -->
 
                 <div class="col-md-4 m-5">
-                    <h4>Création de la table abonné : </h4><br>
+                    <h4>Création et insertion de la table abonné : </h4><br>
                         <code>CREATE TABLE abonne (
                         id_abonne INT(3) NOT NULL AUTO_INCREMENT,
-                        prenom VARCHAR(20) NOT NULL,
+                        prenom VARCHAR(25) NOT NULL,
                         PRIMARY KEY (id_abonne)
                         ) ENGINE=InnoDB;</code>
 
                         <hr>
 
+                        <code>INSERT INTO `abonne` (`id_abonne`, `prenom`) VALUES <br>
+                            (1, 'Guillaume'),
+                            (2, 'Benoît'),
+                            (3, 'Chloé'),
+                            (4, 'Laura');
+                        </code><br>
+
                         <p><code>NULL</code> : le code peut être vide;</p><br>
                         <p><code>NOT NULL</code> : le code ne peut pas être vide;</p><br>
                 </div>
                 <!-- fin col -->
+
             </div>
             <!-- fin row  -->
 
@@ -252,7 +248,8 @@
                             (102, 'HONORE DE BALZAC', 'Le père Goriot'),
                             (103, 'ALPHONSE DAUDET', 'Le Petit chose'),
                             (104, 'ALEXANDRE DUMAS', 'La Reine Margot'),
-                            (105, 'ALEXANDRE DUMAS', 'Les Trois Mousquetaires')</code><br>
+                            (105, 'ALEXANDRE DUMAS', 'Les Trois Mousquetaires')
+                        </code><br>
                 </div>
                 <!-- fin col -->
             </div>
@@ -275,16 +272,25 @@
                     <li>
                         <code>CREATE TABLE emprunt (
                             id_emprunt INT(3) NOT NULL AUTO_INCREMENT,
-                            id_livre INT(3) DEFAULT NULL,
-                            id_abonne INT(3) DEFAULT NULL,
+                            id_livre INT(3) NOT NULL,
+                            id_abonne INT(3) NOT NULL,
                             date_sortie DATE NOT NULL,
-                            date_rendu DATE DEFAULT NULL,
+                            date_rendu DATE NOT NULL,
                             PRIMARY KEY (id_livre)
                             ) ENGINE=InnoDB;
                         </code>
                     </li><br>
 
-                    <li>Avec DESCRIBE on demande à voir les descriptions des tables créés : <code> DESCRIBE emprunt;</code></li>       
+                    <li>Ici j'ai rajouté la création obligatoire de l'INDEX dans le code de commande. <br>
+                        
+                        Voir <a href="https://openclassrooms.com/fr/courses/1959476-administrez-vos-bases-de-donnees-avec-mysql/1962880-index">sur ce site</a> : <br>
+                    
+                        <code>CREATE TABLE emprunt ( id_emprunt INT(3) NOT NULL AUTO_INCREMENT, id_livre INT(3) NOT NULL, id_abonne INT(3) NOT NULL, date_sortie DATE NOT NULL, date_rendu DATE NOT NULL, PRIMARY KEY (id_livre), INDEX ind_emprunt (id_emprunt) ) ENGINE=InnoDB;
+                        </code>
+                    </li><br>
+
+                    <li>Avec DESCRIBE on demande à voir les descriptions des tables créés : <br>
+                        <code>DESCRIBE emprunt;</code></li>       
                 </div>
                 <!-- fin col -->
             </div>
@@ -343,7 +349,9 @@
             <!-- fin row 6 -->
 
             <div class="row mt-4">
-                <h2>2- SELECT sur plusieurs tables : requêtes imbriquées avec <code>IS</code> ou <code>IN</code> ou <code>NOT IN</code></h2>
+                <h2>2- SELECT sur plusieurs tables : <br>
+                    requêtes imbriquées avec <code>IS</code> ou <code>IN</code> ou <code>NOT IN</code></h2>
+
                 <div class="col-md-4 m-5">
                     <ul>
                         <li><code>SELECT * FROM abonne;</code></li>
@@ -356,21 +364,25 @@
             <!-- fin row -->
 
             <div class="row">
-                <div class="col-10 m-5">
+                <div class="col-10">
                     <ol>
-                        <li>Ici cherche les livres qui n'ont pas été rendus :<code> SELECT * FROM emprunt WHERE date_rendu IS NULL;</code> Attention, cas particulier :  la valeur NULL se teste avec le mot-clef <code>IS</code>!</li><br>
+                        <li>Ici on cherche les livres qui n'ont pas été rendus : <br>
+                            <code> SELECT * FROM emprunt WHERE date_rendu IS NULL;<br>
+
+                        </code> Attention, cas particulier :  la valeur NULL se teste avec le mot-clef <code>IS</code>!</li><br>
                     
                         <li>Ici on cherche les noms des auteurs et les titres des livres qui n'ont pas été rendus : <br>
                             
-                            <code>SELECT * FROM livre WHERE id_livre IN (SELECT id_livre FROM emprunt WHERE date_rendu IS NULL);
+                            <code>SELECT * FROM livre WHERE id_livre IN(SELECT id_livre FROM emprunt WHERE date_rendu IS NULL);
                             </code> <br>
                         
-                            Nous cherchons des informations dans les tables '"livre" et "emprunt", la requête entre parantheses s'execute en premier, et nous donne l'id des livres de la table "emprunt", puis nous demandons les titres des livres correspondant aux id les livres de la première requête.
+                            <p>Nous cherchons des informations dans les tables '"livre" et "emprunt", la requête entre parantheses s'execute en premier, et nous donne l'id des livres de la table "emprunt", puis nous demandons les titres des livres correspondant aux id_livres de la première requête.
+                            </p><br>
                         </li><br>
                     
-                        <li class="alert alert-danger"> ATTENTION !!! Pour qu'une requête imbriquée sur 3 tables soit possible, il faut absolument qu'une information soit commune aux 2 tables : ici c'est l'id_livre !!! Le champs id_livre nous sert à "joindre" (table de jointure) et à "faire correspondre" les informations.</li><br>
+                        <li class="alert alert-success"> ATTENTION !!! Pour qu'une requête imbriquée sur 3 tables soit possible, il faut absolument qu'une information soit commune aux 2 tables : ici c'est l'id_livre !!! Le champs id_livre nous sert à "joindre" (table de jointure) et à "faire correspondre" les informations.</li><br>
                     
-                        <li>
+                        <li>Afficher le(s) abonne(s) ayant emprunté le 19/12/2014 : <br>
                             <code>SELECT * FROM abonne WHERE id_abonne IN(SELECT id_abonne FROM emprunt WHERE date_sortie = '2014-12-19');
                             </code>
                         </li><br>
@@ -382,11 +394,23 @@
                             <code>SELECT * FROM abonne WHERE id_abonne IN('2', '3', '4');</code></p><br>
                     
                         <li>Afficher les prénoms des abonnés ayant emprunté un livre d'Alphonse Daudet : <br>
-                            <code>SELECT prenom FROM abonne WHERE id_abonne IN(SELECT id_abonne FROM emprunt WHERE id_livre IN(SELECT id_livre FROM livre WHERE auteur = 'Alphonse Daudet'));
+                            <code>SELECT prenom FROM abonne WHERE id_abonne IN <br>
+                                  (SELECT id_abonne FROM emprunt WHERE id_livre IN <br>
+                                  (SELECT id_livre FROM livre WHERE auteur = 'Alphonse Daudet'));
                             </code>
                         </li><br>
                     
-                            La dernière requête s'éxecute en premier et nous sort de la table "livre" les "id" des livres de Daudet puis la requête du milieu nous sort les id des abonnés ayant emprunté le ou les livres de Daudet, et enfin la première requête nous donne leurs prénoms.
+                            <ul>La dernière requête s'éxecute en premier et nous sort de la table "livre" les "id" des livres de Daudet puis la requête du milieu nous sort les id des abonnés ayant emprunté le ou les livres de Daudet, et enfin la première requête nous donne leurs prénoms : <br>
+                                
+                                <li>La requête qui s'excute en premier (table livre) : <br>
+                                    <code>SELECT id_livre FROM livre WHERE auteur = 'Alphonse Daudet';</code></li> <br>
+                        
+                                <li>La requête qui s'excute en 2eme (table emprunt) : <br>
+                                    <code>SELECT id_abonne FROM emprunt WHERE id_livre IN</code></li> <br>
+                    
+                                <li>La requête qui s'excute en dernier (table prenom) : <br>
+                                    <code>SELECT prenom FROM abonne WHERE id_abonne IN</code></li>
+                            </ul><br>
                     
                         <li>Afficher le(s) titre(s) du livre/des livres emprunté(s) par Chloé : <br>
                     
@@ -395,37 +419,41 @@
                             (SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));</code><br>
                     
                             <ul>
-                                VERIFIER, A COMPLETER ces notes :
+                                <li>VERIFIER, A COMPLETER ces notes :</li><br>
+
                                 <li>La requête qui s'excute en premier (table abonne) : <code>SELECT id_abonne FROM abonne WHERE prenom = 'Chloé';</code></li> <br>
                     
                                 <li>La requête qui s'excute en 2eme (table emprunt) : <code>...A COMPLETER...</code></li> <br>
                     
-                                <li>La requête qui s'excute en dernier (table titre) : <code>... A COMPLETER...</code></li> <br>
-                            </ul><br>                   
+                                <li>La requête qui s'excute en dernier (table titre) : <code>... A COMPLETER...</code></li>
+                            </ul>             
                         </li><br>
                         
-                        <li>Afficher le/les livre(s) empruntée par Chloé : <br>
+                        <li>Afficher le/les livre(s) emprunté(s) par Chloé : <br>
                             <code>SELECT titre FROM livre WHERE id_livre IN <br>
                                 (SELECT id_livre FROM emprunt WHERE id_abonne = <br>
                                 (SELECT id_abonne FROM abonne WHERE prenom = 'Chloé')
                             </code>
-                        </li>
+                        </li><br>
 
                         <li>Afficher le(s) titre(s) des livres que Chloé n'a pas emprunté(s) : <br>
 
                             <code>SELECT titre FROM livre WHERE id_livre NOT IN <br>
                                 (SELECT id_livre FROM emprunt WHERE id_abonne = <br>
                                 (SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));
-                            </code> <br>
+                            </code><br>
                     
                                 <ul> <br>
-                                    <li>La requête qui s'excute en premier (table abonne) : <code>(SELECT id_abonne FROM abonne WHERE prenom = 'Chloé')</code></li> <br>
+                                    <li>La requête qui s'excute en premier (table abonne) :<br>
+                                        <code>(SELECT id_abonne FROM abonne WHERE prenom = 'Chloé')</code></li> <br>
                     
-                                    <li>La requête qui s'excute en 2eme (table emprunt) : <code>(SELECT id_livre FROM emprunt WHERE id_abonne =  <br>
+                                    <li>La requête qui s'excute en 2eme (table emprunt) : <br>
+                                        <code>(SELECT id_livre FROM emprunt WHERE id_abonne =  <br>
                                         (SELECT id_abonne FROM abonne WHERE prenom = Chloé'))
                                     </code></li><br>
                     
-                                    <li>La requête qui s'excute en dernier (table titre) : <code>SELECT titre FROM livre WHERE id_livre NOT IN <br>
+                                    <li>La requête qui s'excute en dernier (table titre) : <br>
+                                        <code>SELECT titre FROM livre WHERE id_livre NOT IN <br>
                                         (SELECT id_livre FROM emprunt WHERE id_abonne = <br>
                                         (SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'))
                                     </code></li> <br>
@@ -445,7 +473,7 @@
                     
                                     <li>La requête qui s'excute en dernier (table titre) : <code>... A COMPLETER...</code></li> <br>
                                 </ul><br>     
-                        </li>
+                        </li><br>
 
                         <li>Combien de livres a emprunté Guillaume ? (creation d'un alias : nouvelle colonne pour nombre de livres) <br>
                     
@@ -460,7 +488,7 @@
                     
                                     <li>La requête qui s'excute en dernier (table titre) : <code>... A COMPLETER...</code></li> <br>
                                 </ul><br>     
-                        </li>                   
+                        </li><br>                
                     </ol>                  
                 </div>
                 <!-- fin col -->
