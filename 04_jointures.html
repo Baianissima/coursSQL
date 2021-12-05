@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     
-    <title>Cours SQL - Requêtes de jointures /04 </title>
+    <title>Cours SQL - Requêtes imbriquées - BDD bibliotheque </title>
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -24,6 +24,7 @@
 
     <!-- =================================== -->
 
+
     <!-- ======= -->
     <!-- en-tête -->
     <!-- ======= -->
@@ -32,7 +33,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="display-4 text-dark">Cours SQL - Requêtes de jointures</h1>
-                <p class="lead">...</p>
+                <p class="lead">Jointures SQL</p>
             </div>
         </div>
         <!-- fin row  -->
@@ -80,7 +81,7 @@
     <!-- fin div caroussel -->
 
     <!-- corps central avec contenu principal -->
-    <main class="row container-fluid mx-auto p-2 bg-light">
+    <main class="container-fluid row mx-auto p-2 bg-light">
 
         <!-- aside gauche avec nav sommaire -->
         <div class="col-3 mt-5 p-5 bg-white">
@@ -143,30 +144,48 @@
                     <a class="nav-link" href="#">3. </a>
                     <a class="nav-link" href="#">4. </a>
                 </nav>
+
+                <!-- nav pour la page 05_exos -->
+                <a class="navbar-brand" href="#">Page 05 - exos</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. </a>
+                    <a class="nav-link" href="#">2. </a>
+                    <a class="nav-link" href="#">3. </a>
+                    <a class="nav-link" href="#">4. </a>
+                </nav>
             </nav>
         </div>
 
         <!-- ================================================ -->
-        <!-- section container : zoning avec contenu principal-->
+        <!-- section container : avec contenu principal-->
         <!-- ================================================ -->
     
-        <section class="container col-9">
+        <section class="container mb-4 bg-light col-9">
 
-            <!-- debut row 1 -->
-            <div class="row mt-4">
-                <h2 id="base_dune_bdd" class="text-dark p-5">4. Requêtes de jointures</h2>
-                
-                <div>
-                    <h3>Définition</h3><br>
-                    
-                    <h4>Les jointures</h4> <br>
-
-                    <p>Les jointures permettent, comme les requêtes imbriquées d'effectuer les requetes sur plusieurs tables. Il faut un champ commun aux diff tables. L avantage des jointures est que l on peut obtenir un resultat final des colonnes ou champs issus de plusieurs tables differentes.</p>
-                </div>
+            <div class="row">
+                <h2>1- Définition</h2>
+                <dl>
+                    <dt>Les jointures</dt>
+                    <dd>Les jointures permettent, comme les requêtes imbriquées d'effectuer les requêtes sur plusieurs tables. Il faut un champ commun aux différentes tables. L'avantage des jointures est que l'on peut obtenir un résultat final des colonnes ou champs issus de plusieurs tables différentes.</dd>
+                </dl>
             </div>
-            <!-- fin row 1 -->
+            <!-- fin row -->
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>texte</h2>
+                </div>
+                <!-- fin col -->
+                
+                <div class="col-md-6">
+                    <h2>texte</h2>
+                </div>
+            <!-- fin col -->     
+            </div>
+            <!-- fin row -->
+
         </section>
-        <!-- fin container -->      
+        <!-- fin container -->
     </main>
     <!-- fin corps central -->
 

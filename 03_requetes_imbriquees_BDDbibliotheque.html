@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     
-    <title>Cours SQL - Requêtes de jointures /04 </title>
+    <title>Cours SQL - Requêtes imbriquées - BDD bibliotheque </title>
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -32,8 +32,8 @@
     <header class="container mt-4 p-4 bg-white">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="display-4 text-dark">Cours SQL - Requêtes de jointures</h1>
-                <p class="lead">Jointures</p>
+                <h1 class="display-4 text-dark">Cours SQL - Requêtes imbriquées</h1>
+                <p class="lead">BDD "bibliotheque"</p>
             </div>
         </div>
         <!-- fin row  -->
@@ -81,7 +81,7 @@
     <!-- fin div caroussel -->
 
     <!-- corps central avec contenu principal -->
-    <main class="container-fluid mx-auto p-2 bg-light">
+    <main class="row container-fluid mx-auto p-2 bg-light">
 
         <!-- aside gauche avec nav sommaire -->
         <div class="col-3 mt-5 p-5 bg-white">
@@ -160,34 +160,35 @@
         <!-- section container : zoning avec contenu principal-->
         <!-- ================================================ -->
     
-        <section class="container mb-4 col-9">
-
-            <!-- debut row 1 -->
-            <div class="row mt-3">
-                <h2 id="" class="text-dark p-5">1. Définition"</h2>
-
-                <dl>
-                    <dt>Les jointures</dt>
-                        <dd>Les jointures permettent, comme les requêtes imbriquées d'effectuer les requêtes sur plusieurs tables. Il faut un champ commun aux différentes tables. L'avantage des jointures est que l'on peut obtenir un résultat final des colonnes ou champs issus de plausieurs tables différentes.</dd>
-                </dl>
+        <section class="container col-9">
+        
+            <div class="row justify-content-center">
+                <h2>a) Modélisation</h2>
+                <div class="col-md-8">
+                    <figure>
+                    <img src="img/designer.png" alt="Modélisation">
+                    <figcaption>Modélisation de la BDD bibliotheque</figcaption>
+                    </figure>
+                </div>
+            <!-- fin col  -->
             </div>
-
             <!-- fin row -->
 
-
-
-                <p><code>NULL</code> : le code peut être vide;</p>
-                <p><code>NOT NULL</code> : le code ne peut pas être vide;</p>
+            <div class="row">
+            
+                <h3 class="text-center">Les codes nécessaires pour la création des différentes parties</h3>
+                <p>On écrit la requête suivante sur le terminal : <br>
+                <code>CREATE DATABASE bibliotheque CHARACTER SET 'utf8';</code></p><br>
                 
-                <div class="col-5 m-5">
+                <div class="col-md-4 m-5">
                     <figure>
-                        <img src="img/abonne.png" class="image" alt="tableau abonné">
+                        <img src="img/abonne.png" class="image" alt="table abonné">
                         <figcaption class="text-center">La table abonné</figcaption>
                     </figure>
                 </div>
                 <!-- fin col -->
 
-                <div class="col-4 m-5">
+                <div class="col-md-4 m-5">
                     <h4>Création de la table abonné : </h4><br>
                         <code>CREATE TABLE abonne (
                         id_abonne INT(3) NOT NULL AUTO_INCREMENT,
@@ -202,11 +203,11 @@
                 </div>
                 <!-- fin col -->
             </div>
-            <!-- fin row 1 -->
+            <!-- fin row  -->
 
-            <!-- debut row 2 -->
+            <!-- debut row -->
             <div class="row mt-3">
-                <div class="col-5 m-5">
+                <div class="col-md-4 m-5">
                     <figure>
                         <img src="img/livre.png" class="image" alt="tableau livre">
                         <figcaption class="text-center">La table livre</figcaption>
@@ -214,7 +215,7 @@
                 </div>
                  <!-- fin col -->
 
-                <div class="col-4 m-5">
+                <div class="col-md-4 m5">
                     <h4>Création de la table livre : </h4> <br>
 
                     <li>
@@ -228,15 +229,14 @@
                     </li><br>
 
                     <li><code>DESCRIBE livre;</code></li><br>
-
                 </div>
                 <!-- fin col -->
             </div>
-            <!-- fin row 2 -->
+            <!-- fin row  -->
 
-            <!-- debut row 3 -->
+            <!-- debut row  -->
             <div class="row mt-3">
-                <div class="col-5 m-5">
+                <div class="col-md-4 m-5">
                     <figure>
                         <img src="img/contenu_livre.jpg" class="image" alt="contenu table livre">
                         <figcaption class="text-center">Contenu table livre</figcaption>
@@ -244,7 +244,7 @@
                 </div>
                  <!-- fin col -->
 
-                <div class="col-4 m-5">
+                <div class="col-md-4 m-5">
                     <h4>Insertion contenu table livre : </h4> <br>
                         <code>INSERT INTO livre (id_livre, auteur, titre) VALUES
                             (100, 'GUY DE MAUPASSANT', 'Une vie'),
@@ -261,7 +261,7 @@
 
             <!-- debut row 4 -->
             <div class="row mt-3">
-                <div class="col-5 m-5">
+                <div class="col-md-4 m-5">
                     <figure>
                         <img src="img/emprunt.png" class="image" alt="tableau emprunt">
                         <figcaption class="text-center">La table emprunt</figcaption>
@@ -269,7 +269,7 @@
                 </div>
                  <!-- fin col -->
 
-                <div class="col-4 m-5">
+                <div class="col-md-4 m-5">
                     <h4>Création de la table emprunt : </h4> <br>
                         
                     <li>
@@ -284,8 +284,7 @@
                         </code>
                     </li><br>
 
-                    <li>Avec DESCRIBE on demande à voir les descriptions des tables créés : <code> DESCRIBE emprunt;</code></li>
-                      
+                    <li>Avec DESCRIBE on demande à voir les descriptions des tables créés : <code> DESCRIBE emprunt;</code></li>       
                 </div>
                 <!-- fin col -->
             </div>
@@ -294,7 +293,7 @@
 
             <!-- debut row 5 -->
             <div class="row mt-3">
-                <div class="col-5 m-5">
+                <div class="col-md-4 m-5">
                     <figure>
                         <img src="img/contenu_emprunt.jpg" class="image" alt="contenu table emprunt">
                         <figcaption class="text-center">Contenu table emprunt</figcaption>
@@ -302,7 +301,7 @@
                 </div>
                  <!-- fin col -->
 
-                <div class="col-4 m-5">
+                <div class="col-md-4 m-5">
                     <h4>Insertion du contenu sur table emprunt : </h4> <br>
                         <code>INSERT INTO emprunt (id_emprunt, id_livre, id_abonne, date_sortie, date_rendu) VALUES
                             (1, 100, 1, '2014-12-17', '2014-12-18'),
@@ -311,7 +310,8 @@
                             (4, 103, 4, '2014-12-19', '2014-12-22'),
                             (6, 105, 2, '2015-03-20', '2015-03-26'),
                             (7, 105, 3, '2015-06-13', NULL),
-                            (8, 100, 2, '2015-06-15', NULL)</code><br>
+                            (8, 100, 2, '2015-06-15', NULL)
+                        </code><br>
                 </div>
                 <!-- fin col -->
             </div>
@@ -322,7 +322,7 @@
             <div class="row mt-3">
                 <h3>Création clé étrangère</h3><br>
 
-                <div class="col-4 m-3">
+                <div class="col-md-4 m-3">
                     <figure>
                         <img src="img/designer.png" class="image" alt="capture ecran plateforme SQL_index de clés etreangères">
                         <figcaption class="text-center">Modélisation des tables <br>
@@ -344,7 +344,7 @@
 
             <div class="row mt-4">
                 <h2>2- SELECT sur plusieurs tables : requêtes imbriquées avec <code>IS</code> ou <code>IN</code> ou <code>NOT IN</code></h2>
-                <div class="col-4 m-5">
+                <div class="col-md-4 m-5">
                     <ul>
                         <li><code>SELECT * FROM abonne;</code></li>
                         <li><code>SELECT * FROM livre; </code></li>
@@ -357,17 +357,23 @@
 
             <div class="row">
                 <div class="col-10 m-5">
-                    <ul>
+                    <ol>
                         <li>Ici cherche les livres qui n'ont pas été rendus :<code> SELECT * FROM emprunt WHERE date_rendu IS NULL;</code> Attention, cas particulier :  la valeur NULL se teste avec le mot-clef <code>IS</code>!</li><br>
                     
-                        <li>Ici on cherche les noms des auteurs et les titres des livres qui n'ont pas été rendus :<code> SELECT auteur, titre FROM livre WHERE id_livre IN(SELECT id_livre FROM emprunt WHERE date_rendu IS NULL);</code> Nous cherchons des informations dans les tables '"livre" et "emprunt", la requête entre parantheses s'execute en premier, et nous donne l'id des livres de la table "emprunt", puis nous demandons les titres des livres correspondant aux id les livres de la première requête.</li><br>
+                        <li>Ici on cherche les noms des auteurs et les titres des livres qui n'ont pas été rendus : <br>
+                            
+                            <code>SELECT * FROM livre WHERE id_livre IN (SELECT id_livre FROM emprunt WHERE date_rendu IS NULL);
+                            </code> <br>
+                        
+                            Nous cherchons des informations dans les tables '"livre" et "emprunt", la requête entre parantheses s'execute en premier, et nous donne l'id des livres de la table "emprunt", puis nous demandons les titres des livres correspondant aux id les livres de la première requête.
+                        </li><br>
                     
-                        <li class="alert alert-danger"> Attention ! Pour qu'une requête imbriquée sur 3 tables soit possible, il faut absolument qu'une information soit commune aux 2 tables : ici c'est l'id_livre !!! Le champs id_livre nous sert à "joindre" (table de jointure) et à "faire correspondre" les informations.</li><br>
+                        <li class="alert alert-danger"> ATTENTION !!! Pour qu'une requête imbriquée sur 3 tables soit possible, il faut absolument qu'une information soit commune aux 2 tables : ici c'est l'id_livre !!! Le champs id_livre nous sert à "joindre" (table de jointure) et à "faire correspondre" les informations.</li><br>
                     
-                        <li><code></code></li><br>
-                    
-                        <li>Afficher les prénoms des abonnés ayant emprunté un livre le 19/12/2014 : <br>
-                            <code></code></li><br>
+                        <li>
+                            <code>SELECT * FROM abonne WHERE id_abonne IN(SELECT id_abonne FROM emprunt WHERE date_sortie = '2014-12-19');
+                            </code>
+                        </li><br>
                     
                         <p> - Avec IN ici on fait afficher plusieurs id/personnes : <br>
                             <code>SELECT id_abonne FROM emprunt WHERE date_sortie = '2014-12-19';</code></p><br>
@@ -375,16 +381,21 @@
                         <p> - Avec IN on peut trouver aussi les abonnés une fois qu'on a trouvé leurs id : <br>
                             <code>SELECT * FROM abonne WHERE id_abonne IN('2', '3', '4');</code></p><br>
                     
-                        <li>Afficher les abonnés ayant emprunté un livre d'Alphonse Daudet : <br>
-                            <code>SELECT prenom FROM abonne WHERE id_abonne IN(SELECT id_abonne FROM emprunt WHERE id_livre IN(SELECT id_livre FROM livre WHERE auteur = 'Alphonse Daudet'));</code></li><br>
+                        <li>Afficher les prénoms des abonnés ayant emprunté un livre d'Alphonse Daudet : <br>
+                            <code>SELECT prenom FROM abonne WHERE id_abonne IN(SELECT id_abonne FROM emprunt WHERE id_livre IN(SELECT id_livre FROM livre WHERE auteur = 'Alphonse Daudet'));
+                            </code>
+                        </li><br>
                     
-                            <p>La dernière requête s'éxecute en premier et nous sort de la table livre les id des livres de Daudet, puis la requête du milieu nous sort les id des abonnés ayant emprunté le ou les livres de Daudet, et enfin la première requête nous donne leur prénom.</p>
+                            La dernière requête s'éxecute en premier et nous sort de la table "livre" les "id" des livres de Daudet puis la requête du milieu nous sort les id des abonnés ayant emprunté le ou les livres de Daudet, et enfin la première requête nous donne leurs prénoms.
                     
                         <li>Afficher le(s) titre(s) du livre/des livres emprunté(s) par Chloé : <br>
                     
-                            <code>SELECT titre FROM livre WHERE id_livre IN(SELECT id_livre FROM emprunt WHERE id_abonne =(SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));</code><br>
+                            <code>SELECT titre FROM livre WHERE id_livre IN <br>
+                            (SELECT id_livre FROM emprunt WHERE id_abonne = <br>
+                            (SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));</code><br>
                     
-                            <ul> <br>
+                            <ul>
+                                VERIFIER, A COMPLETER ces notes :
                                 <li>La requête qui s'excute en premier (table abonne) : <code>SELECT id_abonne FROM abonne WHERE prenom = 'Chloé';</code></li> <br>
                     
                                 <li>La requête qui s'excute en 2eme (table emprunt) : <code>...A COMPLETER...</code></li> <br>
@@ -393,18 +404,31 @@
                             </ul><br>                   
                         </li><br>
                         
+                        <li>Afficher le/les livre(s) empruntée par Chloé : <br>
+                            <code>SELECT titre FROM livre WHERE id_livre IN <br>
+                                (SELECT id_livre FROM emprunt WHERE id_abonne = <br>
+                                (SELECT id_abonne FROM abonne WHERE prenom = 'Chloé')
+                            </code>
+                        </li>
+
                         <li>Afficher le(s) titre(s) des livres que Chloé n'a pas emprunté(s) : <br>
-                    
+
                             <code>SELECT titre FROM livre WHERE id_livre NOT IN <br>
                                 (SELECT id_livre FROM emprunt WHERE id_abonne = <br>
-                                (SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));</code> <br>
+                                (SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));
+                            </code> <br>
                     
                                 <ul> <br>
-                                    <li>La requête qui s'excute en premier (table abonne) : <code>...A COMPLETER...</code></li> <br>
+                                    <li>La requête qui s'excute en premier (table abonne) : <code>(SELECT id_abonne FROM abonne WHERE prenom = 'Chloé')</code></li> <br>
                     
-                                    <li>La requête qui s'excute en 2eme (table emprunt) : <code>...A COMPLETER...</code></li> <br>
+                                    <li>La requête qui s'excute en 2eme (table emprunt) : <code>(SELECT id_livre FROM emprunt WHERE id_abonne =  <br>
+                                        (SELECT id_abonne FROM abonne WHERE prenom = Chloé'))
+                                    </code></li><br>
                     
-                                    <li>La requête qui s'excute en dernier (table titre) : <code>... A COMPLETER...</code></li> <br>
+                                    <li>La requête qui s'excute en dernier (table titre) : <code>SELECT titre FROM livre WHERE id_livre NOT IN <br>
+                                        (SELECT id_livre FROM emprunt WHERE id_abonne = <br>
+                                        (SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'))
+                                    </code></li> <br>
                                 </ul><br>     
                         </li><br>
                     
@@ -413,7 +437,7 @@
                             <code>SELECT titre FROM livre WHERE id_livre IN <br>
                                 (SELECT id_livre FROM emprunt WHERE date_rendu IS NULL AND id_abonne = <br>
                                 (SELECT id_abonne FROM abonne WHERE prenom = 'Chloé'));</code><br>
-                    
+                        
                                 <ul> <br>
                                     <li>La requête qui s'excute en premier (table abonne) : <code>...A COMPLETER...</code></li> <br>
                     
@@ -423,10 +447,11 @@
                                 </ul><br>     
                         </li>
 
-                        <li>Combien de livres a emprunté Guillaume ? <br>
+                        <li>Combien de livres a emprunté Guillaume ? (creation d'un alias : nouvelle colonne pour nombre de livres) <br>
                     
-                            <code>SELECT COUNT(*) AS 'nombre de livre' FROM emprunt WHERE id_abonne = <br>
-                                (SELECT id_abonne FROM abonne WHERE prenom = 'Guillaume');</code><br>
+                            <code>SELECT COUNT(*) AS 'nombre de livre' FROM emprunt     WHERE id_abonne = <br>
+                                (SELECT id_abonne FROM abonne WHERE prenom = 'Guillaume');
+                            </code><br>
                     
                                 <ul> <br>
                                     <li>La requête qui s'excute en premier (table abonne) : <code>...A COMPLETER...</code></li> <br>
@@ -435,13 +460,12 @@
                     
                                     <li>La requête qui s'excute en dernier (table titre) : <code>... A COMPLETER...</code></li> <br>
                                 </ul><br>     
-                        </li>
-                    
-                    </ul>
-                    
-                    
-                    
+                        </li>                   
+                    </ol>                  
                 </div>
+                <!-- fin col -->
+            </div>
+            <!-- fin row -->
         </section>
         <!-- fin container -->      
     </main>
