@@ -160,27 +160,178 @@
         <!-- section container : avec contenu principal-->
         <!-- ================================================ -->
     
-        <section class="container mb-4 bg-light col-9">
+        <section class="container mb-4 p-4 bg-light col-9">
 
             <div class="row">
                 <h2>1- Définition</h2>
                 <dl>
                     <dt>Les jointures</dt>
-                    <dd>Les jointures permettent, comme les requêtes imbriquées d'effectuer les requêtes sur plusieurs tables. Il faut un champ commun aux différentes tables. L'avantage des jointures est que l'on peut obtenir un résultat final des colonnes ou champs issus de plusieurs tables différentes.</dd>
+                    <dd>Les jointures permettent, comme les requêtes imbriquées, d'effectuer les requêtes sur plusieurs tables. Il faut un champ commun aux différentes tables. L'avantage des jointures est que l'on peut obtenir un résultat final des colonnes ou champs issus de plusieurs tables différentes.
+                    </dd>
                 </dl>
             </div>
             <!-- fin row -->
 
             <div class="row">
-                <div class="col-md-6">
-                    <h2>texte</h2>
+                <div class="col-md-12">
+                    <h3>a) Récapitulatif</h3>
+
+                    <!-- ul>li*5{:}code -->
+
+                    <ul>
+                        <li><code>SELECT</code> : liste des champs que je souhaite afficher dans mon résultat</li>
+                        <li><code>FROM</code> : de quelle table cela provient-il ?</li>
+                        <li><code>WHERE</code> : condition de jointure pour assurer le croisement des données</li>
+                        <li><code>AND / OR</code> : autre condition éventuellle</li>
+                    </ul>
                 </div>
                 <!-- fin col -->
                 
-                <div class="col-md-6">
-                    <h2>texte</h2>
+                <div class="col-md-12">
+                    <h3>Exemples</h3>
+                  
+                    <ol>
+                        <li>Afficher les dates quxquelles Guillaume s'est rendu à la bibliothèque pour emprunter ou rendre un livre. On a besoin de 3 colonnes : le prénom, la date de sortie et la date de rendu : <br>
+                            <code>SELECT abonne.prenom, emprunt.date_sortie, emprunt.date_rendu
+                            FROM abonne, emprunt
+                            WHERE abonne.id_abonne = emprunt.id_abonne 
+                            AND abonne.prenom = 'Guillaume'</code></li><br>
+
+                        <li>Qui a emprunté le livre "Une Vie" en 2014 ? <br>
+                            <code>SELECT abonne.prenom <br>
+                                FROM abonne, emprunt, livre WHERE livre.id_livre = emprunt.id_livre <br>
+                                AND emprunt.id_abonne = abonne.id_abonne <br>
+                                AND livre.titre = 'Une vie' <br>
+                                AND emprunt.date_sortie LIKE '2014%';</code><br>
+                        </li><br>
+
+                        <li>Afficher le nombre de livre(s) emprunté(s) par chaque abonné (il faut la virgule avant COUNT !):
+                            <code>SELECT abonne.prenom, COUNT(emprunt.id_livre) AS 'nombre de livres empruntés' <br>
+                                FROM abonne, emprunt <br>
+                                WHERE abonne.id_abonne = emprunt.id_abonne <br>
+                                GROUP BY emprunt.id_abonne<br>
+                            </code><br>
+
+                            <ul>
+                                <li class="alert alert-success">
+                                    La même requête avec des préfixes (à chaque table on met un préfixe dans le FROM - "from" sert pour indiquer les tables) : Ex.: "FROM abonne a, emprunt e" (on lit : a pour abonne, e pour emprunt) <br>
+        
+                                    <code>SELECT a.prenom, COUNT(e.id_livre) AS 'nombre de livres empruntés' <br>
+                                        FROM abonne a, emprunt e <br>
+                                        WHERE a.id_abonne = e.id_abonne <br>
+                                        GROUP BY e.id_abonne
+                                    </code>
+                                </li>
+                            </ul>
+                        </li><br>                  
+
+                        <li>Afficher qui a emprunté QUOI et QUAND. L'indice : (qui = prénom, quoi = titre / quand = date de sortie)<br>
+                            <code>SELECT abonne.prenom, livre.titre, emprunt.date_sortie <br>
+                                FROM abonne, livre, emprunt WHERE abonne.id_abonne = emprunt.id_abonne <br>
+                                AND livre.id_livre = emprunt.id_livre <br>
+                                ORDER BY abonne.prenom ASC; <br>
+                            </code><br>
+
+                            <ul>
+                                <li  class="alert alert-success">
+                                    La même requête avec des préfixes : <br>
+
+                                    <code>SELECT a.prenom, l.titre, e.date_sortie<br>
+                                        FROM abonne a, livre l, emprunt e<br>
+                                        AND l.id_livre = e.id_livre<br>
+                                        ORDER BY a.prenom ASC<br>
+                                    </code>
+                                </li>
+                            </ul>
+                        </li> <br>
+
+                        <li>Afficher les prénoms des abonnés avec l'id des livres qu'ils ont empruntés. ici on cherche les prenom dans la table "abonne", l'id_livre dans la table "emprunt" (SELECT), puis on dit dans FROM quelles sont les tables recherchées, puis dans WHERE on mets les id_communs pour les tables recherchées : <br>
+
+                            <code>SELECT abonne.prenom, emprunt.id_livre<br>
+                                FROM abonne, emprunt<br>
+                                WHERE abonne.id_abonne = emprunt.id_abonne;<br>
+                            </code> <br>
+
+                            <ul>
+                                <li class="alert alert-success">
+                                    La même requête avec des préfixes : <br>
+        
+                                    <code>SELECT ab.prenom, em.id_livre<br>
+                                        FROM abonne ab, emprunt em<br>
+                                        WHERE ab.id_abonne = em.id_abonne;<br>
+                                    </code>
+                                </li><br>
+                            </ul>
+                        </li><br>
+
+                        <!-- ci dessous un copié collé pour la suite : -->
+                        
+                        <li>Afficher les prénoms des abonnés avec l'id des livres qu'ils ont empruntés. ici on cherche les prenom dans la table "abonne", l'id_livre dans la table "emprunt" (SELECT), puis on dit dans FROM quelles sont les tables recherchées, puis dans WHERE on mets les id_communs pour les tables recherchées : <br>
+
+                            <code>SELECT abonne.prenom, emprunt.id_livre<br>
+                                FROM abonne, emprunt<br>
+                                WHERE abonne.id_abonne = emprunt.id_abonne;<br>
+                            </code> <br>
+
+                            <ul>
+                                <li class="alert alert-success">
+                                    La même requête avec des préfixes : <br>
+        
+                                    <code>SELECT ab.prenom, em.id_livre<br>
+                                        FROM abonne ab, emprunt em<br>
+                                        WHERE ab.id_abonne = em.id_abonne;<br>
+                                    </code>
+                                </li><br>
+                            </ul>
+                        </li><br>          
+
+                    </ol>
+                    <!-- fin liste ordonnée -->
                 </div>
-            <!-- fin col -->     
+                <!-- fin col -->
+
+                <div class="col-md-6">
+                    <h3>b) Jointures externes</h3>
+    
+                    <ul>
+                        <li>Afficher le prénom des abonnés avec le numéro des livres qu'ils on empruntés : <br>
+                            <code>
+                                SELECT abonne.prenom, emprunt.id_livre
+                                FROM abonne LEFT JOIN emprunt
+                                ON abonne.id_abonne = emprunt.id_abonne
+                            </code><br>
+                            
+                            SELECT : nous selectionons le champ prenom et id_livre. <br>
+                            FROM et LEFT JOIN : la table placée à gauche de l'expression LEFT JOIN (la table abonne) sera la table dont tous les résultats seront rapatriés (sans correspondance exigée dans l'autre table) <br>
+                            ON : la condition de fait par le mot-clef ON et non plus WHERE, dans le cadre d'une requête LEFT JOIN ou RIGHT JOIN (FULL JOIN n'est pas valable en SQL)
+                        </li>
+                    </ul>
+                </div>
+                <!-- fin col -->
+
+                <div class="col-md-6">
+                    <h3>c) Jointures externes avec <code>UNION</code></h3>
+
+                    <p>Il est possible de fusionner 2 résultats en 1 seul grâce au mot-clef <code>UNION</code></p>
+    
+                    <ul>
+                        <li>Nous fusionons la liste d'abonnés avec la liste des auteurs. UNION fait comme UNION DISTINCT : il évite les doublons (Maupassant aparâit 1 fois alors qu'il a 2 livres dans la BDD) :<br>
+                            <code>
+                                SELECT auteur AS 'nom des personnes physiques' <br>
+                                FROM livre <br>
+                                UNION <br>
+                                SELECT prenom <br>
+                                FROM abonne <br>
+                            </code><br>
+                            
+                            SELECT : nous selectionons le champ prenom et id_livre. <br>
+                            FROM et LEFT JOIN : la table placée à gauche de l'expression LEFT JOIN (la table abonne) sera la table dont tous les résultats seront rapatriés (sans correspondance exigée dans l'autre table) <br>
+                            ON : la condition de fait par le mot-clef ON et non plus WHERE, dans le cadre d'une requête LEFT JOIN ou RIGHT JOIN (FULL JOIN n'est pas valable en SQL)
+                        </li>
+                    </ul>
+                </div>
+                <!-- fin col -->
+
             </div>
             <!-- fin row -->
 

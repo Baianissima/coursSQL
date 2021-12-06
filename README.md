@@ -46,7 +46,31 @@
 
 ### 04_jointures.html
 1. Définition
-    a) Récap
+    a) Récapitulatif
+        Exemples
+    b) Jointures externes 
+    c) Jointures externes avec UNION
 
-2. Exemples
+### 05_fonctions.html
+1. Quelques fonctions
+
+
+### 06_EXO : BDD immobilier.html
+
+Création des tables avec figures correspondantes sur le HTML :
+
+1 - agence
+
+2 - demande
+
+3 - logement
+
+4 - logement_agence
+
+5 - logement_personne
+
+6 - personne
+
+
+
 

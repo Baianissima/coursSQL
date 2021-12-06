@@ -1,0 +1,273 @@
+<!-- Démarrage SQL : repos sur OS (C:) -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    
+    <title>Cours SQL - EXO : Immobilier </title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- =================================== -->
+
+    <!-- Pour une navbar Bootstrap sans la fleche :
+        https://www.it-swarm-fr.com/fr/css/comment-supprimer-la-fleche-dans-la-liste-deroulante-dans-bootstrap-4/827351415/-->
+
+    <!-- =================================== -->
+
+    <!-- ======= -->
+    <!-- en-tête -->
+    <!-- ======= -->
+
+    <header class="container mt-4 p-4 bg-white">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 text-dark">Cours SQL - BDD Immobilier # 6</h1>
+                <p class="lead">Exercice...</p>
+            </div>
+        </div>
+        <!-- fin row  -->
+    </header>
+
+    <!-- debut div de la row caroussel -->
+    <div class="d-flex mb-4 p-4 justify-content-center">
+        <!-- debut row -->
+        <div class="row col-6">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2500">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img src="img/langage.png" class="d-block w-100" alt="logo sql">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/sql.jpg" class="d-block w-100" alt="logo sql">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/php.jpg" class="d-block w-100" alt="logo php">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/pma.jpg" class="d-block w-100" alt="logo pma">
+                    </div>               
+                </div>
+              </div>
+        </div>
+        <!-- fin row -->
+    </div>
+    <!-- fin div caroussel -->
+
+    <!-- corps central avec contenu principal -->
+    <main class="container-fluid row mx-auto p-2 bg-light">
+
+        <!-- aside gauche avec nav sommaire -->
+        <div class="col-3 p-5 bg-grisclair">
+
+            <!-- nav pour la page index : sommaire -->
+            <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
+                <a class="navbar-brand" href="#index">Page Index - Sommaire</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#introduction">1. Introduction</a>
+                    <a class="nav-link" href="#modelisation">2. Modélisation</a>
+                    <a class="nav-link" href="#tables">3. Les tables </a>
+                    <a class="nav-link" href="#les_colonnes">4. Les colonnes ou les champs </a>
+                    <a class="nav-link" href="#les_types_de_donnees">5. Les types de données</a>
+                    <a class="nav-link" href="#pk_ai_id">6. Types de données PK AI pour ID</a>
+                    <a class="nav-link" href="#les_cardinalites">7. Les cardinalités</a>
+                    <a class="nav-link" href="#table de jointure">8.Table de jointure</a>
+                    <a class="nav-link" href="#clefs_etrangères">9. Clefs étrangères ou FK</a>
+                    <a class="nav-link" href="#les_enregistrements">10. Les enrégistrements</a>
+                    <a class="nav-link" href="#interroger_la_bdd">11. Intérroger la BDD </a>
+                </nav>
+
+                 <!-- nav pour la page 01_requêtes -->
+                <a class="navbar-brand" href="#">Page 01 - Requêtes</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#introduction">1. Base d'une BDD</a>
+                    <a class="nav-link" href="#modelisation">2. Création d'une table</a>
+                    <a class="nav-link" href="#tables">3. SELECT et DISTINCT</a>
+                    <a class="nav-link" href="#les_colonnes">4. Les conditions</a>
+                    <a class="nav-link" href="#les_types_de_donnees">5. Les opérateurs de comparaison</a>
+                    <a class="nav-link" href="#pk_ai_id">6. ORDER BY</a>
+                    <a class="nav-link" href="#les_cardinalites">7. Limitation avec LIMIT</a>
+                    <a class="nav-link" href="#table de jointure">8. Faire des calculs</a>
+                    <a class="nav-link" href="#clefs_etrangères">9. Les conditions multiples</a>
+                    <a class="nav-link" href="#les_enregistrements"> Les regroupements</a>
+                </nav>
+
+                <!-- nav pour la page 02_requêtes -->
+                <a class="navbar-brand" href="#">Page 02 - Requêtes</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#INSERT INTO, insertion">1. INSERT INTO, insertion</a>
+                    <a class="nav-link" href="#modelisation">2. UPDATE, mise à jour</a>
+                    <a class="nav-link" href="#tables">3. DELETE, effacer</a>
+                    <a class="nav-link" href="#les_colonnes">4. Exo</a>
+                </nav>
+
+                <!-- nav pour la page 03_requêtes imbriquées -->
+                <a class="navbar-brand" href="#">Page 03 - Requêtes imbriquées</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. </a>
+                    <a class="nav-link" href="#">2. </a>
+                    <a class="nav-link" href="#">3. </a>
+                    <a class="nav-link" href="#">4. </a>
+                </nav>
+
+                <!-- nav pour la page 04_jointures -->
+                <a class="navbar-brand" href="#">Page 04 - Jointures</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. </a>
+                    <a class="nav-link" href="#">2. </a>
+                    <a class="nav-link" href="#">3. </a>
+                    <a class="nav-link" href="#">4. </a>
+                </nav>
+
+                <!-- nav pour la page 05_exos -->
+                <a class="navbar-brand" href="#">Page 05 - exos</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. </a>
+                    <a class="nav-link" href="#">2. </a>
+                    <a class="nav-link" href="#">3. </a>
+                    <a class="nav-link" href="#">4. </a>
+                </nav>
+            </nav>
+        </div>
+
+        <!-- ================================================ -->
+        <!-- section container : contenu principal-->
+        <!-- ================================================ -->
+    
+        <section class="container mb-4 p-4 col-9">
+        
+            <div class="row">
+                <h2>Modélisation de la BDD immobilier</h2>
+                <div class="col-md-8">
+                    <code>CREATE DATABASE bibliotheque CHARACTER SET 'utf8';</code></p><br>
+                    <p class="alert alert-success">Il faut creer des INDEX pour certaines tables avant de faire les relaations</p>
+                </div>
+                <!-- fin col  -->
+            </div>
+            <!-- fin row -->
+
+            <div class="row">         
+                <h3 class="text-center">Les codes nécessaires pour la création des différentes parties</h3>
+                <p>Requête On écrit la requête suivante sur le terminal :<br>
+               
+                
+                <div class="col-md-4 m-5">
+                    <figure>
+                        <img src="img/png" class="image" alt="table abonné">
+                        <figcaption class="text-center">Table Agence</figcaption>
+                    </figure>
+                </div>
+                <!-- fin col -->
+
+                <div class="col-md-4 m-5">
+                    <h4>Création de la table AGENCE :</h4><br>
+                    <p><code>CREATE TABLE IF NOT EXISTS agence ( <br>
+                        idAgence int(6) NOT NULL AUTO_INCREMENT, <br>
+                        nom varchar(100) NOT NULL, <br>
+                        adresse varchar(100) NOT NULL, <br>
+                        PRIMARY KEY (idAgence) <br>
+                        ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ;</code></p>
+                </div>
+                <!-- fin col -->
+
+                <div class="col-md-4 m-5">
+                    <figure>
+                        <img src="img/png" class="image" alt="table abonné">
+                        <figcaption class="text-center">Table Agence</figcaption>
+                    </figure>
+                </div>
+                <!-- fin col -->
+
+                <div class="col-md-4 m-5">
+                    <h4>Création de la table AGENCE :</h4><br>
+                    <p><code>CREATE TABLE IF NOT EXISTS agence ( <br>
+                        idAgence int(6) NOT NULL AUTO_INCREMENT, <br>
+                        nom varchar(100) NOT NULL, <br>
+                        adresse varchar(100) NOT NULL, <br>
+                        PRIMARY KEY (idAgence) <br>
+                        ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ;</code></p>
+                </div>
+                <!-- fin col -->
+
+                <div class="col-md-4 m-5">
+                    <figure>
+                        <img src="img/png" class="image" alt="table abonné">
+                        <figcaption class="text-center">Table Agence</figcaption>
+                    </figure>
+                </div>
+                <!-- fin col -->
+
+                <div class="col-md-4 m-5">
+                    <h4>Création de la table AGENCE :</h4><br>
+                    <p><code>CREATE TABLE IF NOT EXISTS agence ( <br>
+                        idAgence int(6) NOT NULL AUTO_INCREMENT, <br>
+                        nom varchar(100) NOT NULL, <br>
+                        adresse varchar(100) NOT NULL, <br>
+                        PRIMARY KEY (idAgence) <br>
+                        ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ;</code></p>
+                </div>
+                <!-- fin col -->
+            </div>
+            <!-- fin row  -->
+        </section>
+        <!-- fin container -->
+    </main>
+    <!-- fin corps central -->
+
+
+    <!-- =================================== -->
+    <!-- pied de page -->
+    <!-- =================================== -->
+    
+    <!-- Ajouter "container" if you want to extend the Footer to full width/ou container-fluid -->
+    <div class="p-5 my-5">
+
+        <footer class="text-center text-lg-start bg-jaune">
+            <!-- <div class="container d-flex justify-content-center py-5">
+                <button type="button" class="btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-facebook-f"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-youtube"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-instagram"></i>
+                </button>
+    
+                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+                <i class="fab fa-twitter"></i>
+                </button>
+            </div> -->
+
+            <!-- Copyright -->
+            <div class="text-center text-dark p-5 m-5" style="background-color: rgba(0, 0, 0, 0.2);">
+                &copy; Colombbus 2021-2022 :
+                <a class="text-dark" href="https://mdbootstrap.com/">Agence Suresnes</a>
+            </div>
+            <!-- Copyright -->     
+        </footer>    
+  </div>
+  <!-- fin div container/fluid du footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+</html>
