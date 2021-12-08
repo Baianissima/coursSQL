@@ -10,36 +10,29 @@
     <!-- Bootstrap CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     
-    <title>Cours SQL - EXO : Immobilier </title>
+    <title>Cours SQL - EXO : BDD Immobilier </title>
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <!-- =================================== -->
-
-    <!-- Pour une navbar Bootstrap sans la fleche :
-        https://www.it-swarm-fr.com/fr/css/comment-supprimer-la-fleche-dans-la-liste-deroulante-dans-bootstrap-4/827351415/-->
-
-    <!-- =================================== -->
-
-    <!-- ======= -->
+    <!-- ================= -->
     <!-- en-tête -->
-    <!-- ======= -->
+    <!-- ================= -->
 
-    <header class="container mt-4 p-4 bg-white">
+    <header class="container-fluid p-4">
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="display-4 text-dark">Cours SQL - BDD Immobilier # 6</h1>
-                <p class="lead">Exercice...</p>
+                <p class="lead">Exercice</p>
             </div>
         </div>
         <!-- fin row  -->
     </header>
 
     <!-- debut div de la row caroussel -->
-    <div class="d-flex mb-4 p-4 justify-content-center">
+    <div class="container-fluid d-flex mt-4 mb-4 p-4 justify-content-center">
         <!-- debut row -->
         <div class="row col-6">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2500">
@@ -68,7 +61,7 @@
     <!-- fin div caroussel -->
 
     <!-- corps central avec contenu principal -->
-    <main class="container-fluid row mx-auto p-2 bg-light">
+    <main class="row container-fluid p-2 bg-light">
 
         <!-- aside gauche avec nav sommaire -->
         <div class="col-3 p-5 bg-grisclair">
@@ -132,60 +125,82 @@
                     <a class="nav-link" href="#">4. </a>
                 </nav>
 
-                <!-- nav pour la page 05_exos -->
-                <a class="navbar-brand" href="#">Page 05 - exos</a>
+                <!-- nav pour la page 05_fonction -->
+                <a class="navbar-brand" href="#">Page 05 -</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link" href="#">1. </a>
                     <a class="nav-link" href="#">2. </a>
                     <a class="nav-link" href="#">3. </a>
                     <a class="nav-link" href="#">4. </a>
                 </nav>
+
+                <!-- nav pour la page 06_immobilier -->
+                <a class="navbar-brand" href="#">Page 06 - BDD immobilier</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. </a>
+                    <a class="nav-link" href="#">2. </a>
+                    <a class="nav-link" href="#">3. </a>
+                    <a class="nav-link" href="#">4. </a>
+                </nav>
+
             </nav>
         </div>
 
         <!-- ================================================ -->
-        <!-- section container : contenu principal-->
+        <!-- section container : contenu principal -->
         <!-- ================================================ -->
     
-        <section class="container mb-4 p-4 col-9">
+        <section class="container mb-4 p-4 bg-light col-9">
         
-            <div class="row">
+            <div class="col-md-4 col-lg-12 m-4 mb-4">
                 <h2>Modélisation de la BDD immobilier</h2>
-                <div class="col-md-8">
+                <div class="col-lg-9 mb-4 p-4"><br>
                     <code>CREATE DATABASE bibliotheque CHARACTER SET 'utf8';</code></p><br>
-                    <p class="alert alert-success">Il faut creer des INDEX pour certaines tables avant de faire les relaations</p>
+                    <p class="alert alert-success col-12">Il faut creer des INDEX pour les tables qui auront besoin de relations (voir VUE RELATIONNELLE)</p>
                 </div>
                 <!-- fin col  -->
             </div>
             <!-- fin row -->
 
-            <div class="row">         
-                <h3 class="text-center">Les codes nécessaires pour la création des différentes parties</h3>
-                <p>Requête On écrit la requête suivante sur le terminal :<br>
+            <div class="row mt-4">         
+                <h3>Les codes nécessaires pour la création des différentes parties :</h3>
+                <p>(Une liste des requêtes à être réalisées sur ligne de commande phpMyAdmin ou le cas écheant sur terminal)<br>
                
-                <!-- table agence -->
-                <div class="col-md-4 m-5">
-                    <figure>
-                        <img src="img/immo_agence.jpg" class="image" alt="table agence">
-                        <figcaption class="text-center">Table Agence</figcaption>
-                    </figure>
+                <div class="row m-5">
+                    <!-- table agence -->
+                    <div class="col-md-4 m-5">
+                        <figure>
+                            <img src="img/immo_agence.jpg" class="image" alt="table agence">
+                            <figcaption class="text-center">Table "agence"</figcaption>
+                        </figure>
+                    </div>
+                    <!-- fin col -->
+
+                    <div class="col-md-5 m-5">
+                        <h4>Création de la table AGENCE :</h4><br>
+                        <p><code>CREATE TABLE IF NOT EXISTS agence ( <br>
+                            idAgence int(6) NOT NULL AUTO_INCREMENT, <br>
+                            nom varchar(100) NOT NULL, <br>
+                            adresse varchar(100) NOT NULL, <br>
+                            PRIMARY KEY (idAgence) <br>
+                            ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ;</code></p>
+                    </div>
+                    <!-- fin col -->       
                 </div>
                 <!-- fin col -->
 
-                <div class="col-md-4 m-5">
-                    <h4>Création de la table AGENCE :</h4><br>
-                    <p><code>CREATE TABLE IF NOT EXISTS agence ( <br>
-                        idAgence int(6) NOT NULL AUTO_INCREMENT, <br>
-                        nom varchar(100) NOT NULL, <br>
-                        adresse varchar(100) NOT NULL, <br>
-                        PRIMARY KEY (idAgence) <br>
-                        ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ;</code></p>
-                </div>
-                <!-- fin col -->
+                
 
                 <!-- table demande -->
-                <div class="col-md-4 m-5">
-                    <h4>Création de la table DEMANDE :</h4><br>
+                <div class="col-md-5 m-5">
+                    <h4>Création de la table DEMANDE insertion du contenu de la table DEMANDE :</h4><br>
+
+
+                    <div class="col-md-5 m-5">
+                        <h4>Création et insertion du contenu de la table DEMANDE :</h4><br>
+                        <p><code>CREATE TABLE IF NOT EXISTS...</code></p>
+                    </div>
+                    <!-- fin col -->       
                     <p><code>INSERT INTO demande (idDemande, idPersonne, genre, ville, budget, superficie, categorie) VALUES
                         (1, 1, 'appartement', 'paris', 530000, 120, 'vente'),
                         (2, 3, 'appartement', 'bordeaux', 120000, 18, 'vente'),
@@ -220,10 +235,10 @@
                         (31, 55, 'appartement', 'paris', 630, 20, 'location')</code></p>
                 </div>
                 <!-- fin col -->
-                <div class="col-md-4 m-5">
+                <div class="col-md-4">
                     <figure>
                         <img src="img/immo_demande.jpg" class="image" alt="table abonné">
-                        <figcaption class="text-center">Table Agence</figcaption>
+                        <figcaption class="text-center">Table "agence"</figcaption>
                     </figure>
                 </div>
                 <!-- fin col -->
@@ -232,7 +247,7 @@
                 <div class="col-md-4 m-5">
                     <figure>
                         <img src="img/immo_logement.jpg" class="image" alt="table abonné">
-                        <figcaption class="text-center">Table Agence</figcaption>
+                        <figcaption class="text-center">Table "demande"</figcaption>
                     </figure>
                 </div>
                 <!-- fin col -->
@@ -332,30 +347,40 @@
                 <div class="col-md-4 m-5">
                     <figure>
                         <img src="img/immo_logement_agence.jpg" class="image" alt="table logement_agence ">
-                        <figcaption class="text-center">Table...</figcaption>
+                        <figcaption class="text-center">Table "logement_agence"</figcaption>
                     </figure>
                 </div>
                 <!-- fin col -->
 
-
-
-                <!-- MODELE POUR LA CREATION DE LA COL avec 2 DIV code + image -->
+                <!-- table logement_personne -->
                 <div class="col-md-4 m-5">
-                    <h4>Création de la table... :</h4><br>
+                    <h4>Création de la table logement_personne :</h4><br>
                     <p><code></code></p>
                 </div>
                 <!-- fin col -->
 
                 <div class="col-md-4 m-5">
                     <figure>
-                        <img src="img/.jpg" class="image" alt="table...">
-                        <figcaption class="text-center">Table...</figcaption>
+                        <img src="img/immo_logement_personne.jpg" class="image" alt="table logement_personne">
+                        <figcaption class="text-center">Table logement_personne</figcaption>
                     </figure>
                 </div>
                 <!-- fin col -->
 
+                <!-- table personne -->
+                <div class="col-md-4 m-5">
+                    <figure>
+                        <img src="img/immo_personne.jpg" class="image" alt="table personne">
+                        <figcaption class="text-center">Table personne</figcaption>
+                    </figure>
+                </div>
+                <!-- fin col -->
 
-
+                <div class="col-md-4 m-5">
+                    <h4>Création de la table personne :</h4><br>
+                    <p><code></code></p>
+                </div>
+                <!-- fin col -->
             </div>
             <!-- fin row  -->
         </section>
@@ -369,7 +394,7 @@
     <!-- =================================== -->
     
     <!-- Ajouter "container" if you want to extend the Footer to full width/ou container-fluid -->
-    <div class="p-5 my-5">
+    <div class="container-fluid p-5 my-5">
 
         <footer class="text-center text-lg-start bg-jaune">
             <!-- <div class="container d-flex justify-content-center py-5">
@@ -392,7 +417,7 @@
 
             <!-- Copyright -->
             <div class="text-center text-dark p-5 m-5" style="background-color: rgba(0, 0, 0, 0.2);">
-                &copy; Colombbus 2021-2022 :
+                &copy; Vanusa Santos, Colombbus 2021-2022 :
                 <a class="text-dark" href="https://mdbootstrap.com/">Agence Suresnes</a>
             </div>
             <!-- Copyright -->     

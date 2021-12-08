@@ -34,7 +34,7 @@
     <!-- ====================== -->
    
 
-    <header class="container mt-4 p-4 bg-white">
+    <header class="container-fluid  p-4">
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="display-4 text-dark">Cours SQL - Requêtes - # 1</h1>
@@ -45,51 +45,39 @@
     </header>
 
     <!-- debut div de la row caroussel -->
-    <!-- <div class="d-flex mb-4 p-4 justify-content-center">
+    <div class="d-flex mb-4 mt-4 p-4 justify-content-center">
         <!-- debut row -->
-        <!-- <div class="row col-6">
+        <div class="row col-6">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2500">
                 <div class="carousel-inner">
 
                     <div class="carousel-item active">
                         <img src="img/langage.png"class="d-block w-100" alt="logo sql">
-                    </div> -->
-
-                    <!-- <div class="carousel-item">
-                        <img src="img/index.png"class="d-block w-100" alt="logo sql">
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="img/php-apache-postgresql-logo.png"class="d-block w-100" alt="logo sql">
-                    </div> -->
-
-                    <!-- <div class="carousel-item">
-                        <img src="img/conception-logo-sql-ou-base-données-icône-ux-app-ui-clipart-vecteur_csp49313056.webp"class="d-block w-100" alt="logo sql">
                     </div>
 
                     <div class="carousel-item">
                         <img src="img/sql.jpg"class="d-block w-100" alt="logo sql">
-                    </div> -->
+                    </div>
 
-                    <!-- <div class="carousel-item">
+                    <div class="carousel-item">
                         <img src="img/php.jpg" class="d-block w-100" alt="logo php">
                     </div>
 
                     <div class="carousel-item">
                         <img src="img/pma.jpg" class="d-block w-100" alt="logo pma">
-                    <!-- </div>                -->
+                    </div>
                 </div>
               </div>
-        </div> --> -->
+        </div>
         <!-- fin row -->
     </div>
     <!-- fin div caroussel -->
 
     <!-- corps central avec contenu principal -->
-    <main class="row container-fluid mx-auto p-2">
+    <main class="row container-fluid mx-auto p-2 bg-light">
 
         <!-- aside gauche avec nav sommaire -->
-        <div class="col-3 p-5  bg-grisclair">
+        <div class="col-3 p-5 bg-grisclair">
 
             <!-- nav pour la page index : sommaire -->
             <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
@@ -156,7 +144,7 @@
         <!-- section container : zoning avec contenu principal-->
         <!-- ================================================ -->
     
-        <section class="container col-9">
+        <section class="container mb-4 p-4 bg-light col-9">
 
             <!-- debut row 1 -->
             <div class="row mt-4">
@@ -359,6 +347,7 @@
 
             <!-- debut row -->
             <div class="row justify-content-center">
+                <h2 id="conditions" class="text-dark p-5">5. Les opérateurs de comparaison</h2>
                 <div class="col-10">
                     <table class="table table-striped table-hover" id="tableComparaisons">
                         <thead>
@@ -466,11 +455,10 @@
             <!-- fin row -->
 
             <div class="row">
-                <h2>8- Faire desc calculs dans la requête</h2>
+                <h2>8- Faire des calculs dans la requête</h2>
 
                 <div class="col-md-6">
                     <ul>
-                        <h3>...</h3>
                         <li>Afficher la liste des employes avec leur salaire annuel :<br>
                             <code>SELECT nom, prenom, salaire, salaire*12 FROM employes;</code></li>
                     </ul>
@@ -685,6 +673,16 @@
                 </ul>
             </div>
             <!-- fin col -->
+
+            <div class="row">
+                <h2>9. Les conditions multipless</h2>
+
+                <div class="col-md-6">
+                    <p>... A COMPLETER... ???</p>
+                </div>
+            </div>
+            <!-- fin row -->
+
 
             <div class="row">
                 <h2>10 - Les regroupements avec GROUP BY</h2>

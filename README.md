@@ -37,16 +37,15 @@
 
 ### 03_requetes_imbriquees.html
 1. Création de la BDD "bibliothèque"
-    a) Modélisation
-    b) Créations de tables
-    c) Création des clefs étrangères
-    d) Insettion des données
-
+    a. Modélisation
+    b. Créations de tables
+    c. Création des clefs étrangères
+    d. Insertion des données
 2. SELECT sur plusieurs tables
 
 ### 04_jointures.html
 1. Définition
-    a) Récapitulatif
+    1. Récapitulatif
         Exemples
     b) Jointures externes 
     c) Jointures externes avec UNION
@@ -56,8 +55,7 @@
 
 
 ### 06_EXO : BDD immobilier.html
-
-Création des tables avec figures correspondantes sur le HTML :
+Création des tables avec les figures/figurecaption correspondantes sur le HTML :
 
 1 - agence
 
