@@ -605,21 +605,62 @@
                         AND logement_personne.idLogement = 5770</code>
                     </li>
 
-
                     <li>
-                        Affichez les prénoms des personnes souhaitant avoir un logement à Lyon :
+                        Affichez les prénoms des personnes souhaitant avoir un logement à Lyon (je rajoute Morgane + budget): <br>
+                        <code>SELECT personne.prenom, demande.ville, demande.budget <br>
+                        FROM demande, personne <br>
+                        WHERE personne.idPersonne = demande.idPersonne <br>
+                        AND demande.ville = 'Lyon' <br>
+                        AND personne.prenom = 'Morgane'</code> <br>
                     </li>
 
                     <li>
-                        Affichez les prénoms des personnes souhaitant accéder à un logement en location à Paris :
+                        Affichez les prénoms des personnes souhaitant accéder à un logement en location à Paris ( avec ORDER BY en plus pour ASC) : <br>
+                        <code>SELECT personne.prenom, demande.ville <br>
+                            FROM demande, personne <br>
+                            WHERE personne.idPersonne = demande.idPersonne <br>
+                            AND demande.ville = 'Paris' <br>
+                            ORDER BY personne.prenom ASC</code> <br>
                     </li>
 
                     <li>
-                        Affichez les prénoms des personnes souhaitant acheter un logement de la plus grande à la plus petite superficie :
+                        Affichez les prénoms des personnes souhaitant acheter un logement de la plus grande à la plus petite superficie (avec le nom de l agence et sans le nom de l agence): <br>
+                        
+                        <code>SELECT personne.prenom, demande.ville, demande.categorie, demande.superficie <br>
+                        FROM demande, personne <br>
+                        WHERE personne.idPersonne = demande.idPersonne <br>
+                        AND demande.categorie = 'vente' <br>
+                        ORDER BY demande.superficie ASC <br>
                     </li>
 
                     <li>
-                        Quel sont les prix finaux proposés par les agences pour la maison à la vente ayant la référence « 5091 » ? (Alias :  frais d'agence inclus) :
+                        Quel sont les prix finaux proposés par les agences pour la maison à la vente ayant la référence « 5091 » ? (Alias :  frais d'agence inclus) Avec le nom de l agence et sans + autre version d Imram : <br>
+
+                        <code>SELECT agence.nom, (logement_agence.frais+logement.prix) <br>
+                        AS 'prix finaux' <br>
+                        FROM agence, logement_agence, logement <br>
+                        WHERE agence.idAgence = logement_agence.idAgence <br>
+                        AND logement_agence.idLogement = logement.idLogement <br>
+                        AND logement_agence.idLogement = '5091' <code> <br>
+
+                        <code>SELECT (logement.prix + logement_agence.frais) <br>
+                        AS 'prix_final', logement.prix, logement.categorie <br>
+                        FROM logement, logement_agence <br>
+                        WHERE logement_agence.idLogement = logement.idLogement <br>
+                        AND logement_agence.idLogement = '5091'</code> <br>
+
+                        <code>SELECT (logement.prix + logement_agence.frais) AS 'Prix Finaux', logement.categorie, logement.ville, logement.prix, logement_agence.frais <br>
+                        FROM logement, logement_agence <br>
+                        WHERE logement.idLogement = logement_agence.idLogement <br>
+                        AND logement_agence.idLogement = '5091' </code> <br>
+
+                        Avec Nom de l'agence : <br>
+                        <code>SELECT logement.categorie, logement.ville, logement.prix, logement_agence.frais, agence.nom, (logement.prix + logement_agence.frais) AS 'Prix Finaux'
+                        FROM logement, logement_agence, agence
+                        WHERE logement.idLogement = logement_agence.idLogement
+                        AND agence.idAgence = logement_agence.idAgence
+                        AND logement_agence.idLogement = '5091'
+                        </code>
                     </li>
                 </ol>                                      
             <!-- fin row -->
