@@ -661,6 +661,57 @@
                         AND agence.idAgence = logement_agence.idAgence
                         AND logement_agence.idLogement = '5091'
                         </code>
+
+                        Suite exos :
+
+                        Indiquez les frais ajoutés par l'agence pour le logement ID 5873 :
+                        <code>SELECT frais, idLogement FROM logement_agence WHERE idLogement = '5873'</code> 
+
+                        Si l’ensemble des logements étaient vendus ou loués demain, quel serait le bénéfice généré grâce aux frais d’agence et pour chaque agence
+                        (Alias : benefice, classement : par ordre croissant des gains) // tables agence et logement_agence // SUM() // GROUP BY et ORDER
+                        <code>SELECT agence.nom, SUM(logement_agence.frais) AS 'bénéfices' <br>
+                        FROM agence, logement_agence <br>
+                        WHERE agence.idAgence = logement_agence.idAgence <br>
+                        GROUP BY agence.idAgence <br>
+                        ORDER BY bénéfices DESC</code> <br>
+
+                        Autre :
+                        <code>SELECT agence.nom, SUM(logement_agence.frais) AS 'bénéfices' <br>
+                        FROM agence, logement_agence <br>
+                        WHERE agence.idAgence = logement_agence.idAgence <br>
+                        GROUP BY agence.idAgence <br>
+                        ORDER BY agence.nom ASC <br></code> <br>
+
+
+                        Affichez les id des biens en location, les prix, suivis des frais d’agence (classement : dans l’ordre croissant des prix) : <br>
+
+                        <code>SELECT logement.idLogement, logement.prix, logement.categorie, logement_agence.frais <br>
+                        FROM logement, logement_agence <br>
+                        WHERE logement.idLogement = logement_agence.idLogement <br>
+                        AND logement.categorie = 'location' <br>
+                        ORDER BY logement.prix ASC</code> <br>
+
+                        Autre méthode :
+
+                        Quel est le prénom du propriétaire proposant le logement le moins cher à louer ? REQUETES IMRIQUEES // IN : <br>
+                        <code> </code>
+                   
+                        Affichez le prénom et la ville où se trouve le logement de chaque propriétaire // REQUETE DE JOINTURE : <br>
+
+                        Chat de Patrick pour Imram :
+                        @Imran HOSSAIN - Suresnes 2021 on n'a pas besoin de la catégorie !
+
+                        on cherche le prénom, la ville dans les tables personne, logement et logement_personne avec 2 id
+
+                        <code>SELECT logement.idLogement, logement.prix, logement.categorie, logement_agence.frais <br>
+                        FROM logement, logement_agence <br>
+                        WHERE logement.idLogement = logement_agence.idLogement <br>
+                        AND logement.categorie = 'location' <br>
+                        ORDER BY logement.prix ASC</code> <br>
+
+
+                        Affichez le nombre de logements à la vente dans la ville de recherche de « hugo » (alias : nombre) // REQUETE DE JOINTURE : <br>
+                        <code></code>
                     </li>
                 </ol>                                      
             <!-- fin row -->
