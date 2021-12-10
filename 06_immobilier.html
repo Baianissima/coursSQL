@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     
-    <title>Cours SQL - EXO : Immobilier </title>
+    <title>Cours SQL - EXO : BDD Immobilier </title>
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -125,24 +125,34 @@
                     <a class="nav-link" href="#">4. </a>
                 </nav>
 
-                <!-- nav pour la page 05_exos -->
-                <a class="navbar-brand" href="#">Page 05 - exos</a>
+                <!-- nav pour la page 05_fonction -->
+                <a class="navbar-brand" href="#">Page 05 -</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link" href="#">1. </a>
                     <a class="nav-link" href="#">2. </a>
                     <a class="nav-link" href="#">3. </a>
                     <a class="nav-link" href="#">4. </a>
                 </nav>
+
+                <!-- nav pour la page 06_immobilier -->
+                <a class="navbar-brand" href="#">Page 06 - BDD immobilier</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. </a>
+                    <a class="nav-link" href="#">2. </a>
+                    <a class="nav-link" href="#">3. </a>
+                    <a class="nav-link" href="#">4. </a>
+                </nav>
+
             </nav>
         </div>
 
         <!-- ================================================ -->
-        <!-- section container : contenu principal-->
+        <!-- section container : contenu principal -->
         <!-- ================================================ -->
     
         <section class="container col-9 mt-4">
         
-            <div class="row">
+            <div class="col-md-4 col-lg-12 m-4 mb-4">
                 <h2>Modélisation de la BDD immobilier</h2>
                 <div class="col-md-8">
                     <code>CREATE DATABASE bibliotheque CHARACTER SET 'utf8';</code></p>
@@ -156,12 +166,26 @@
                 <h3 class="text-center">Les codes nécessaires pour la création des différentes parties</h3>
                 <p>Requête On écrit la requête suivante sur le terminal :
                
-                <!-- table agence -->
-                <div class="col-md-4 m-5">
-                    <figure>
-                        <img src="img/immo_agence.jpg" class="image" alt="table agence">
-                        <figcaption class="text-center">Table Agence</figcaption>
-                    </figure>
+                <div class="row m-5">
+                    <!-- table agence -->
+                    <div class="col-md-4 m-5">
+                        <figure>
+                            <img src="img/immo_agence.jpg" class="image" alt="table agence">
+                            <figcaption class="text-center">Table "agence"</figcaption>
+                        </figure>
+                    </div>
+                    <!-- fin col -->
+
+                    <div class="col-md-5 m-5">
+                        <h4>Création de la table AGENCE :</h4><br>
+                        <p><code>CREATE TABLE IF NOT EXISTS agence ( <br>
+                            idAgence int(6) NOT NULL AUTO_INCREMENT, <br>
+                            nom varchar(100) NOT NULL, <br>
+                            adresse varchar(100) NOT NULL, <br>
+                            PRIMARY KEY (idAgence) <br>
+                            ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ;</code></p>
+                    </div>
+                    <!-- fin col -->       
                 </div>
                 <!-- fin col -->
 
@@ -214,7 +238,7 @@
                 </div>
 
                 <!-- fin col -->
-                <div class="col-md-4 m-5">
+                <div class="col-md-4">
                     <figure>
                         <img src="img/immo_demande.jpg" class="image" alt="table demande">
                         <figcaption class="text-center">Table Agence</figcaption>
@@ -563,12 +587,24 @@
             <div class="row">
                 <h3>La suite des questions ( requêtes de jointure)</h3>
                 <ol>
+                    <li>Afficher le bien de Robin et le/les agences qui gérent ce bien <br>
+                        <code>SELECT personne.prenom, logement_personne.idLogement, logement.ville, logement.superficie, logement.genre, agence.nom <br>
+                        FROM personne, logement_personne, logement, agence, logement_agence <br>
+                        WHERE personne.idPersonne = logement_personne.idPersonne <br>
+                        AND logement_personne.idLogement = logement.idLogement <br>
+                        AND logement_personne.idLogement = logement_agence.idLogement <br>
+                        AND agence.idAgence = logement_agence.idAgence <br>
+                        AND logement_personne.idLogement = 5770</code> <br>
+                    </li>
+
+
                     <li>Affichez le prénom du vendeur pour le logement ayant la référence « 5770 » <br>
                         <code>SELECT personne.prenom, logement_personne.idLogement <br>
                         FROM personne, logement_personne <br>
                         WHERE personne.idPersonne = logement_personne.idPersonne <br>
                         AND logement_personne.idLogement = 5770</code>
                     </li>
+
 
                     <li>
                         Affichez les prénoms des personnes souhaitant avoir un logement à Lyon :
@@ -600,7 +636,7 @@
     <!-- =================================== -->
     
     <!-- Ajouter "container" if you want to extend the Footer to full width/ou container-fluid -->
-    <div class="p-5 my-5">
+    <div class="container-fluid p-5 my-5">
 
         <footer class="text-center text-lg-start bg-jaune">
             <!-- <div class="container d-flex justify-content-center py-5">
@@ -623,7 +659,7 @@
 
             <!-- Copyright -->
             <div class="text-center text-dark p-5 m-5" style="background-color: rgba(0, 0, 0, 0.2);">
-                &copy; Colombbus 2021-2022 :
+                &copy; Vanusa Santos, Colombbus 2021-2022 :
                 <a class="text-dark" href="https://mdbootstrap.com/">Agence Suresnes</a>
             </div>
             <!-- Copyright -->     

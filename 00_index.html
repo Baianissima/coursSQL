@@ -31,8 +31,8 @@
         <!-- fin row  -->
     </header>
 
-    <!-- debut div de la row caroussel -->
-    <div class="d-flex p-4 justify-content-center">
+    <!-- div row caroussel : diaporama full width (cf.container-fluid) -->
+    <div class="container-fluid d-flex mb-4 mt-4 p-4 justify-content-center">
         <!-- debut row -->
         <div class="row col-6">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2500">
@@ -82,24 +82,24 @@
                 <a class="navbar-brand" href="#">Page 01 - Requêtes</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link" href="#introduction">1. Base d'une BDD</a>
-                    <a class="nav-link" href="#modelisation">2. Création d'une table</a>
+                    <a class="nav-link" href="#modelisation">2. 2. Création d'une table</a>
                     <a class="nav-link" href="#tables">3. SELECT et DISTINCT</a>
-                    <a class="nav-link" href="#les_colonnes">4. Les conditions</a>
-                    <a class="nav-link" href="#les_types_de_donnees">5. Les opérateurs de comparaison</a>
+                    <a class="nav-link" href="#les_colonnes">4. Conditions</a>
+                    <a class="nav-link" href="#les_types_de_donnees">5. Opérateurs de comparaison</a>
                     <a class="nav-link" href="#pk_ai_id">6. ORDER BY</a>
                     <a class="nav-link" href="#les_cardinalites">7. Limitation avec LIMIT</a>
                     <a class="nav-link" href="#table de jointure">8. Faire des calculs</a>
-                    <a class="nav-link" href="#clefs_etrangères">9. Les conditions multiples</a>
-                    <a class="nav-link" href="#les_enregistrements"> Les regroupements</a>
+                    <a class="nav-link" href="#clefs_etrangères">9. Conditions multiples</a>
+                    <a class="nav-link" href="#les_enregistrements"> Regroupements</a>
                 </nav>
 
                 <!-- nav pour la page 02_requêtes -->
                 <a class="navbar-brand" href="#">Page 02 - Requêtes</a>
                 <nav class="nav nav-pills flex-column">
-                    <a class="nav-link" href="#INSERT INTO, insertion">1. INSERT INTO, insertion</a>
+                    <a class="nav-link" href="#INSERT INTO, insertion">1. INSERT INTO : insertion</a>
                     <a class="nav-link" href="#modelisation">2. UPDATE, mise à jour</a>
-                    <a class="nav-link" href="#tables">3. DELETE, effacer</a>
-                    <a class="nav-link" href="#les_colonnes">4. Exo</a>
+                    <a class="nav-link" href="#tables">3. DELETE : effacer</a>
+                    <a class="nav-link" href="#les_colonnes">4. Exos</a>
                 </nav>
 
                 <!-- nav pour la page 03_requêtes imbriquées -->
@@ -139,7 +139,7 @@
         </div>
 
         <!-- ================================================ -->
-        <!-- section container : zoning avec contenu principal-->
+        <!-- section container : contenu principal -->
         <!-- ================================================ -->
     
         <section class="container col-sm-10 col-md-8 col-lg-6 bg-grisclair">
@@ -162,7 +162,7 @@
                         <li>Pour se connecter en ligne de commande on utilise <code>mysql -u utilisateur -p</code>
                         </li>
                         <br>
-                        <li class="bg-info text-white">Attention : il faut penser à mettre le nom d'utilisateur spécifique au serveur ; sur le Pc en local l'utilisateur est 'root' qui signifie 'racine'.
+                        <li class="alert alert-danger">Attention : il faut penser à mettre le nom d'utilisateur spécifique au serveur ; sur le Pc en local l'utilisateur est 'root' qui signifie 'racine'.
                         </li>
                         <br>
                         <li class = "alert alert-success">Pour une première utilisation il est nécessaire d'installer les variables de commandes (variables d'environnement) avant d'utiliser MySQL en ligne de commande :
@@ -222,7 +222,6 @@
             </div>
             <!-- fin row 1  -->
 
-
             <!-- debut row 2 -->
             <div class="row mt-4">
                 <h2 id="modelisation" class="text-dark p-4">2. Modélisation</h2>
@@ -231,12 +230,18 @@
                 <div class="col-10 col-md-12 col-lg-10 m-4 bg-light">
                     <h3>1 - Intro</h3><br>
                     <ul>
-                        <li>Avant de créer une BDD, il est essentiel de se poser et de réflechir à la modélisation de la base : pour éviter de se tromper.</li><br>
-                        <li>Changer la modélisation d'une BDD en cours de production/de projet, n'est pas récommandé. Cela nous forcera à re-écrire une bonne partie des requêtes.</li><br>
-                        <li>Comment modéliser une BDD ?</li><br>
+                        <li>Avant de créer une BDD, il est essentiel de se poser et de réflechir à la modélisation de la base : pour éviter de se tromper.
+                        </li><br>
+
+                        <li>Changer la modélisation d'une BDD en cours de production/de projet, n'est pas récommandé. Cela nous forcera à re-écrire une bonne partie des requêtes.          
+                        </li><br>
+
+                        <li>Comment modéliser une BDD ?
+                        </li><br>
                             <ul>
                                 <li>On peut modéliser une BDD sur une feille de papier ou utiliser un logiciel pour nous aider. Exemple : <a href="https://www.mysql.com/fr/products/workbench">MySQL WorkBench</a></li><br>
-                                <li>La modélisation se compose de différentes tables (une table = un sujet). Ex.: Si nous vendons des produits il faut uen table des produits et une table des commandes: qu'est-ce qu'il y a comme produits, qu'est-ce que je peux commander...</li><br>
+                                <li>La modélisation se compose de différentes tables (une table = un sujet). Ex.: Si nous vendons des produits il faut uen table des produits et une table des commandes: qu'est-ce qu'il y a comme produits, qu'est-ce que je peux commander...
+                                </li><br>
                             </ul>
                     </ul>
                 </div>
@@ -270,7 +275,6 @@
                 <!-- fin col -->
             </div>
             <!-- fin row 3 -->    
-
 
             <!-- debut row 4 -->
             <div class="row mt-4">
@@ -371,27 +375,25 @@
                         <li>Auto-incrementé est une option permettant de génerer un numéro unique dans un champ de type clef primaire (identifiant).</li><br>
                         <li>Par conséquent, retenez bien que le 1er champ de chaque table sera systématiquement un <code>"id"</code> qui sera PK et AI.</li><br>
                     </ul>
-                </ul>
                 </div>
 
                 <div class="col-12 m-4 p-4 bg-light">
                     <h3>c) NULL, NOT NULL</h3><br>
                     <ul>
-                        <li>Dans cahque champ, nous pourrons indiquer si nous acceptons les valeurs <code>NULL</code> ou <code>NOT NULL</code></li><br>
+                        <li>Dans chaque champ, nous pourrons indiquer si nous acceptons les valeurs <code>NULL</code> ou <code>NOT NULL</code></li><br>
                         <li>"Null" est un type de valeur en informatique évitant de laisser un champ vide si nous n'avons pas d'inforamtion à y déposer.</li><br>
                     </ul>
-                </ul>
                 </div>
 
                 <div class="col-12 m-4 p-4 bg-light">
                     <h3>d) Les relations</h3><br>
-                    <p>Il arrive parfois que les sujets interagissent entre eux.</p><br>
+                    <p>Il arrive parfois que les sujets interagissent entre eux.
+                    </p><br>
                     <ul>
                         <li>Exemples : </li><br>
                         <li>1 membre commande un produit (ou 1 produit est commandé par un membre), nous deveons enregistrer l'information dans une table commande.</li><br>
                         <li>1 conducteur conduit 1 véhicule (ou 1 véhicule est conduit par 1 conducteur), il nous faudra une table permetrant de préciser qui conduit tel véhicule.</li><br>
                     </ul>
-                </ul>
                 </div>
                 <!-- fin des 4 col -->
             </div>
@@ -408,9 +410,12 @@
                             <li>Exemple 1 : Un homme est le fils d'une femme et d'une seule <code>(min = 1 et max = 1)</code></li><br>
                         </ul> <br>
 
-                    <p>En revanche, une femme peut n'avoir aucun enfant ou plusieurs <code>(min = 0 et max = n). Ici : (n = nombre entier naturel)</code>(min = 0 et max = n). Ici : (n = nombre entier naturel)</p><br>
+                    <p>En revanche, une femme peut n'avoir aucun enfant ou plusieurs    
+                        <code>(min = 0 et max = n). Ici : (n = nombre entier naturel)</code>(min = 0 et max = n). Ici : (n = nombre entier naturel)
+                    </p><br>
                         <ul>
-                            <li>Exemple 2 : 1 livre possède forcément 1 auteur et qu'1 seul. <code>Relation (1,1)</code>. Minimum 1 auteur, Maximum 1 auteur. 1 auteur peut avoir écrit plusieurs livre (ou aucun). <code>Relation (0,n)</code>. Minimum 0 livre, Maximum N livres</li>
+                            <li>Exemple 2 : 1 livre possède forcément 1 auteur et qu'1 seul. <code>Relation (1,1)</code>. Minimum 1 auteur, Maximum 1 auteur. 1 auteur peut avoir écrit plusieurs livre (ou aucun). <code>Relation (0,n)</code>. Minimum 0 livre, Maximum N livres
+                            </li>
                         </ul>               
                 </div>
                 <!-- fin col -->
@@ -455,7 +460,7 @@
             
             <!-- debut row 9 -->
             <div class="row mt-4">
-                <h2 id="clefs_etrangeres" class="text-dark p-4">9. Clefs étrangères ou FK</h2>
+                <h2 id="clefs_etrangeres" class="text-dark p-4">9. Clefs étrangères ou FK (foreign key)</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
                 <div class="col-10 m-4 bg-light">
