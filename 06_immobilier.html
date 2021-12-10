@@ -18,28 +18,21 @@
 <body>
 
     <!-- =================================== -->
-
-    <!-- Pour une navbar Bootstrap sans la fleche :
-        https://www.it-swarm-fr.com/fr/css/comment-supprimer-la-fleche-dans-la-liste-deroulante-dans-bootstrap-4/827351415/-->
-
+    <!-- en-tête -->
     <!-- =================================== -->
 
-    <!-- ======= -->
-    <!-- en-tête -->
-    <!-- ======= -->
-
-    <header class="container mt-4 p-4 bg-white">
+    <header class="container-fluid p-4 bg-grisclair">
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="display-4 text-dark">Cours SQL - BDD Immobilier # 6</h1>
-                <p class="lead">Exercice...</p>
+                <p class="lead">Exercice</p>
             </div>
         </div>
         <!-- fin row  -->
     </header>
 
     <!-- debut div de la row caroussel -->
-    <div class="d-flex mb-4 p-4 justify-content-center">
+    <div class="d-flex p-4 justify-content-center">
         <!-- debut row -->
         <div class="row col-6">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2500">
@@ -68,7 +61,7 @@
     <!-- fin div caroussel -->
 
     <!-- corps central avec contenu principal -->
-    <main class="container-fluid row mx-auto p-2 bg-light">
+    <main class="row container-fluid mx-auto bg-light">
 
         <!-- aside gauche avec nav sommaire -->
         <div class="col-3 p-5 bg-grisclair">
@@ -147,12 +140,12 @@
         <!-- section container : contenu principal-->
         <!-- ================================================ -->
     
-        <section class="container mb-4 p-4 col-9">
+        <section class="container col-9 mt-4">
         
             <div class="row">
                 <h2>Modélisation de la BDD immobilier</h2>
                 <div class="col-md-8">
-                    <code>CREATE DATABASE bibliotheque CHARACTER SET 'utf8';</code></p><br>
+                    <code>CREATE DATABASE bibliotheque CHARACTER SET 'utf8';</code></p>
                     <p class="alert alert-success">Il faut creer des INDEX pour certaines tables avant de faire les relaations</p>
                 </div>
                 <!-- fin col  -->
@@ -161,7 +154,7 @@
 
             <div class="row">         
                 <h3 class="text-center">Les codes nécessaires pour la création des différentes parties</h3>
-                <p>Requête On écrit la requête suivante sur le terminal :<br>
+                <p>Requête On écrit la requête suivante sur le terminal :
                
                 <!-- table agence -->
                 <div class="col-md-4 m-5">
@@ -173,19 +166,19 @@
                 <!-- fin col -->
 
                 <div class="col-md-4 m-5">
-                    <h4>Création de la table AGENCE :</h4><br>
-                    <p><code>CREATE TABLE IF NOT EXISTS agence ( <br>
-                        idAgence int(6) NOT NULL AUTO_INCREMENT, <br>
-                        nom varchar(100) NOT NULL, <br>
-                        adresse varchar(100) NOT NULL, <br>
-                        PRIMARY KEY (idAgence) <br>
+                    <h4>Création de la table AGENCE :</h4>
+                    <p><code>CREATE TABLE IF NOT EXISTS agence ( 
+                        idAgence int(6) NOT NULL AUTO_INCREMENT, 
+                        nom varchar(100) NOT NULL, 
+                        adresse varchar(100) NOT NULL, 
+                        PRIMARY KEY (idAgence) 
                         ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ;</code></p>
                 </div>
                 <!-- fin col -->
 
                 <!-- table demande -->
                 <div class="col-md-4 m-5">
-                    <h4>Création de la table DEMANDE :</h4><br>
+                    <h4>Création de la table DEMANDE :</h4>
                     <p><code>INSERT INTO demande (idDemande, idPersonne, genre, ville, budget, superficie, categorie) VALUES
                         (1, 1, 'appartement', 'paris', 530000, 120, 'vente'),
                         (2, 3, 'appartement', 'bordeaux', 120000, 18, 'vente'),
@@ -219,10 +212,11 @@
                         (30, 54, 'appartement', 'paris', 177000, 40, 'vente'),
                         (31, 55, 'appartement', 'paris', 630, 20, 'location')</code></p>
                 </div>
+
                 <!-- fin col -->
                 <div class="col-md-4 m-5">
                     <figure>
-                        <img src="img/immo_demande.jpg" class="image" alt="table abonné">
+                        <img src="img/immo_demande.jpg" class="image" alt="table demande">
                         <figcaption class="text-center">Table Agence</figcaption>
                     </figure>
                 </div>
@@ -231,14 +225,14 @@
                 <!-- table logement -->
                 <div class="col-md-4 m-5">
                     <figure>
-                        <img src="img/immo_logement.jpg" class="image" alt="table abonné">
-                        <figcaption class="text-center">Table Agence</figcaption>
+                        <img src="img/immo_logement.jpg" class="image" alt="table logement">
+                        <figcaption class="text-center">Table logement</figcaption>
                     </figure>
                 </div>
                 <!-- fin col -->
 
                 <div class="col-md-4 m-5">
-                    <h4>Création de la table logement :</h4><br>
+                    <h4>Création de la table logement :</h4>
                     <p><code>INSERT INTO logement (idLogement, genre, ville, prix, superficie, categorie) VALUES
                         (5067, 'appartement', 'paris', 685000, 61, 'vente'),
                         (5089, 'appartement', 'paris', 115000, 15, 'vente'),
@@ -273,7 +267,7 @@
 
                 <!-- table logement_agence -->
                 <div class="col-md-4 m-5">
-                    <h4>Création de la table logement_agence :</h4><br>
+                    <h4>Création de la table logement_agence :</h4>
                     <p><code>INSERT INTO logement_agence (idLogementAgence, idAgence, idLogement, frais) VALUES
                         (1, 257400, 5067, 34250),
                         (2, 383505, 5067, 30000),
@@ -332,36 +326,273 @@
                 <div class="col-md-4 m-5">
                     <figure>
                         <img src="img/immo_logement_agence.jpg" class="image" alt="table logement_agence ">
-                        <figcaption class="text-center">Table...</figcaption>
+                        <figcaption class="text-center">Table logement_agence</figcaption>
                     </figure>
                 </div>
                 <!-- fin col -->
 
 
-
                 <!-- MODELE POUR LA CREATION DE LA COL avec 2 DIV code + image -->
                 <div class="col-md-4 m-5">
-                    <h4>Création de la table... :</h4><br>
-                    <p><code></code></p>
+                    <h4></h4>
                 </div>
                 <!-- fin col -->
 
                 <div class="col-md-4 m-5">
                     <figure>
                         <img src="img/.jpg" class="image" alt="table...">
-                        <figcaption class="text-center">Table...</figcaption>
+                        <figcaption class="text-center"></figcaption>
                     </figure>
                 </div>
                 <!-- fin col -->
-
-
-
             </div>
             <!-- fin row  -->
+
+
+            <div class="row col-10 m-5">
+
+                <h4>Exos : requêtes SQL</h4>
+
+                <ol>
+                    <li>
+                        Affichez le nom des agences (par ordre alphabetique ou l'inverse) :
+                        <code>SELECT nom FROM agence</code>
+
+                        <code>SELECT nom FROM agence ORDER BY nom DESC</code>
+                    </li>
+
+                    <li>
+                        Affichez le numéro de l'agence « Orpi » :
+                        <code>SELECT idAgence FROM agence WHERE nom = 'Orpi'</code>
+                    </li>
+                   
+                    <li>
+                        Affichez le premier enregistrement de la table logement : 
+                        <code>SELECT * FROM logement LIMIT 1</code>
+                    </li>
+
+                    <li>
+                        Affichez le nombre de logements (Alias : Nombre_de_logements) : Patrick dit qu'il vaut mieux préciser avec ORDER BY<br>
+
+                        <code>SELECT COUNT(*) AS 'Nombre_de_logements' FROM logement</code>
+
+                        <code>SELECT COUNT(idLogement) AS 'Nombre_de_logements' FROM logement</code>
+
+                        <code>SELECT * FROM logement WHERE idLogement=(SELECT MIN(idLogement) FROM logement)</code>
+
+                        <code>SELECT * FROM logement ORDER BY idLogement LIMIT 0,1</code>
+
+                        <code>SELECT * FROM logement ORDER BY idLogement LIMIT 0,1</code>
+
+                        <code>SELECT MIN(idLogement), genre, ville, prix, superficie, categorie FROM logement</code>
+                    </li>
+
+                    <li>
+                        Affichez les logements à vendre à moins de 150 000 € dans l'ordre croissant des prix (toujours mettre ASC même si c'est pas ASC par défaut) : <br>
+                        <code>SELECT * FROM `logement` WHERE prix <= 150000 ORDER BY prix ASC;</code>
+
+                        <code>SELECT * FROM `logement` WHERE PRIX <= 150000 AND categorie = 'vente';</code>
+
+                        <code>SELECT * FROM `logement` WHERE PRIX <= 150000 AND categorie = 'vente' ORDER BY prix ASC</code>
+                    </li>
+
+                    <li>
+                        Afficher le nombre de logements à la location (alias : 'nombre_logement_en_location') : <br>
+                        <code>SELECT COUNT(idLogement) AS 'nombre_logement_en_location' FROM logement WHERE categorie = 'location'</code>
+                    </li>
+
+                    <li>
+                        Afficher les villes différentes recherchées par les personnes demandeuses d'un logement : <br>
+                        <code>SELECT DISTINCT ville FROM `demande`;</code>
+                    </li> 
+
+                    <li>
+                        Affichez le nombre de biens à vendre par ville : (Alias nbr_logement_envente_ville) <br>
+
+                        <code>SELECT ville, COUNT(ville) AS 'nbr_logement_envente_ville' FROM logement WHERE categorie='vente' GROUP BY ville ASC</code>
+
+                        <code>SELECT COUNT(idLogement) AS 'nbr logement', ville<br>
+                            FROM logement<br>
+                            WHERE ville IN(SELECT DISTINCT(ville) FROM logement)<br>
+                            AND categorie='vente'<br>
+                            GROUP BY ville</code><br>
+
+                        Autres méthodes moins approfondies :
+
+                        <code>SELECT COUNT(*) AS nbr_logement_envente_ville FROM logement WHERE categorie ='vente'</code>
+
+                        <code>SELECT DISTINCT ville AS nbr_logement_envente_ville FROM logement WHERE categorie ='vente'</code>
+                    </li> 
+
+                    <li>Quels sont les id des logements destinés à la location ? :<br>
+                        <code>SELECT idLogement<br>
+                        FROM logement<br>
+                        WHERE categorie='location'<br>
+                        ORDER BY idLogement</code>
+                    </li>
+
+                    <li>
+                        Quels sont les id des logements entre 20 et 30m² ? : <br>
+
+                        <code>SELECT idLogement <br>
+                        FROM logement <br>
+                        WHERE superficie <br>
+                        BETWEEN '20' AND '30'</code>
+
+                        <code>SELECT * FROM logement<br>
+                        WHERE superficie<br>
+                        BETWEEN '20' AND '30'</code>
+
+                        <code>SELECT *<br>
+                        FROM logement<br>
+                        WHERE superficie>= 20 AND superficie<=30;</code>
+                    </li>
+
+                    <li>
+                        Quel est le prix vendeur(hors comission) du logement le moins cher à vendre ? <br>
+                        <code>SELECT MIN(prix), idLogement, categorie <br>
+                        FROM logement <br>
+                        WHERE categorie = 'vente'</code> <br>
+
+                        <code>SELECT * <br>
+                        FROM logement <br>
+                        WHERE categorie = 'vente' <br>
+                        ORDER BY prix <br>
+                        ASC LIMIT 0,1;</code> <br>
+                        
+                        Et les prix vendeur des 3 moins chers ?
+                        <code>SELECT *
+                        FROM logement <br>
+                        WHERE categorie = 'vente' <br>
+                        ORDER BY prix <br>
+                        ASC LIMIT 1,3</code>
+                        <!-- Pour LIMIT 1,3 : 0 serait le premier de la liste, 1 veut dire d'afficher 1 seul element -->
+                    </li> 
+
+                    <li>
+                        Dans quelles villes se trouvent les maisons à vendre ?
+
+                        <code>SELECT ville <br>
+                        FROM logement <br>
+                        WHERE categorie = 'vente' <br>
+                        AND genre = 'appartement' <br>
+                        GROUP By ville</code> <br>
+
+                        <code>SELECT DISTINCT (ville) <br>
+                        FROM logement <br>
+                        WHERE genre = 'maison' <br>
+                        AND categorie = 'vente';</code> <br>
+
+                        <code>SELECT *
+                        FROM logement <br>
+                        WHERE genre = 'maison'</code>
+                    </li> 
+
+                    <li>
+                        L'agence Orpi souhaite diminuer les frais qu'elle applique sur le logement ayant l'id « 5246 ». Passer les frais de ce logement de 800 à 730€ : <br>
+
+                        <p>Ici on a une requête impriquée, les 2 faites par Patrick :</p> <br>
+
+                        <code>UPDATE logement_agence <br>
+                        SET frais ='1200000' <br>
+                        WHERE idLogement = '5246' <br>
+                        AND idAgence = <br>
+                        (SELECT idAgence <br>
+                        FROM agence <br>
+                        WHERE nom ='orpi')</code> <br>
+
+                        <code>UPDATE logement_agence <br>
+                            SET frais = '12' <br>
+                            WHERE idLogement = '5246' <br>
+                            AND idAgence = <br>  
+                            (SELECT idAgence <br>
+                            FROM agence <br>
+                            WHERE nom = 'Orpi')</code><br>
+
+                            <hr>
+
+                        <code>UPDATE logement_agence <br>
+                        SET frais = 730 <br>
+                        WHERE idLogement = 5246;</code>
+
+
+                        <!-- Ce code de Sleyter n'a pas marché -->
+                        <!-- <code>UPDATE logement_agence <br>
+                        SET frais = 730 <br>
+                        WHERE idLogement = <br>
+                        (SELECT idAgence <br>
+                        FROM agence <br>
+                        WHERE nom = 'Orpi'</code> -->
+                    </li> 
+
+                    <li>
+                        Quels sont les logements gérés par l'agence « laforet » (id de laforet : 504585) : <br>
+
+                        <code>SELECT * <br>
+                        FROM logement_agence <br>
+                        WHERE idAgence = <br>
+                        (SELECT idAgence <br>
+                        FROM agence <br>
+                        WHERE nom = 'laforet')</code><br>
+
+                        <code>SELECT idLogement <br>
+                        FROM `logement_agence` <br>
+                        WHERE idAgence = <br>
+                        =(SELECT idAgence FROM agence WHERE nom = 'laforet')</code> <br>
+                    </li>
+
+                        
+                    <li>
+                        Affichez le nombre de propriétaires dans la ville de Paris (Alias : Nombre propriétaire parisien), c'est une enquete de JOINTURE : <br>
+                        <code>SELECT COUNT(DISTINCT(logement_personne.idPersonne)) <br>
+                            AS 'nombre de proprietaires parisiens' <br>
+                            FROM logement_personne , logement <br>
+                            WHERE logement_personne.idLogement = logement.idLogement <br>
+                            AND logement.ville='paris';</code>
+                    </li>
+
+                    <li>
+                        Afficher les infos des trois premières personnes souhaitant acheter un logement : <br>
+                        <code>SELECT * FROM personne, demande
+                        WHERE personne.idPersonne = demande.idPersonne
+                        AND demande.categorie = 'vente' ORDER BY demande.idDemande
+                        LIMIT 0,3;</code>   
+                </ol>  
+            </div>
+
+            <div class="row">
+                <h3>La suite des questions ( requêtes de jointure)</h3>
+                <ol>
+                    <li>Affichez le prénom du vendeur pour le logement ayant la référence « 5770 » <br>
+                        <code>SELECT personne.prenom, logement_personne.idLogement <br>
+                        FROM personne, logement_personne <br>
+                        WHERE personne.idPersonne = logement_personne.idPersonne <br>
+                        AND logement_personne.idLogement = 5770</code>
+                    </li>
+
+                    <li>
+                        Affichez les prénoms des personnes souhaitant avoir un logement à Lyon :
+                    </li>
+
+                    <li>
+                        Affichez les prénoms des personnes souhaitant accéder à un logement en location à Paris :
+                    </li>
+
+                    <li>
+                        Affichez les prénoms des personnes souhaitant acheter un logement de la plus grande à la plus petite superficie :
+                    </li>
+
+                    <li>
+                        Quel sont les prix finaux proposés par les agences pour la maison à la vente ayant la référence « 5091 » ? (Alias :  frais d'agence inclus) :
+                    </li>
+                </ol>                                      
+            <!-- fin row -->
+            </div>
         </section>
         <!-- fin container -->
     </main>
     <!-- fin corps central -->
+
 
 
     <!-- =================================== -->

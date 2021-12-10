@@ -9,44 +9,21 @@
 
     <!-- Bootstrap CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    
-    
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon_io/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_io/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_io/favicon-16x16.png">
-        <link rel="manifest" href="/img/favicon_io/site.webmanifest">
-        
         
     <title>Cours SQL - Accueil</title>
 
-    <link rel="stylesheet" href="css/styles.css">
-
-    
+    <link rel="stylesheet" href="css/styles.css">    
 </head>
+
 <body>
-
-    <!-- =================================== -->
-
-    <!-- Pour une navbar Bootstrap sans la fleche :
-        https://www.it-swarm-fr.com/fr/css/comment-supprimer-la-fleche-dans-la-liste-deroulante-dans-bootstrap-4/827351415/-->
-
-    <!-- =================================== -->
-
-
-
-    <!-- =================================== -->
-    <!-- Ici on mettra un diaporama full width (cf.container-fluid) -->
-    <!-- =================================== -->
-
-
 
     <!-- =================================== -->
     <!-- en-tête -->
     <!-- =================================== -->
     
-    <header class="container-fluid p-4">
+    <header class="container-fluid p-4 bg-grisclair">
         <div class="row">
-            <div class="col-10 text-center">
+            <div class="col-12 text-center">
                 <h1 class="display-4 text-dark">Cours SQL - Accueil</h1>
                 <p class="lead">Base de données pour PHP : on commence le back-end !</p>
             </div>
@@ -60,12 +37,7 @@
         <div class="row col-6">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2500">
                 <div class="carousel-inner">
-
-                    <div class="carousel-item active">
-                        <img src="img/langage.png"class="d-block w-100" alt="logo sql">
-                    </div>
-
-                    <div class="carousel-item">
+                    <div class="carousel-item  active">
                         <img src="img/sql.jpg"class="d-block w-100" alt="logo sql">
                     </div>
 
@@ -84,14 +56,14 @@
     <!-- fin div caroussel -->
 
     <!-- corps central avec contenu principal -->
-    <main class="row container-fluid mx-auto bg-light">
+    <main class="row container-fluid mx-auto bg-grisclair">
 
-        <!-- aside gauche avec nav sommaire -->
-        <div class="col-3">
+         <!-- aside gauche avec nav sommaire -->
+         <div class="col-3 p-4">
 
-            <!-- nav lattérale -->
-            <nav id="navbar-example3" class="navbar navbar-light bg-liflex-column align-items-stretch p-3">
-                <a class="navbar-brand" href="#">Page Index</a>
+            <!-- nav pour la page index : sommaire -->
+            <nav id="navbar-example3" class="navbar navbar-light flex-column align-items-stretch p-3">
+                <a class="navbar-brand" href="#index">Page Index - Sommaire</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link" href="#introduction">1. Introduction</a>
                     <a class="nav-link" href="#modelisation">2. Modélisation</a>
@@ -106,8 +78,8 @@
                     <a class="nav-link" href="#interroger_la_bdd">11. Intérroger la BDD </a>
                 </nav>
 
-                <!-- nav pour la page requêtes -->
-                <a class="navbar-brand" href="#">Page Requêtes</a>
+                 <!-- nav pour la page 01_requêtes -->
+                <a class="navbar-brand" href="#">Page 01 - Requêtes</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link" href="#introduction">1. Base d'une BDD</a>
                     <a class="nav-link" href="#modelisation">2. Création d'une table</a>
@@ -122,7 +94,7 @@
                 </nav>
 
                 <!-- nav pour la page 02_requêtes -->
-                <a class="navbar-brand" href="#">Page 02_Requêtes</a>
+                <a class="navbar-brand" href="#">Page 02 - Requêtes</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link" href="#INSERT INTO, insertion">1. INSERT INTO, insertion</a>
                     <a class="nav-link" href="#modelisation">2. UPDATE, mise à jour</a>
@@ -131,21 +103,37 @@
                 </nav>
 
                 <!-- nav pour la page 03_requêtes imbriquées -->
-                <a class="navbar-brand" href="#">Page 03 Requêtes imbriquées</a>
+                <a class="navbar-brand" href="#">Page 03 - Requêtes imbriquées <br>
+                BDD "bibliotheque"</a>
                 <nav class="nav nav-pills flex-column">
-                    <a class="nav-link" href="#">1. </a>
-                    <a class="nav-link" href="#">2. </a>
-                    <a class="nav-link" href="#">3. </a>
-                    <a class="nav-link" href="#">4. </a>
+                    <a class="nav-link" href="#">1. Modélisation </a>
+                    <a class="nav-link" href="#">2. Création de la table</a>
+                    <a class="nav-link" href="#">3. Insertion de contenu</a>
+                    <a class="nav-link" href="#">4. Création clé-étrangère</a>
+                    <a class="nav-link" href="#">4. Selectionner des tables(SELECT)</a>
                 </nav>
 
                 <!-- nav pour la page 04_jointures -->
                 <a class="navbar-brand" href="#">Page 04 - Jointures</a>
                 <nav class="nav nav-pills flex-column">
-                    <a class="nav-link" href="#">1. </a>
-                    <a class="nav-link" href="#">2. </a>
-                    <a class="nav-link" href="#">3. </a>
-                    <a class="nav-link" href="#">4. </a>
+                    <a class="nav-link" href="#">1. Définition </a>
+                    <a class="nav-link" href="#">2. Récapitulatif</a>
+                    <a class="nav-link" href="#">3. Exemples</a>
+                    <a class="nav-link" href="#">4. Jointures externes </a>
+                    <a class="nav-link" href="#">5. Jointures externes avec UNION </a>
+                </nav>
+
+                <!-- nav pour la page 05_fonctions -->
+                <a class="navbar-brand" href="#">Page 05 - Fonctions</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. Quelques fonctions </a>
+                </nav>
+
+                <!-- nav pour la page 05_exos -->
+                <a class="navbar-brand" href="#">Page 06 - EXO: BDD immobilier</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#">1. Modélisation de la BDD immobilier : créations des tables et insertion de contenu<br> </a>
+                    <a class="nav-link" href="#">2. Exos / récap : multiples requêtes SQL<br> </a>
                 </nav>
             </nav>
         </div>
@@ -154,10 +142,10 @@
         <!-- section container : zoning avec contenu principal-->
         <!-- ================================================ -->
     
-        <section class="container col-9 mt-4">
+        <section class="container col-sm-10 col-md-8 col-lg-6 bg-grisclair">
 
-            <div class="col-10 col-md-4 col-lg-6 m-4">
-                <img src="img/front-back.jpg" alt="front-back">             
+            <div class="m-4">
+                <img src="img/front-back.jpg" class="d-block w-100" alt="front-back">             
             </div>
             <!-- fin div img -->
 
@@ -166,7 +154,7 @@
                 <h2 id="introduction" class="text-dark p-5">1. Introduction</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-10 col-md-6 col-lg-3 m-4 bg-white">
+                <div class="col-10 col-md-3 col-lg-3 m-4 bg-light">
                     <h3>a) MySQL</h2>
                     <ul>
                         <li>MySQL peut s'utiliser en ligne de commande (Shell, Bash, CMDR et le Terminal sur Mac ou Linux , ou avec une interface graphique comme phpMyAdmin.</li>
@@ -198,7 +186,7 @@
                     </ul>
                 </div>
                 
-                <div class="col-10 col-md-6 col-lg-3 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-3 m-4 bg-light">
                     <h3>b) SGBDR ou SGBD</h3>
                     <ul>
                         <li>Un SGBDR est un système de gestion de base de données relationnelles</li><br>
@@ -222,7 +210,7 @@
                     </ul>
                 </div>
 
-                <div class="col-10 col-md-6 col-lg-3 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-3 m-4 bg-light">
                     <h3>c) En résumé</h3>
                     <ul>
                         <li>A l'intérieur de la BDD les informations sont classées, sctructurées et regroupées par sujet</li><br>
@@ -240,7 +228,7 @@
                 <h2 id="modelisation" class="text-dark p-4">2. Modélisation</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-10 col-md-12 col-lg-10 m-4 bg-white">
+                <div class="col-10 col-md-12 col-lg-10 m-4 bg-light">
                     <h3>1 - Intro</h3><br>
                     <ul>
                         <li>Avant de créer une BDD, il est essentiel de se poser et de réflechir à la modélisation de la base : pour éviter de se tromper.</li><br>
@@ -260,7 +248,7 @@
                 <h2 id="tables" class="text-dark p-4">3. Les tables</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="row col-10 col-md-6 col-lg-2 m-4 bg-white">
+                <div class="row col-10 col-md-6 col-lg-2 m-4 bg-light">
                     <ul>
                         <ul>
                             <li>1 sujet représente 1 table dans une base de données. </li><br>
@@ -270,9 +258,9 @@
                     </ul>
                 </div>
                 
-                <div class="col-10 col-md-6 col-lg-8 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-8 m-4 bg-light">
                     <figure>
-                        <img src="img/abonne.png" alt="table_abonne">
+                        <img src="img/abonne.png" class="d-block w-100" alt="table_abonne">
                         <figcaption class="bg-light text-center">
                             Il faut réfléchir au sujet et à ses conséquences. Si nous vendons des produits, nous aurons certainement des membres. 1 table membre sera donc nécessaire. En terme de fonctionnalité, si nous souhaitons proposer un abonnement newsletter aux membres, nous aurons besoin d'1 table newsletter repertoriant les membres abonnés <br>
                             <strong>table = 1 sujet</strong></li>
@@ -289,13 +277,13 @@
                 <h2 id="colonnes_champs" class="text-dark p-4">4. Les colonnes et les champs</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="row col-10 col-md-6 col-lg-5 m-4 bg-white">
+                <div class="row col-10 col-md-6 col-lg-5 m-4 bg-light">
                     <p class="p-5">Chaque table possède généralement plusieurs champs (aussi appelés colonnes).<br>
                     <br>
                     Les colonnes / champs représentent des caractéristiques relatives au sujet (la table).</p>
                 </div>
                 
-                <div class="col-10 col-md-6 col-lg-5 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-5 m-4 bg-light">
                     <p class="p-5">Pour savoir, quelle colonne mettre dans quelle table, il faut se poser la question suivante : qu'est-ce qui pourrait décrire mon sujet ? quelles sont les informations sur mon sujet ? <br>
                     <br>
                     Par exemple, la table membre aura les champs : pseudo, mot de passe, nom, prenom, adresse, email, etc.</p>
@@ -304,12 +292,12 @@
             <!-- fin row 4 -->    
 
             <!-- debut row 5-->
-            <div class="row mt-4">
+            <div class="row col-sm-10 col-md-6 col-lg-12 mt-4">
                 <h2 id="types" class="text-dark p-4">5. Types de données</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
                 <!-- debut div tableau -->
-                <div class="row col-10 m-4 bg-white">
+                <div  m-4 bg-light">
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
@@ -365,7 +353,7 @@
                 <!-- .col-4*3>h2{$/ Titre} -->
 
                 <!-- debut des 4 col -->
-                <div class="col-10 m-4 p-4 bg-white">
+                <div class="col-12 m-4 p-4 bg-light">
                     <h3>a) PK - Les identifiants - Primary Key et clef primaire</h2><br>
                         <ul>
                             <li>Les identifiants sont des champs un peu particuliers car ils ne décrivent pas le sujet. Ce sont des champs/colonnes systématiquement présents dans chaque table et ce en première position.</li><br>
@@ -376,7 +364,7 @@
                     </ul>
                 </div>
                 
-                <div class="col-10 m-4 p-4 bg-white">
+                <div class="col-12 m-4 p-4 bg-light">
                     <h3>b) AI (Auto Increment = auto-incrementé)</h3><br>
                     <ul>
                         <li>L'ID membre sera toujours auto-incrementé.</li><br>
@@ -386,7 +374,7 @@
                 </ul>
                 </div>
 
-                <div class="col-10 m-4 p-4 bg-white">
+                <div class="col-12 m-4 p-4 bg-light">
                     <h3>c) NULL, NOT NULL</h3><br>
                     <ul>
                         <li>Dans cahque champ, nous pourrons indiquer si nous acceptons les valeurs <code>NULL</code> ou <code>NOT NULL</code></li><br>
@@ -395,7 +383,7 @@
                 </ul>
                 </div>
 
-                <div class="col-10 m-4 p-4 bg-white">
+                <div class="col-12 m-4 p-4 bg-light">
                     <h3>d) Les relations</h3><br>
                     <p>Il arrive parfois que les sujets interagissent entre eux.</p><br>
                     <ul>
@@ -414,7 +402,7 @@
                 <h2 id="cardinalites" class="text-dark p-4">7. Les cardinalités</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-md-6 col-lg-5 m-4 p-4 bg-white">
+                <div class="col-md-6 col-lg-5 m-4 p-4 bg-light">
                     <p>Les cardinalités permettent de connaître le chiffre minimum et maximum d'enregistrements pour une relation.</p><br>
                         <ul>
                             <li>Exemple 1 : Un homme est le fils d'une femme et d'une seule <code>(min = 1 et max = 1)</code></li><br>
@@ -427,9 +415,9 @@
                 </div>
                 <!-- fin col -->
                 
-                <div class="col-md-6 col-lg-5 m-4 bg-white">
+                <div class="col-md-6 col-lg-5 m-4 bg-light">
                     <figure>
-                        <img src="img/cardinalites.jpg" alt="les cardinalités">
+                        <img src="img/cardinalites.jpg" class="d-block w-100" alt="les cardinalités">
                         <figcaption class="bg-light text-center">Les cardinalités</figcaption>
                     </figure>
                 </div>
@@ -443,7 +431,7 @@
                 <h2 id="table_de_jointure" class="text-dark p-4">8. Les tables de jointure </h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-10 col-md-6 col-lg-4 m-4 p-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-5 m-4 p-4 bg-light">
                     <p class="bg-info">Une table de jointure permet de faire le lien entre 2 tables.</p><br>
                     <p>Exemple : une société de taxi, qui possède des conducteurs et des véhicules.</p><br>
                     <ul>               
@@ -455,9 +443,9 @@
                 </div>
                 <!-- fin col -->
 
-                <div class="col-md-6 col-lg-6 m-4 p-4 bg-white">
+                <div class="col-md-6 col-lg-5 m-4 p-4 bg-light">
                     <figure>
-                        <img src="img/jointures.jpg" alt="les tables de jointure">
+                        <img src="img/jointures.jpg" class="d-block w-100" alt="les tables de jointure">
                         <figcaption class="bg-light text-center">Une table de jointure <br>Avec cette table de jointure, nous savons qu'Alexandre est autorisé à conduire la BM et la Mercedes et Julien ne peut conduire que la BM.</figcaption>
                     </figure>
                 </div>
@@ -470,24 +458,24 @@
                 <h2 id="clefs_etrangeres" class="text-dark p-4">9. Clefs étrangères ou FK</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-10 m-4 bg-white">
+                <div class="col-10 m-4 bg-light">
                     <p>Les clefs étrangères sont des champs forcément clefs primaires dans leur table d'origine et qui se retrouvent dans une table extérieure.</p> <br>
 
                     <p>Un champ clef étrangère permet de faire la relation avec un autre sujet.</p> <br>
                 </div>
                 <!-- fin col -->
                 
-                <div class="col-md-5 m-4 bg-white">
+                <div class="col-md-5 m-4 bg-light">
                     <figure>
-                        <img src="img/clef_etrangere_1.jpg" alt="clef etrangere">
+                        <img src="img/clef_etrangere_1.jpg" class="d-block w-100" alt="clef etrangere">
                         <figcaption class="bg-light text-center">Les tables de jointure et les clefs étrangères.<br></figcaption>
                     </figure>
                 </div>
                 <!-- fin col -->
 
-                <div class="col-md-5 m-4 bg-white">
+                <div class="col-md-5 m-4 bg-light">
                     <figure>
-                        <img src="img/clef_etrangere_2.jpg" alt="clef etrangere">
+                        <img src="img/clef_etrangere_2.jpg" class="d-block w-100" alt="clef etrangere">
                         <figcaption class="bg-light text-center">Les tables de jointure et les clefs étrangères.<br></figcaption>
                     </figure>
                 </div>
@@ -501,7 +489,7 @@
                 <h2 id="enregistrement" class="text-dark p-4">10. Les enregistrements</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-md-10 m-4 bg-white">
+                <div class="col-md-10 m-4 bg-light">
                     <p class="bg-info text-white">Chaque enregistrement represente 1 ligne dans la table de la BDD. Chaque nouvel enregistrement va s'auto-incrementer. Même si un <code>ID</code> est supprimé, il ne sera pas réutilisé !</p><br>
                 </div>
                 <!-- fin col-10 -->
@@ -513,7 +501,7 @@
                 <h2 id="interroger_la_bdd" class="text-dark p-4">11. Interroger la BDD </h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
 
-                <div class="col-10 col-md-6 col-lg-5 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-5 m-4 bg-light">
                     <h3>a) Les requêtes</h3>
                     <p>Une requête permet de poser une question afin d'obtenir une réponse, ou encore de donner un ordre.</p><br>
                     <p>Nous terminerons toutes nos requêtes SQL par un point virgule <code>" ; "</code> pour que SQL sache que nous avons terminé d'écrire et qu'il doit exécuter notre demande.</p><br>
@@ -523,7 +511,7 @@
                 </div>
                 <!-- fin col -->
                 
-                <div class="col-10 col-md-6 col-lg-5 m-4 bg-white">
+                <div class="col-10 col-md-6 col-lg-5 m-4 bg-light">
                     <h3>b) Types de requêtes</h3>
                     <p>Il existe 4 types de requêtes :</p>
                     <ul>

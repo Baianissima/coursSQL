@@ -26,9 +26,9 @@
         background-color: var(--gristrend);
     }
 
-    section {
+    /* section {
         background-color: var(--jaunetrend);
-    }
+    } */
 
     .bg-grisclair {
         background-color: var(--grisclair);
