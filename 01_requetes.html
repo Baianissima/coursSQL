@@ -21,9 +21,9 @@
     <!-- en-tête -->
     <!-- ======= -->
 
-    <header class="container mt-4 p-4 bg-white">
+    <header class="container-fluid p-4 bg-grisclair">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-10 text-center">
                 <h1 class="display-4 text-dark">Cours SQL - Requêtes - # 1</h1>
                 <p class="lead">Base de données pour PHP : le back-end !</p>
             </div>
@@ -32,7 +32,7 @@
     </header>
 
     <!-- debut div de la row caroussel -->
-    <div class="d-flex mb-4 p-4 justify-content-center">
+    <div class="container-fluid d-flex mb-4 mt-4 p-4 justify-content-center">
         <!-- debut row -->
         <div class="row col-6">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2500">
@@ -56,7 +56,7 @@
     <!-- fin div caroussel -->
 
     <!-- corps central avec contenu principal -->
-    <main class="row container-fluid mx-auto p-2 bg-light">
+    <main class="row container-fluid mx-auto p-2 bg-grisclair">
 
         <!-- aside gauche avec nav sommaire -->
         <div class="col-3 p-4">
@@ -142,10 +142,10 @@
         <!-- section container : zoning avec contenu principal-->
         <!-- ================================================ -->
     
-        <section class="container mb-4 p-4 bg-light col-9">
+        <section class="container col-9 bg-grisclair">
 
             <!-- debut row 1 -->
-            <div class="row mt-4">
+            <div class="row mt-4 col-10 bg-light">
                 <h2 id="base_dune_bdd" class="text-dark p-5">1. Base d'une BDD</h2>
                 <!-- .col-4*3>h2{$/ Titre} -->
                 <ul>
@@ -153,14 +153,14 @@
                     <li>Voir les BDD dans le serveur : <code>SHOW DATABASES;</code></li><br>
                     <li>Utiliser une BDD : <code>USE nomdelabdd;</code></li><br>
                     <li>Supprimer une BDD : <code>DROP DATABASE IF EXISTS nomdelabdd;</code></li><br>
-                    <li class="alert alert-danger">En cas de bug dans le terminal, relancer la BDD : pour reinitier, faire <code>CRTL + C</code> + relancer la BDD avec <code>USE entreprise</code> + taper la requête</li><br>
+                    <p class="alert alert-success">En cas de bug dans le terminal, relancer la BDD : pour reinitier, faire <code> CRTL + C </code> + relancer la BDD avec <code> USE entreprise </code> + taper la requête</ps><br>
 
                 </ul>
             </div>
             <!-- fin row 1 -->
 
             <!-- debut row 2 -->
-            <div class="row col-12 m-4 bg-white">
+            <div class="row col-10 m-4 bg-light">
                 <h2 id="creation_dune_table" class="text-dark p-5">2. Création d'une table dans le terminal et myPHPAdmin (pas besoin de point virgule)</h2>
                 <p>Création d'une table "employés" dans la BDD entreprise (tester sur le terminal le texte suivant, pour la ligne de commande)</p><br>
                 <p><code>int</code> = integer = c'est nombre entier et on choisi le numéro 3, DEFAULT NOT NULL veut dire qu'il ne peut pas être vide, NULL pourraît être vide. Varchar c'est le nombre de caractères acceptés.</p><br>
@@ -223,7 +223,7 @@
 
             <div class="row">
                 <h2 id="select_distinct" class="text-dark p-5">3. SELECT et DISTINCT</h2>
-                <div class="col-12 m-4 bg-white">
+                <div class="col-10 m-4 bg-light">
                     <ul>
                         <li>Pour voir le contenu d'une table <code>SELECT * FROM employes;</code></li>
                         <li>Sélectionner les prénoms et les noms des employés <code>SELECT prenom, nom FROM employes;</code></li>
@@ -232,15 +232,15 @@
                 </div>
 
                 <div class="col-md-6">
-                    <p class="alert alert-danger">Les requêtes ne sont pas sensibles à la casse mais une convention indique qu'il faut mettre les mots-clefs des requêtes en majuscules. C'est plus facile ainsi de de s'y retrouver.</p>            
+                    <p class="alert alert-success">Les requêtes ne sont pas sensibles à la casse mais une convention indique qu'il faut mettre les mots-clefs des requêtes en majuscules. C'est plus facile ainsi de de s'y retrouver.</p>            
                 </div>
                 <!-- fin col -->
             </div>
             <!-- fin row -->
 
-            <div class="row">
+            <div class="row bg-light">
                 <h2 id="conditions" class="text-dark p-5">4. Les conditions</h2>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <h3>a) Le mot-clef WHERE</h3>
                     <ul>
                         <li>Nous cherchons une condition. Ex. Les prénoms et les noms des employes du service informatique : <code>SELECT prenom, nom FROM employes WHERE service='informatique';</code></li><br>
@@ -250,7 +250,7 @@
                 </div>
                 <!-- fin col -->
 
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <h3>b) Le mot-clef BETWEEN</h3>
                     <ul>
                         <li>Nous cherchons avec une condition une partie des données. Ex.: Les employés embauchés entre 2006 et 2010. <br> <code>SELECT nom, prenom, data-embauche FROM employes WHERE date_embauche BETWEEN '2006-01-01 AND '2010-12-31';</code></li><br>
@@ -259,7 +259,7 @@
                 </div>
                 <!-- fin col -->
 
-                <div class="col-md-4">
+                <div class="col-md-10">
                     <h3>c) Le mot-clef LIKE</h3>
                     <ul>
                         <li>Afficher les employés dons le prénom commence par <code>"S" :</code> <br><code>SELECT prenom, nom FROM employes WHERE prenom LIKE 's%';</code> </li> <br>
@@ -292,7 +292,7 @@
                 </div>
                 <!-- fin col -->
 
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <h3>d) CURDATE()</h3>
                     <ul>
                         <li>Une requête qui donne la date du jour : <code>SELECT CURDATE(); </code></li>
@@ -301,7 +301,7 @@
                 </div>
                 <!-- fin col -->
 
-                <div class="col-md-4">                
+                <div class="col-md-6">                
                     <h3>e/ IN() avec plusieurs valeurs</h3>
                     <ul>
                         <li>Trouver les employés de la comptabilité et du service informatique : <code>SELECT prenom, nom, service FROM employes WHERE service IN('informatique', 'comptabilite');</code></li><br>
@@ -313,7 +313,7 @@
                  </div>
                  <!-- fin col -->
 
-                 <div class="col-md-4">                
+                 <div class="col-md-10">                
                     <h3>f/ le mon-clef HAVING</h3>
                     <p>On verra après le "alias = "AS" rajoute la colonne "nombre_employes"</p>
                     <ul>
@@ -344,7 +344,7 @@
             <!-- fin row -->
 
             <!-- debut row -->
-            <div class="row justify-content-center">
+            <div class="row justify-content-center bg-light">
                 <h2 id="conditions" class="text-dark p-5">5. Les opérateurs de comparaison</h2>
                 <div class="col-10">
                     <table class="table table-striped table-hover" id="tableComparaisons">
@@ -388,7 +388,7 @@
 
             <hr>
 
-            <div class="col-md-4">
+            <div class="col-md-10">
                 
                 <ul>
                     <li>Différent de <code>!=</code>: Afficher tous les employés, sauf ceux du service informatique : <code>SELECT prenom, nom, service FROM employes WHERE service != 'informatique';</code></li>
@@ -422,13 +422,13 @@
             </div>
             <!-- fin row ? -->
 
-            <div class="row">
+            <div class="row bg-light">
                 <h2>6- Classement avec ORDER BY</h2>
                 <div class="col-md-10">
                     <ul>
                         <li>Grace à ORDER BY on va classer les données par ordre alphabétique</li>
                         <li> On range les noms par ordre alphabétique grâce au code suivant : <code>SELECT prenom, nom FROM employes ORDER BY nom DESC;</code></li>
-                        <li class="alert alert-danger">On précise <em>ASC</em> (ascendant) ou <em>DESC</em> (descendant). Se ce n'est pas précisé, ce sera trié automatiquement du plus petit au plus grand.</li>
+                        <li class="alert alert-success">On précise <em>ASC</em> (ascendant) ou <em>DESC</em> (descendant). Se ce n'est pas précisé, ce sera trié automatiquement du plus petit au plus grand.</li>
                         <li>Fonctionnne par les chaînes de caractères comme pour les nombres :<code>SELECT sexe, salaire FROM employes ORDER BY salaire ASC;</code></li>
                         <li>ORDER BY permet aussi de trier sur plusieurs colonnes : <code>SELECT nom, prenom, service, salaire FROM employes ORDER BY service ASC, salaire ASC;</code></li>
                     </ul>
@@ -445,17 +445,17 @@
 
                         <code>SELECT nom, prenom, service, salaire FROM employes ORDER BY service DESC LIMIT 0,3;</code><br>
 
-                        <li class="alert alert-danger">Le premier chiffre précise l'enregistrement de départ : 0 définit le premier enregistrement informatique. Le second chiffre nous indique de résultats que nous attendons.</li>                      
+                        <li class="alert alert-success">Le premier chiffre précise l'enregistrement de départ : 0 définit le premier enregistrement informatique. Le second chiffre nous indique de résultats que nous attendons.</li>                      
                     </ul>
                 </div>
                 <!-- fin col - div ul -->
             </div>
             <!-- fin row -->
 
-            <div class="row">
+            <div class="row bg-light">
                 <h2>8- Faire des calculs dans la requête</h2>
 
-                <div class="col-md-6">
+                <div class="col-md-10">
                     <ul>
                         <li>Afficher la liste des employes avec leur salaire annuel :<br>
                             <code>SELECT nom, prenom, salaire, salaire*12 FROM employes;</code></li>
@@ -463,7 +463,7 @@
                 </div>
                 <!-- fin col -->
 
-                <div class="col-md-6">
+                <div class="col-md-10">
                     <ul>
                         <h3>a) Utiliser un alis (AS) - on cree salaire_annule dans la BDD</h3>
                         <li>Avec le code précedent on a une colonne provisoire qui n'a pas de nom défini.<br>
@@ -527,7 +527,7 @@
                 </div>
                 <!-- fin col -->
 
-                <div class="col-md-6">
+                <div class="col-md-10">
                     <h3>b) Calculer une somme <code>SUM</code> et une moyenne <code>AVG</code></h3>
 
                     <ul>
@@ -577,7 +577,7 @@
                 </div>
                 <!-- fin col -->
 
-                <div class="col-md-6">
+                <div class="col-md-10">
                     <h3>c) Arrondir avec <code>ROUND()</code></h3>
 
                     <ul>
@@ -620,17 +620,12 @@
                                 20 rows in set (0.001 sec)
                                 </code>
                         </li><br>
-                    </ul>
-                </div>
-                <!-- fin col -->
-            </div>
 
-            <div class="col-md-6">
                 <h3>d) Compter avec <code>COUNT()</code></h3>
 
                 <ul>
-                    <li>On peut compter le nombre d'employés du sexe féminin <code> SELECT COUNT(*) FROM employes WHERE sexe = 'f';
-                        <code> MariaDB [entreprise]> SELECT COUNT(*) FROM employes WHERE sexe = 'f';
+                    <li>On peut compter le nombre d'employés du sexe féminin <code> SELECT COUNT(*) FROM employes WHERE sexe = 'f'; <br>
+                    MariaDB [entreprise]> SELECT COUNT(*) FROM employes WHERE sexe = 'f';
                         +----------+
                         | COUNT(*) |
                         +----------+
@@ -643,7 +638,7 @@
             </div>
             <!-- fin col -->
 
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <h3>e) Isoler une valeur avec MIN (minimum)  ou MAX (maximum)</h3>
 
                 <ul>
@@ -669,20 +664,22 @@
 
                     <li>Le système va éxecuter en premier la requête entre parenthèse pour connaître le résultat et l'éxecuter comme source pour la seconde requête.</li> Attention : ne pas oublier toutes les parenthèses !!!
                 </ul>
+                    </ul>
+                </div>
+                <!-- fin col -->
             </div>
-            <!-- fin col -->
 
             <div class="row">
-                <h2>9. Les conditions multipless</h2>
+                <h2>9. Les conditions multiples</h2>
 
-                <div class="col-md-6">
-                    <p>... A COMPLETER... ???</p>
+                <div class="col-md-10">
+                    <p>... A COMPLETER...</p>
                 </div>
             </div>
             <!-- fin row -->
 
 
-            <div class="row">
+            <div class="row bg-light">
                 <h2>10 - Les regroupements avec GROUP BY</h2>
 
                 <div class="col-md-10">
@@ -705,7 +702,7 @@
                                 +---------------+-----------------+
                             </code></li><br>
 
-                            <li class="alert alert-danger">La virgule ici signifie "et" donc on cherche le service et on compte le nombre d'meployés par service.</li><br>
+                            <li class="alert alert-success">La virgule ici signifie "et" donc on cherche le service et on compte le nombre d'meployés par service.</li><br>
                 </div>
                 <!-- fin col -->            
             <!-- fin row -->
