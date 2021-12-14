@@ -379,61 +379,67 @@
 
                 <ol>
                     <li>
-                        Affichez le nom des agences (par ordre alphabetique ou l'inverse) :
-                        <code>SELECT nom FROM agence</code>
-
+                        Affichez le nom des agences (par ordre alphabetique ou l'inverse) : <br>
+                        <code>SELECT nom FROM agence</code> <br>
                         <code>SELECT nom FROM agence ORDER BY nom DESC</code>
                     </li>
 
                     <li>
-                        Affichez le numéro de l'agence « Orpi » :
+                        Affichez le numéro de l'agence « Orpi » : <br>
                         <code>SELECT idAgence FROM agence WHERE nom = 'Orpi'</code>
                     </li>
                    
                     <li>
-                        Affichez le premier enregistrement de la table logement : 
+                        Affichez le premier enregistrement de la table logement : <br>
                         <code>SELECT * FROM logement LIMIT 1</code>
                     </li>
 
                     <li>
-                        Affichez le nombre de logements (Alias : Nombre_de_logements) : Patrick dit qu'il vaut mieux préciser avec ORDER BY<br>
+                        Affichez le nombre de logements (Alias : Nombre_de_logements) : Patrick dit qu'il vaut mieux préciser avec ORDER BY :<br>
 
-                        <code>SELECT COUNT(*) AS 'Nombre_de_logements' FROM logement</code>
+                        <code>SELECT COUNT(*) AS 'Nombre_de_logements' FROM logement</code> <br>
 
-                        <code>SELECT COUNT(idLogement) AS 'Nombre_de_logements' FROM logement</code>
+                        <code>SELECT COUNT(idLogement) AS 'Nombre_de_logements' FROM logement</code> <br>
 
-                        <code>SELECT * FROM logement WHERE idLogement=(SELECT MIN(idLogement) FROM logement)</code>
+                        <code>SELECT * FROM logement WHERE idLogement=(SELECT MIN(idLogement) FROM logement)</code> <br>
 
-                        <code>SELECT * FROM logement ORDER BY idLogement LIMIT 0,1</code>
+                        <code>SELECT * FROM logement ORDER BY idLogement LIMIT 0,1</code> <br>
 
-                        <code>SELECT * FROM logement ORDER BY idLogement LIMIT 0,1</code>
+                        <code>SELECT * FROM logement ORDER BY idLogement LIMIT 0,1</code> <br>
 
-                        <code>SELECT MIN(idLogement), genre, ville, prix, superficie, categorie FROM logement</code>
+                        <code>SELECT MIN(idLogement), genre, ville, prix, superficie, categorie FROM logement</code> <br>
                     </li>
 
                     <li>
                         Affichez les logements à vendre à moins de 150 000 € dans l'ordre croissant des prix (toujours mettre ASC même si c'est pas ASC par défaut) : <br>
-                        <code>SELECT * FROM `logement` WHERE prix <= 150000 ORDER BY prix ASC;</code>
+                        <code>SELECT * FROM `logement` WHERE prix <= 150000 ORDER BY prix ASC;</code> <br>
 
-                        <code>SELECT * FROM `logement` WHERE PRIX <= 150000 AND categorie = 'vente';</code>
+                        <code>SELECT * FROM `logement` WHERE PRIX <= 150000 AND categorie = 'vente';</code> <br>
 
-                        <code>SELECT * FROM `logement` WHERE PRIX <= 150000 AND categorie = 'vente' ORDER BY prix ASC</code>
+                        <code>SELECT * FROM `logement` WHERE PRIX <= 150000 AND categorie = 'vente' ORDER BY prix ASC</code> <br>
                     </li>
 
                     <li>
                         Afficher le nombre de logements à la location (alias : 'nombre_logement_en_location') : <br>
-                        <code>SELECT COUNT(idLogement) AS 'nombre_logement_en_location' FROM logement WHERE categorie = 'location'</code>
+                        <code>SELECT COUNT(idLogement) <br>
+                            AS 'nombre_logement_en_location' <br>
+                            FROM logement <br>
+                            WHERE categorie = 'location'</code>
                     </li>
 
                     <li>
                         Afficher les villes différentes recherchées par les personnes demandeuses d'un logement : <br>
-                        <code>SELECT DISTINCT ville FROM `demande`;</code>
+                        <code>SELECT DISTINCT ville <br>
+                            FROM `demande`;</code>
                     </li> 
 
                     <li>
-                        Affichez le nombre de biens à vendre par ville : (Alias nbr_logement_envente_ville) <br>
+                        Affichez le nombre de biens à vendre par ville : (Alias nbr_logement_envente_ville) : <br>
 
-                        <code>SELECT ville, COUNT(ville) AS 'nbr_logement_envente_ville' FROM logement WHERE categorie='vente' GROUP BY ville ASC</code>
+                        <code>SELECT ville, COUNT(ville)
+                            AS 'nbr_logement_envente_ville' <br>
+                            FROM logement WHERE categorie='vente' <br>
+                            GROUP BY ville ASC</code>
 
                         <code>SELECT COUNT(idLogement) AS 'nbr logement', ville<br>
                             FROM logement<br>
@@ -441,10 +447,9 @@
                             AND categorie='vente'<br>
                             GROUP BY ville</code><br>
 
-                        Autres méthodes moins approfondies :
+                        Autres méthodes moins approfondies : <br>
 
-                        <code>SELECT COUNT(*) AS nbr_logement_envente_ville FROM logement WHERE categorie ='vente'</code>
-
+                        <code>SELECT COUNT(*) AS nbr_logement_envente_ville FROM logement WHERE categorie ='vente'</code> <br>
                         <code>SELECT DISTINCT ville AS nbr_logement_envente_ville FROM logement WHERE categorie ='vente'</code>
                     </li> 
 
@@ -456,7 +461,7 @@
                     </li>
 
                     <li>
-                        Quels sont les id des logements entre 20 et 30m² ? : <br>
+                        Quels sont les id des logements entre 20 et 30m² ? <br>
 
                         <code>SELECT idLogement <br>
                         FROM logement <br>
@@ -484,8 +489,8 @@
                         ORDER BY prix <br>
                         ASC LIMIT 0,1;</code> <br>
                         
-                        Et les prix vendeur des 3 moins chers ?
-                        <code>SELECT *
+                        Et les prix vendeur des 3 moins chers ? <br>
+                        <code>SELECT * <br>
                         FROM logement <br>
                         WHERE categorie = 'vente' <br>
                         ORDER BY prix <br>
@@ -494,7 +499,7 @@
                     </li> 
 
                     <li>
-                        Dans quelles villes se trouvent les maisons à vendre ?
+                        Dans quelles villes se trouvent les maisons à vendre ? <br>
 
                         <code>SELECT ville <br>
                         FROM logement <br>
@@ -513,9 +518,9 @@
                     </li> 
 
                     <li>
-                        L'agence Orpi souhaite diminuer les frais qu'elle applique sur le logement ayant l'id « 5246 ». Passer les frais de ce logement de 800 à 730€ : <br>
+                        L'agence Orpi souhaite diminuer les frais qu'elle applique sur le logement ayant l'id « 5246 ». Passer les frais de ce logement de 800 à 730€. <br>
 
-                        <p>Ici on a une requête impriquée, les 2 faites par Patrick :</p> <br>
+                        <p>(Ici on a une requête impriquée, les 2 faites par Patrick) :</p> <br>
 
                         <code>UPDATE logement_agence <br>
                         SET frais ='1200000' <br>
@@ -581,10 +586,11 @@
                         WHERE personne.idPersonne = demande.idPersonne
                         AND demande.categorie = 'vente' ORDER BY demande.idDemande
                         LIMIT 0,3;</code>   
+                    </li>
                 </ol>  
             </div>
 
-            <div class="row">
+            <div class="row col-10 m-5">
                 <h3>La suite des questions ( requêtes de jointure)</h3>
                 <ol>
                     <li>Afficher le bien de Robin et le/les agences qui gérent ce bien <br>
@@ -630,7 +636,7 @@
                         FROM demande, personne <br>
                         WHERE personne.idPersonne = demande.idPersonne <br>
                         AND demande.categorie = 'vente' <br>
-                        ORDER BY demande.superficie ASC <br>
+                        ORDER BY demande.superficie ASC</code><br>
                     </li>
 
                     <li>
@@ -641,18 +647,18 @@
                         FROM agence, logement_agence, logement <br>
                         WHERE agence.idAgence = logement_agence.idAgence <br>
                         AND logement_agence.idLogement = logement.idLogement <br>
-                        AND logement_agence.idLogement = '5091' <code> <br>
+                        AND logement_agence.idLogement = '5091' </code> <hr>
 
                         <code>SELECT (logement.prix + logement_agence.frais) <br>
                         AS 'prix_final', logement.prix, logement.categorie <br>
                         FROM logement, logement_agence <br>
                         WHERE logement_agence.idLogement = logement.idLogement <br>
-                        AND logement_agence.idLogement = '5091'</code> <br>
+                        AND logement_agence.idLogement = '5091'</code> <hr>
 
                         <code>SELECT (logement.prix + logement_agence.frais) AS 'Prix Finaux', logement.categorie, logement.ville, logement.prix, logement_agence.frais <br>
                         FROM logement, logement_agence <br>
                         WHERE logement.idLogement = logement_agence.idLogement <br>
-                        AND logement_agence.idLogement = '5091' </code> <br>
+                        AND logement_agence.idLogement = '5091' </code> <hr>
 
                         Avec Nom de l'agence : <br>
                         <code>SELECT logement.categorie, logement.ville, logement.prix, logement_agence.frais, agence.nom, (logement.prix + logement_agence.frais) AS 'Prix Finaux'
@@ -660,29 +666,32 @@
                         WHERE logement.idLogement = logement_agence.idLogement
                         AND agence.idAgence = logement_agence.idAgence
                         AND logement_agence.idLogement = '5091'
-                        </code>
-
-                        Suite exos :
-
-                        Indiquez les frais ajoutés par l'agence pour le logement ID 5873 :
-                        <code>SELECT frais, idLogement FROM logement_agence WHERE idLogement = '5873'</code> 
+                        </code> <br>
+                    </li>
+                    <li>
+                        Indiquez les frais ajoutés par l'agence pour le logement ID 5873 : <br>
+                        <code>SELECT frais, idLogement FROM logement_agence WHERE idLogement = '5873'</code> <br>
 
                         Si l’ensemble des logements étaient vendus ou loués demain, quel serait le bénéfice généré grâce aux frais d’agence et pour chaque agence
-                        (Alias : benefice, classement : par ordre croissant des gains) // tables agence et logement_agence // SUM() // GROUP BY et ORDER
+                        (Alias : benefice, classement : par ordre croissant des gains) // tables agence et logement_agence // SUM() // GROUP BY et ORDER <br>
                         <code>SELECT agence.nom, SUM(logement_agence.frais) AS 'bénéfices' <br>
                         FROM agence, logement_agence <br>
                         WHERE agence.idAgence = logement_agence.idAgence <br>
                         GROUP BY agence.idAgence <br>
                         ORDER BY bénéfices DESC</code> <br>
-
+                    </li>
+                        
+                
                         Autre :
+                    <li>
                         <code>SELECT agence.nom, SUM(logement_agence.frais) AS 'bénéfices' <br>
-                        FROM agence, logement_agence <br>
-                        WHERE agence.idAgence = logement_agence.idAgence <br>
-                        GROUP BY agence.idAgence <br>
-                        ORDER BY agence.nom ASC <br></code> <br>
-
-
+                            FROM agence, logement_agence <br>
+                            WHERE agence.idAgence = logement_agence.idAgence <br>
+                            GROUP BY agence.idAgence <br>
+                            ORDER BY agence.nom ASC <br></code> <br>
+                    </li>
+                        
+                    <li>
                         Affichez les id des biens en location, les prix, suivis des frais d’agence (classement : dans l’ordre croissant des prix) : <br>
 
                         <code>SELECT logement.idLogement, logement.prix, logement.categorie, logement_agence.frais <br>
@@ -695,22 +704,59 @@
 
                         Quel est le prénom du propriétaire proposant le logement le moins cher à louer ? REQUETES IMRIQUEES // IN : <br>
                         <code> </code>
-                   
-                        Affichez le prénom et la ville où se trouve le logement de chaque propriétaire // REQUETE DE JOINTURE : <br>
+                    </li>
+                    
+                        
+                   <li>
+                    Affichez le prénom et la ville où se trouve le logement de chaque propriétaire // REQUETE DE JOINTURE : <br>
 
-                        Chat de Patrick pour Imram :
-                        @Imran HOSSAIN - Suresnes 2021 on n'a pas besoin de la catégorie !
+                    
+                    on cherche le prénom, la ville dans les tables personne, logement et logement_personne avec 2 id
 
-                        on cherche le prénom, la ville dans les tables personne, logement et logement_personne avec 2 id
-
-                        <code>SELECT logement.idLogement, logement.prix, logement.categorie, logement_agence.frais <br>
-                        FROM logement, logement_agence <br>
-                        WHERE logement.idLogement = logement_agence.idLogement <br>
-                        AND logement.categorie = 'location' <br>
-                        ORDER BY logement.prix ASC</code> <br>
-
-
+                    <code>SELECT logement.idLogement, logement.prix, logement.categorie, logement_agence.frais <br>
+                    FROM logement, logement_agence <br>
+                    WHERE logement.idLogement = logement_agence.idLogement <br>
+                    AND logement.categorie = 'location' <br>
+                    ORDER BY logement.prix ASC</code> <br>
+                   </li>
+                       
+                   <li>
                         Affichez le nombre de logements à la vente dans la ville de recherche de « hugo » (alias : nombre) // REQUETE DE JOINTURE : <br>
+                        <code>SELECT COUNT(logement.idLogement)
+                            AS 'nombre de logements ville hugo'
+                            FROM personne, demande, logement
+                            WHERE personne.idPersonne = demande.idPersonne
+                            AND personne.prenom = 'Hugo'
+                            AND logement.categorie = 'vente'
+                            AND demande.ville = logement.ville</code>
+                   </li>
+                        
+                   <li>
+                    Affichez le nombre de logements à la vente dans la ville de recherche de « hugo » et dans la superficie minimum qu’il attend ou dans une
+                    superficie supérieure (alias : nombre): <br>
+                    <code>SELECT COUNT(logement.idLogement) AS 'nombre logements ville hugo'
+                    FROM personne, demande, logement
+                    WHERE personne.idPersonne = demande.idPersonne
+                    AND personne.prenom = 'hugo'
+                    AND logement.categorie = 'vente'
+                    AND demande.ville = logement.ville
+                    AND demande.superficie <= logement.superficie</code>
+                   </li>
+                        
+                   <li>
+                    Affichez le nombre d’opportunités d’achats dans la ville de recherche de « hugo » dans la superficie minimum qu’il attend ou dans une
+                    superficie supérieure et en prenant en compte tous ses autres critères de sélection (alias : nombre): <br>
+                   </li>
+                        
+                   <li>
+
+                   </li>
+                        Affichez les prénoms des personnes souhaitant accéder à un logement en location sur la ville de Paris <br>
+                        <code>SELECT personne.prenom, demande.ville, demande.categorie
+                            FROM demande, personne
+                            WHERE personne.idPersonne = demande.idPersonne
+                            AND demande.ville = 'Paris'
+                            AND demande.categorie ='location'</code>
                         <code></code>
                     </li>
                 </ol>                                      
@@ -721,16 +767,17 @@
     </main>
     <!-- fin corps central -->
 
-    <img src="https://ci3.googleusercontent.com/proxy/APsqK2QtW6SVfEbjjrHtD8grjTx-dhVq1i3G0fuQPU_BBaJIUX3AYo-Puv-kGv1-icE0OhQc7szXX-QBxzrZB2bgEnNurI5wQpPfylrgYuDlmsThbIlx=s0-d-e1-ft#https://www.iscal.ipl.pt/sites/default/files/inline-images/slide.gif" alt="Boas Festas | Instituto Superior de Contabilidade e Administração de Lisboa" class="CToWUd">
-
     <!-- =================================== -->
     <!-- pied de page -->
     <!-- =================================== -->
     
-    <!-- Ajouter "container" if you want to extend the Footer to full width/ou container-fluid -->
-    <div class="container-fluid p-5 my-5">
+    <!-- Ajouter "container" pour avoir footer full width/ou container-fluid -->
+    <div class="container p-5 my-5">
 
         <footer class="text-center text-lg-start bg-jaune">
+
+            <!-- Ici on a des boutons pour les réseaux : -->
+
             <!-- <div class="container d-flex justify-content-center py-5">
                 <button genre="button" class="btn-lg btn-floating mx-2" style="background-color: #54456b;">
                 <i class="fab fa-facebook-f"></i>
@@ -738,7 +785,6 @@
     
                 <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
                 <i class="fab fa-youtube"></i>
-                </button>
     
                 <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
                 <i class="fab fa-instagram"></i>
@@ -750,10 +796,15 @@
             </div> -->
 
             <!-- Copyright -->
-            <div class="text-center text-dark p-5 m-5" style="background-color: rgba(0, 0, 0, 0.2);">
-                &copy; Vanusa Santos, Colombbus 2021-2022 :
-                <a class="text-dark" href="https://mdbootstrap.com/">Agence Suresnes</a>
-            </div>
+            <div class="row">
+                <div class="col-6">
+                    <img src="https://ci3.googleusercontent.com/proxy/APsqK2QtW6SVfEbjjrHtD8grjTx-dhVq1i3G0fuQPU_BBaJIUX3AYo-Puv-kGv1-icE0OhQc7szXX-QBxzrZB2bgEnNurI5wQpPfylrgYuDlmsThbIlx=s0-d-e1-ft#https://www.iscal.ipl.pt/sites/default/files/inline-images/slide.gif" alt="Boas Festas | Instituto Superior de Contabilidade e Administração de Lisboa" class="CToWUd">
+                </div>     
+                <div class="col-6 text-center text-dark p-5" style="background-color: rgba(0, 0, 0, 0.2);">
+                    &copy; Vanusa Santos, Colombbus 2021-2022 :
+                    <a class="text-dark" href="https://mdbootstrap.com/">Agence Suresnes</a>
+                </div>                  
+            </div>        
             <!-- Copyright -->     
         </footer>    
   </div>
